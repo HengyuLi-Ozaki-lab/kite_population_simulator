@@ -1,0 +1,13 @@
+{
+ "predictions": 19999,
+ "wall_seconds": 920.656342000002,
+ "predictions_per_minute": 1303.3527769909147,
+ "calls_per_minute": 922.7547362075285,
+ "cache_hits": 11680,
+ "latency_ms_p50": 212.51224994193763,
+ "latency_ms_p95": 304.15836641332135,
+ "usd": 0.32198,
+ "usd_per_1k": 0.01609980499024951,
+ "failed": 1,
+ "stopped": "completed"
+}

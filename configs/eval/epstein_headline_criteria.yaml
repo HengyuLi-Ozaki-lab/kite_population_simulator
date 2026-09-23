@@ -1,0 +1,44 @@
+# D1 addendum A2: headline-level treatment effects on Epstein et al. 2021 - declared before any headline-level outcome is read.
+#
+# What has been seen (2026-09-22, D1): the wave x arm aggregates (share rates on true and false cards, discernment) for
+# every arm, and the ten wave-relative effects. What has NOT been looked at: any per-headline number, any subgroup.
+# This file is committed before scripts/d1_headlines.py runs; the script refuses to run while either is uncommitted.
+# Corrections are appended as errata, never edited in.
+
+question: >-
+  Does the hybrid kernel predict WHICH headlines respond to an accuracy-prompt treatment, beyond the arm-level effect
+  already scored in D1? The unit is the headline within an arm; the arm mean is removed on both sides.
+
+data:
+  ratings: windtunnel.eval.epstein.load_ratings (binary sharing; accuracy_only excluded)
+  predictions: results/d1/20260922-213832-jev (kernel; application pool), results/d1/20260922-225014-gpt-6-astra (anchors; audit pool)
+  hybrid: recomputed with scripts/d1_analysis.hybrid from the locked inputs (anchors_per_cell 12); its wave x arm table must equal results/d1/policies.json
+
+units: waves 2-5, every sharing treatment (10 arms) x 20 headlines = 200 (wave, arm, headline) effects
+
+effects:
+  human: share rate under the arm minus share rate under the wave's control, per headline (all completed participants)
+  model: mean P(yes) under the arm minus under the control, per headline, over the application pool (kernel, hybrid) or the audit pool (flagship_audit)
+  centred: each effect minus the mean of its arm's 20 effects, on both sides; this removes the arm-level effect scored in D1
+
+primary_endpoint:
+  name: within-arm headline heterogeneity, hybrid
+  statistic: Pearson correlation between the hybrid's centred effects and people's centred effects over the 200 units
+  interval: 2,000 participant resamples within wave x arm (people's side only; the model side is fixed)
+  verdict: positive if the correlation is above 0 and the 95% interval excludes 0; otherwise not shown
+
+secondary_endpoints:
+  - the same statistic for the kernel and for flagship_audit, and the paired differences hybrid minus kernel, hybrid minus flagship_audit
+  - centred within arm x veracity (heterogeneity beyond the true/false split), all three systems
+  - Spearman correlations; sign agreement of centred effects
+  - a baseline-only predictor: the kernel's control P(yes) per headline, centred within arm (no treatment information); the hybrid should beat it
+  - the human split-half reliability of the centred effects (200 splits, Spearman-Brown) as the attenuation ceiling, descriptive
+  - false and true headlines separately, descriptive
+
+analysis: {seed: 0, n_boot: 2000, n_splits: 200}
+
+power_note: >-
+  A per-headline share rate rests on about 200-1,000 participants per arm, so a headline-level effect has a standard
+  error of roughly 0.03 while arm-level effects are 0.01-0.06. Individual headline effects are therefore noisy; the
+  endpoint is a correlation over 200 units, and the attenuation ceiling is reported so a modest correlation can be read
+  against what the human data can support.

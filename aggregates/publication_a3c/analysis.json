@@ -1,0 +1,343 @@
+{
+ "labels_commit": "b64c0fe",
+ "seen": {
+  "studies": 91,
+  "contrasts": 9000,
+  "unlabelled_studies": [],
+  "primary": {
+   "interaction": 0.043782425200278044,
+   "p_one_sided": 0.21277872212778723,
+   "null_p95": 0.08929937093306597,
+   "ci": [
+    -0.0780733978563892,
+    0.17010155205452276
+   ],
+   "groups": {
+    "public": {
+     "studies": 74,
+     "contrasts": 2047,
+     "astra_agreement": 0.7411460843196384,
+     "jev_agreement": 0.6789088299361554,
+     "advantage": 0.06223725438348301
+    },
+    "not_public": {
+     "studies": 17,
+     "contrasts": 6953,
+     "astra_agreement": 0.7984544778951609,
+     "jev_agreement": 0.779999648711956,
+     "advantage": 0.018454829183204964
+    }
+   },
+   "underpowered": false,
+   "verdict": "NOT DETECTED (the data allow a recall effect of at most +0.170)"
+  },
+  "published": {
+   "interaction": 0.025093101483473337,
+   "p_one_sided": 0.2896710328967103,
+   "null_p95": 0.07367441934880621,
+   "ci": [
+    -0.061356406921496895,
+    0.1085414638927527
+   ],
+   "groups": {
+    "public": {
+     "studies": 59,
+     "contrasts": 1905,
+     "astra_agreement": 0.7774568740329109,
+     "jev_agreement": 0.7144640884130313,
+     "advantage": 0.06299278561987949
+    },
+    "not_public": {
+     "studies": 32,
+     "contrasts": 7095,
+     "astra_agreement": 0.6995917792998648,
+     "jev_agreement": 0.6616920951634587,
+     "advantage": 0.03789968413640615
+    }
+   },
+   "underpowered": false
+  },
+  "excluding_unclear": {
+   "interaction": 0.043782425200278044,
+   "p_one_sided": 0.20957904209579042,
+   "null_p95": 0.08897686712199164,
+   "ci": [
+    -0.07461577442073082,
+    0.15979531043290612
+   ],
+   "groups": {
+    "public": {
+     "studies": 74,
+     "contrasts": 2047,
+     "astra_agreement": 0.7411460843196384,
+     "jev_agreement": 0.6789088299361554,
+     "advantage": 0.06223725438348301
+    },
+    "not_public": {
+     "studies": 17,
+     "contrasts": 6953,
+     "astra_agreement": 0.7984544778951609,
+     "jev_agreement": 0.779999648711956,
+     "advantage": 0.018454829183204964
+    }
+   },
+   "underpowered": false
+  },
+  "by_size": {
+   "0.00-0.02": {
+    "interaction": null,
+    "studies": [
+     1,
+     2
+    ],
+    "underpowered": true
+   },
+   "0.02-0.05": {
+    "interaction": 0.06557377049180328,
+    "p_one_sided": 0.34636536346365365,
+    "null_p95": 0.26354679802955666,
+    "ci": [
+     -0.3791015208163717,
+     0.34643721198156685
+    ],
+    "groups": {
+     "public": {
+      "studies": 22,
+      "contrasts": 61,
+      "astra_agreement": 0.639344262295082,
+      "jev_agreement": 0.5737704918032787,
+      "advantage": 0.06557377049180328
+     },
+     "not_public": {
+      "studies": 6,
+      "contrasts": 18,
+      "astra_agreement": 0.5555555555555556,
+      "jev_agreement": 0.5555555555555556,
+      "advantage": 0.0
+     }
+    },
+    "underpowered": true
+   },
+   "0.05-0.10": {
+    "interaction": -0.025137651590992613,
+    "p_one_sided": 0.6192380761923808,
+    "null_p95": 0.13575530123888738,
+    "ci": [
+     -0.18683998370862256,
+     0.208097013916033
+    ],
+    "groups": {
+     "public": {
+      "studies": 52,
+      "contrasts": 311,
+      "astra_agreement": 0.7171679571173317,
+      "jev_agreement": 0.6780325590629342,
+      "advantage": 0.03913539805439746
+     },
+     "not_public": {
+      "studies": 16,
+      "contrasts": 111,
+      "astra_agreement": 0.7478945035460993,
+      "jev_agreement": 0.6836214539007092,
+      "advantage": 0.06427304964539007
+     }
+    },
+    "underpowered": false
+   },
+   "0.10-inf": {
+    "interaction": 0.067472267451483,
+    "p_one_sided": 0.1396860313968603,
+    "null_p95": 0.09675365522987203,
+    "ci": [
+     0.006276041594260864,
+     0.15017597229042906
+    ],
+    "groups": {
+     "public": {
+      "studies": 48,
+      "contrasts": 1674,
+      "astra_agreement": 0.7738555114002627,
+      "jev_agreement": 0.7135457924478606,
+      "advantage": 0.06030971895240194
+     },
+     "not_public": {
+      "studies": 8,
+      "contrasts": 6820,
+      "astra_agreement": 0.8674824922821897,
+      "jev_agreement": 0.8746450407812708,
+      "advantage": -0.0071625484990810685
+     }
+    },
+    "underpowered": true
+   }
+  },
+  "by_era": {
+   "before_2015": {
+    "public": 0.09071746329388405,
+    "not_public": -0.3333333333333333
+   },
+   "2015_on": {
+    "public": 0.04721784072924164,
+    "not_public": 0.02669986424218633
+   }
+  },
+  "citations": {
+   "studies": 53,
+   "spearman": -0.1211281661575511,
+   "p_one_sided": 0.8086191380861913
+  }
+ },
+ "unseen": {
+  "studies": 25,
+  "contrasts": 304,
+  "unlabelled_studies": [],
+  "primary": {
+   "interaction": 0.014520126957704979,
+   "p_one_sided": 0.42225777422257776,
+   "null_p95": 0.13022638873154335,
+   "ci": [
+    -0.10642120617072906,
+    0.14205570206500404
+   ],
+   "groups": {
+    "public": {
+     "studies": 19,
+     "contrasts": 222,
+     "astra_agreement": 0.6734550561797753,
+     "jev_agreement": 0.6348314606741573,
+     "advantage": 0.038623595505617975
+    },
+    "not_public": {
+     "studies": 6,
+     "contrasts": 82,
+     "astra_agreement": 0.5555555555555556,
+     "jev_agreement": 0.5314520870076426,
+     "advantage": 0.024103468547912996
+    }
+   },
+   "underpowered": true,
+   "verdict": "DESCRIPTIVE ONLY (a group has fewer than 15 studies)"
+  },
+  "published": {
+   "interaction": 0.06370912186012616,
+   "p_one_sided": 0.1787821217878212,
+   "null_p95": 0.1089725067273611,
+   "ci": [
+    -0.06371433579441392,
+    0.17257859180377633
+   ],
+   "groups": {
+    "public": {
+     "studies": 15,
+     "contrasts": 168,
+     "astra_agreement": 0.6534926470588235,
+     "jev_agreement": 0.5891544117647058,
+     "advantage": 0.06433823529411764
+    },
+    "not_public": {
+     "studies": 10,
+     "contrasts": 136,
+     "astra_agreement": 0.6178861788617886,
+     "jev_agreement": 0.6172570654277971,
+     "advantage": 0.0006291134339914842
+    }
+   },
+   "underpowered": true
+  },
+  "excluding_unclear": {
+   "interaction": 0.014520126957704979,
+   "p_one_sided": 0.44155584441555845,
+   "null_p95": 0.13176973375557122,
+   "ci": [
+    -0.10527051221834655,
+    0.14639173401662697
+   ],
+   "groups": {
+    "public": {
+     "studies": 19,
+     "contrasts": 222,
+     "astra_agreement": 0.6734550561797753,
+     "jev_agreement": 0.6348314606741573,
+     "advantage": 0.038623595505617975
+    },
+    "not_public": {
+     "studies": 6,
+     "contrasts": 82,
+     "astra_agreement": 0.5555555555555556,
+     "jev_agreement": 0.5314520870076426,
+     "advantage": 0.024103468547912996
+    }
+   },
+   "underpowered": true
+  },
+  "by_size": {
+   "0.05-0.10": {
+    "interaction": 0.030612244897959183,
+    "p_one_sided": 0.43385661433856615,
+    "null_p95": 0.26726726726726724,
+    "ci": [
+     -0.9428968253968254,
+     0.21471861471861473
+    ],
+    "groups": {
+     "public": {
+      "studies": 17,
+      "contrasts": 98,
+      "astra_agreement": 0.7040816326530612,
+      "jev_agreement": 0.673469387755102,
+      "advantage": 0.030612244897959183
+     },
+     "not_public": {
+      "studies": 3,
+      "contrasts": 22,
+      "astra_agreement": 0.4090909090909091,
+      "jev_agreement": 0.4090909090909091,
+      "advantage": 0.0
+     }
+    },
+    "underpowered": true
+   },
+   "0.10-inf": {
+    "interaction": -0.030745116952013506,
+    "p_one_sided": 0.6414358564143585,
+    "null_p95": 0.11319761319761319,
+    "ci": [
+     -0.14591775483168926,
+     0.07017886513157895
+    ],
+    "groups": {
+     "public": {
+      "studies": 14,
+      "contrasts": 110,
+      "astra_agreement": 0.7288752913752915,
+      "jev_agreement": 0.7078962703962705,
+      "advantage": 0.020979020979020976
+     },
+     "not_public": {
+      "studies": 5,
+      "contrasts": 58,
+      "astra_agreement": 0.6379310344827587,
+      "jev_agreement": 0.5862068965517241,
+      "advantage": 0.05172413793103448
+     }
+    },
+    "underpowered": true
+   }
+  },
+  "by_era": {
+   "before_2015": {
+    "public": 0.09615384615384616,
+    "not_public": 0.0
+   },
+   "2015_on": {
+    "public": 0.01488095238095238,
+    "not_public": 0.02914001421464108
+   }
+  },
+  "citations": {
+   "studies": 14,
+   "spearman": 0.014606741573033705,
+   "p_one_sided": 0.47525247475252475
+  }
+ }
+}

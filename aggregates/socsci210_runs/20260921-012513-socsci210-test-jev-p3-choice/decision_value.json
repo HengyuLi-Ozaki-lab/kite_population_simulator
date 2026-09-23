@@ -1,0 +1,193 @@
+{
+ "run": "results/20260921-012513-socsci210-test-jev-p3-choice",
+ "split": "test",
+ "n_predictions": 136901,
+ "n_tasks": 162,
+ "frozen_criteria": {
+  "frozen_at_commit": 5044404,
+  "frozen_on": "2026-09-21",
+  "population": {
+   "tasks": "one and the same stated scale across at least two conditions",
+   "reliable_contrast": "|z| >= 3, z from respondent-clustered standard errors of whichever data does the judging",
+   "simulated_respondents_per_cell": "all that the test run holds (200)"
+  },
+  "procedure": {
+   "rng_seed": 0,
+   "permutations": 2000,
+   "study_bootstrap": 2000,
+   "half_sample_splits": 200
+  },
+  "criteria": {
+   "pass": {
+    "sign_accuracy": "permutation p < 0.01 and observed above the null's 95th percentile",
+    "captured_gain": "permutation p < 0.01 and the study-bootstrap 95% interval excludes 0"
+   },
+   "strong": {
+    "sign_accuracy": "(simulation - 0.5) / (pilot - 0.5) >= 2/3",
+    "captured_gain": "simulation / pilot >= 2/3"
+   }
+  },
+  "reported_without_a_threshold": [
+   "effect-size curve",
+   "reliability curve",
+   "stability against simulated respondents and its cost"
+  ],
+  "calibration_on_dev": {
+   "sign_accuracy": {
+    "observed": 0.825,
+    "null_p95": 0.632,
+    "pilot": 0.953,
+    "simulation_same_judge": 0.904
+   },
+   "captured_gain": {
+    "observed": 0.61,
+    "null_p95": 0.179,
+    "pilot": 0.549,
+    "simulation_same_judge": 0.531
+   }
+  },
+  "disclosures": [
+   "The test predictions were produced for G1/G1b and have been scored once for those gates. This is a secondary analysis of them, specified on dev.",
+   "The test-split condition sensitivity (r = 0.385, against 0.640 on dev) was already known when these criteria were written, so a drop from the dev figures is expected. The pass tier rests on permutation tests, which that knowledge cannot help; the strong tier's 2/3 was set knowing a drop was likely, and is meant to be demanding.",
+   "The development split chose the phrasing, partly on condition sensitivity, so the dev figures above are optimistic."
+  ]
+ },
+ "sign_accuracy": {
+  "observed": 0.6710526315789473,
+  "ci": [
+   0.4999331550802139,
+   0.8028675675078935
+  ],
+  "null_mean": 0.4999029605263158,
+  "null_p95": 0.569078947368421,
+  "permutation_p": 0.0004997501249375312,
+  "pilot": 0.984812329272568,
+  "simulation_same_judge": 0.7023517553134678
+ },
+ "captured_gain": {
+  "observed": 0.26757075353491566,
+  "ci": [
+   0.050450516154773535,
+   0.45398446888846156
+  ],
+  "null_mean": 0.0024928293155038555,
+  "null_p95": 0.12635261118436308,
+  "permutation_p": 0.0009995002498750624,
+  "pilot": 0.6280751887278158,
+  "simulation_same_judge": 0.23695182128448702
+ },
+ "effect_curve": [
+  {
+   "effect_from": 0.0,
+   "effect_to": 0.01,
+   "contrasts_per_split": 278.51,
+   "simulation": 0.5098380668557682,
+   "pilot": 0.5238860364080284
+  },
+  {
+   "effect_from": 0.01,
+   "effect_to": 0.02,
+   "contrasts_per_split": 234.13,
+   "simulation": 0.5261179686498954,
+   "pilot": 0.5717336522444796
+  },
+  {
+   "effect_from": 0.02,
+   "effect_to": 0.04,
+   "contrasts_per_split": 334.875,
+   "simulation": 0.5640014930944383,
+   "pilot": 0.613057110862262
+  },
+  {
+   "effect_from": 0.04,
+   "effect_to": 0.08,
+   "contrasts_per_split": 339.05,
+   "simulation": 0.5911959887922136,
+   "pilot": 0.7404291402448017
+  },
+  {
+   "effect_from": 0.08,
+   "effect_to": 1.0,
+   "contrasts_per_split": 305.625,
+   "simulation": 0.6339795501022495,
+   "pilot": 0.9186912065439673
+  }
+ ],
+ "reliability_curve": [
+  {
+   "z_from": 0.0,
+   "z_to": 1.0,
+   "contrasts": 650,
+   "simulation": 0.54,
+   "ceiling": 0.6806525110761479
+  },
+  {
+   "z_from": 1.0,
+   "z_to": 2.0,
+   "contrasts": 372,
+   "simulation": 0.5645161290322581,
+   "ceiling": 0.917670782969835
+  },
+  {
+   "z_from": 2.0,
+   "z_to": 3.0,
+   "contrasts": 167,
+   "simulation": 0.6107784431137725,
+   "ceiling": 0.9896353351630752
+  },
+  {
+   "z_from": 3.0,
+   "z_to": 5.0,
+   "contrasts": 159,
+   "simulation": 0.5911949685534591,
+   "ceiling": 0.9997444859150965
+  },
+  {
+   "z_from": 5.0,
+   "z_to": null,
+   "contrasts": 145,
+   "simulation": 0.7586206896551724,
+   "ceiling": 0.999999981236549
+  }
+ ],
+ "stability": [
+  {
+   "n_per_cell": 5,
+   "sign_accuracy": 0.6546052631578947,
+   "captured_gain": 0.27245275295700744,
+   "usd_per_experiment": 0.0007373373197683108
+  },
+  {
+   "n_per_cell": 10,
+   "sign_accuracy": 0.6743421052631579,
+   "captured_gain": 0.35803996557363454,
+   "usd_per_experiment": 0.0014746746395366216
+  },
+  {
+   "n_per_cell": 20,
+   "sign_accuracy": 0.631578947368421,
+   "captured_gain": 0.2638829287498001,
+   "usd_per_experiment": 0.0029493492790732432
+  },
+  {
+   "n_per_cell": 50,
+   "sign_accuracy": 0.6447368421052632,
+   "captured_gain": 0.2553159205156744,
+   "usd_per_experiment": 0.007373373197683108
+  },
+  {
+   "n_per_cell": 100,
+   "sign_accuracy": 0.6611842105263158,
+   "captured_gain": 0.27826686998684286,
+   "usd_per_experiment": 0.014746746395366215
+  },
+  {
+   "n_per_cell": 200,
+   "sign_accuracy": 0.6710526315789473,
+   "captured_gain": 0.26757075353491566,
+   "usd_per_experiment": 0.02949349279073243
+  }
+ ],
+ "unit_cost_usd": 3.442324086526407e-05,
+ "commit": "4b77b36"
+}

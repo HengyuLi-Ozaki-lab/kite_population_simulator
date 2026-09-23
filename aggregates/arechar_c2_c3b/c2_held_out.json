@@ -1,0 +1,1697 @@
+{
+ "commit": "dfa7234",
+ "criteria": {
+  "design": {
+   "kernel": "jev-1.13.0",
+   "phrasing": "p3 (one Noul per option, renormalised)",
+   "stimulus": "the US English headline, and the US instructions, pretest wording, neutral headline and tips, taken from CRUS.qsf and given in the order participants read them (windtunnel.eval.arechar.context_for)",
+   "persona": "the fields named in the split's addendum, rendered in words (windtunnel.eval.arechar.render_persona)"
+  },
+  "respondents_per_country_condition": 100,
+  "parts": [
+   "new_headlines",
+   "new_countries",
+   "both_new"
+  ],
+  "calibration": {
+   "headline_level_sharing": {
+    "r": 0.72,
+    "null_p95": 0.356,
+    "human_reliability": 0.898
+   },
+   "headline_level_accuracy": {
+    "r": 0.871,
+    "null_p95": 0.353,
+    "human_reliability": 0.984
+   },
+   "discernment_accuracy_condition": {
+    "model": 1.269,
+    "human": 1.494,
+    "null_p95": 0.529
+   },
+   "discernment_share_only": {
+    "model": 0.423,
+    "human": 0.567
+   },
+   "prompt_effect": {
+    "model": -0.029,
+    "model_null_p95": 0.035,
+    "human": 0.151,
+    "human_ci": [
+     -0.013,
+     0.305
+    ]
+   },
+   "tips_effect": {
+    "model": 0.018,
+    "model_null_p95": 0.036,
+    "human": -0.052,
+    "human_ci": [
+     -0.206,
+     0.091
+    ]
+   },
+   "individual_level": {
+    "r": 0.239,
+    "null_p95": 0.01
+   },
+   "stability": "headline-level agreement is flat from 100 simulated respondents per condition upward (0.70 sharing, 0.87 accuracy)"
+  },
+  "gates": {
+   "item_and_person": {
+    "per_part": {
+     "headline_level": "For sharing (share-only condition) and for accuracy (accuracy condition): the correlation across headlines between the model's mean expected rating and the human mean rating is above the item-shuffle null's 95th percentile with permutation p < 0.01. In new_headlines this is one test per measure; in the two fifteen- country parts it has to hold in at least 12 of 15 countries for each measure.",
+     "discernment": "In the accuracy condition the model rates true headlines above false ones by more than the truth-shuffle null's 95th percentile - once in new_headlines, in at least 12 of 15 countries in the other parts.",
+     "individual_level": "Within (country, headline, condition), the correlation between the model's expected rating and the person's rating is above the people-shuffle null's 95th percentile, pooled over the part."
+    },
+    "passes_if": "every per-part criterion holds in all three parts",
+    "note": "\"12 of 15\" is a design choice, not a calibrated number: no non-US data can be looked at before this file is committed. Under the null each country passes about 5% of the time."
+   },
+   "intervention": {
+    "per_part_and_treatment": "For the prompt and for the tips, the effect on sharing discernment (treatment minus share-only), pooled with equal weight per country: PASS if the model's pooled effect is above its condition-shuffle null's 95th percentile AND the human pooled effect is positive with a 95% interval above zero. FAIL if the human effect is reliably positive and the model's is not. NOT APPLICABLE if the human interval includes zero.",
+    "reported_without_a_threshold": "per-country sign agreement on the countries whose human interval excludes zero",
+    "prediction_on_record": "The calibration makes a FAIL on the prompt likely: on US x A the model's effect was -0.029, inside its null band, while people's was +0.151. The design is not re-tuned to change that - wording the context so that it names the mechanism would tell the model the answer instead of testing whether it can infer it."
+   }
+  },
+  "moderator": {
+   "questionnaire_language": {
+    "english": [
+     "US",
+     "UK",
+     "AU",
+     "ZA",
+     "NG"
+    ],
+    "mixed": [
+     "IN",
+     "PN"
+    ],
+    "translated": [
+     "BR",
+     "MX",
+     "AR",
+     "ES",
+     "IT",
+     "CN",
+     "EG",
+     "SA",
+     "RU"
+    ]
+   }
+  },
+  "diagnostic_after_freezing": {
+   "explicit_mechanism": "Re-run the prompt condition for 100 US respondents per condition with one sentence added to the context that names the mechanism (\"This made the respondent think about whether headlines are accurate.\"). If the model's prompt effect then appears, it can represent the effect but does not infer it from what participants read; if it still does not, sharing predictions do not respond to this kind of manipulation at all."
+  }
+ },
+ "parts": {
+  "new_headlines": {
+   "result": {
+    "per_country": {
+     "US": {
+      "headline_share_only": {
+       "r": 0.8309663913061238,
+       "null_p95": 0.36963366882411325,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.8663427418591743,
+       "share_of_reliability": 0.9591658718382835
+      },
+      "discernment_share_only": {
+       "model": 0.5529218416438986,
+       "human": 0.4453649566313822,
+       "null_p95": 0.27305977031022854
+      },
+      "headline_accuracy": {
+       "r": 0.9165506404009424,
+       "null_p95": 0.3837540987228385,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9834234007624016,
+       "share_of_reliability": 0.9320000314110728
+      },
+      "discernment_accuracy": {
+       "model": 1.2988734004336058,
+       "human": 1.4182622048077942,
+       "null_p95": 0.5849960895890579
+      }
+     }
+    },
+    "individual": {
+     "r": 0.16705273446890612,
+     "null_p95": 0.028198331362279175
+    },
+    "effects": {
+     "prompt": {
+      "model_pooled": -0.10181749948639718,
+      "model_null_p95": 0.0823795712182775,
+      "human_pooled": 0.34355675759336446,
+      "human_ci": [
+       0.20405469368897197,
+       0.49338165414828056
+      ],
+      "per_country": {
+       "US": {
+        "model": -0.10181749948639718,
+        "human": 0.34355675759336446,
+        "human_ci": [
+         0.20405469368897197,
+         0.49338165414828056
+        ]
+       }
+      }
+     },
+     "tips": {
+      "model_pooled": 0.05614208888305816,
+      "model_null_p95": 0.08093975197628615,
+      "human_pooled": 0.1560436828539249,
+      "human_ci": [
+       0.016524440312762703,
+       0.28587137749921643
+      ],
+      "per_country": {
+       "US": {
+        "model": 0.05614208888305816,
+        "human": 0.1560436828539249,
+        "human_ci": [
+         0.016524440312762703,
+         0.28587137749921643
+        ]
+       }
+      }
+     }
+    }
+   },
+   "verdict": {
+    "countries": 1,
+    "needed": 1,
+    "counts": {
+     "headline_sharing": 1,
+     "headline_accuracy": 1,
+     "discernment": 1
+    },
+    "individual_ok": true,
+    "item_and_person": true,
+    "intervention": {
+     "prompt": "FAIL",
+     "tips": "FAIL"
+    },
+    "sign_agreement_on_reliable_countries": {
+     "prompt": {
+      "reliable_countries": 1,
+      "same_sign": 0
+     },
+     "tips": {
+      "reliable_countries": 1,
+      "same_sign": 1
+     }
+    }
+   },
+   "by_language": {
+    "english": {
+     "sharing": 0.8309663913061238,
+     "accuracy": 0.9165506404009424,
+     "discernment_gap": -0.11938880437418842,
+     "countries": 1
+    }
+   }
+  },
+  "new_countries": {
+   "result": {
+    "per_country": {
+     "AR": {
+      "headline_share_only": {
+       "r": 0.8294041637475122,
+       "null_p95": 0.33747331207240366,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9715003577980059,
+       "share_of_reliability": 0.8537353147531848
+      },
+      "discernment_share_only": {
+       "model": 0.5694341280446618,
+       "human": 0.9991045405582555,
+       "null_p95": 0.2628046479538442
+      },
+      "headline_accuracy": {
+       "r": 0.8670128051716974,
+       "null_p95": 0.3542169007903583,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9831025105731449,
+       "share_of_reliability": 0.881914953778556
+      },
+      "discernment_accuracy": {
+       "model": 1.223634697159869,
+       "human": 1.457073319937869,
+       "null_p95": 0.5300456847449782
+      }
+     },
+     "AU": {
+      "headline_share_only": {
+       "r": 0.5593967369388938,
+       "null_p95": 0.34726299390393806,
+       "p": 0.0034982508745627187,
+       "items": 23,
+       "human_reliability": 0.8865782979780885,
+       "share_of_reliability": 0.6309614595965658
+      },
+      "discernment_share_only": {
+       "model": 0.36731008761577577,
+       "human": 0.3696170018941931,
+       "null_p95": 0.17786875076787914
+      },
+      "headline_accuracy": {
+       "r": 0.8039053259116758,
+       "null_p95": 0.34707475512757924,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9860547282385317,
+       "share_of_reliability": 0.8152745510867903
+      },
+      "discernment_accuracy": {
+       "model": 1.2505956729336312,
+       "human": 1.4885749708252538,
+       "null_p95": 0.5234462891239549
+      }
+     },
+     "BR": {
+      "headline_share_only": {
+       "r": 0.624873938811287,
+       "null_p95": 0.34288931372015147,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9809870636271262,
+       "share_of_reliability": 0.6369848920340117
+      },
+      "discernment_share_only": {
+       "model": 0.5923840729468512,
+       "human": 1.233696023136042,
+       "null_p95": 0.2656129062094828
+      },
+      "headline_accuracy": {
+       "r": 0.7338941017368269,
+       "null_p95": 0.3594716284103507,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9897423515258302,
+       "share_of_reliability": 0.7415001496151231
+      },
+      "discernment_accuracy": {
+       "model": 1.2156428312130232,
+       "human": 1.71434341297355,
+       "null_p95": 0.5318447983086441
+      }
+     },
+     "CN": {
+      "headline_share_only": {
+       "r": 0.7225695437557094,
+       "null_p95": 0.3657419777170898,
+       "p": 0.0009995002498750624,
+       "items": 23,
+       "human_reliability": 0.9569687402869996,
+       "share_of_reliability": 0.7550607593922108
+      },
+      "discernment_share_only": {
+       "model": 0.5087927799149194,
+       "human": 0.6794367186587569,
+       "null_p95": 0.2625710614044957
+      },
+      "headline_accuracy": {
+       "r": 0.7458475288481439,
+       "null_p95": 0.3474316338700444,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9786910491042632,
+       "share_of_reliability": 0.7620867990268972
+      },
+      "discernment_accuracy": {
+       "model": 1.2850896177024187,
+       "human": 0.9057009341369531,
+       "null_p95": 0.5538281321953367
+      }
+     },
+     "EG": {
+      "headline_share_only": {
+       "r": 0.7954389446810818,
+       "null_p95": 0.35100638411983565,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9695782007660454,
+       "share_of_reliability": 0.8203968942913739
+      },
+      "discernment_share_only": {
+       "model": 0.6261317029647264,
+       "human": 1.095015460657062,
+       "null_p95": 0.2865862833070262
+      },
+      "headline_accuracy": {
+       "r": 0.851939297373584,
+       "null_p95": 0.36474051980075595,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9813417533114444,
+       "share_of_reliability": 0.8681372157036995
+      },
+      "discernment_accuracy": {
+       "model": 1.2386285198419458,
+       "human": 1.4217904154409489,
+       "null_p95": 0.5173368178282604
+      }
+     },
+     "ES": {
+      "headline_share_only": {
+       "r": 0.7529000153259368,
+       "null_p95": 0.3435327439994705,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9737120551001586,
+       "share_of_reliability": 0.7732265523286466
+      },
+      "discernment_share_only": {
+       "model": 0.5583968522794462,
+       "human": 1.0828434126465325,
+       "null_p95": 0.2536111182337669
+      },
+      "headline_accuracy": {
+       "r": 0.8753679842678347,
+       "null_p95": 0.3458420826511899,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9821383564962188,
+       "share_of_reliability": 0.8912878501056738
+      },
+      "discernment_accuracy": {
+       "model": 1.3022113766864925,
+       "human": 1.4919671659415394,
+       "null_p95": 0.577780181768999
+      }
+     },
+     "IN": {
+      "headline_share_only": {
+       "r": 0.775664836586365,
+       "null_p95": 0.37255733809261266,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9043417380715897,
+       "share_of_reliability": 0.8577120837531903
+      },
+      "discernment_share_only": {
+       "model": 0.6696015850760673,
+       "human": 0.497004580900652,
+       "null_p95": 0.30472401181266767
+      },
+      "headline_accuracy": {
+       "r": 0.8110029318138358,
+       "null_p95": 0.35769524131165537,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9575911076606539,
+       "share_of_reliability": 0.8469198651970301
+      },
+      "discernment_accuracy": {
+       "model": 1.2892978531873642,
+       "human": 0.8936286120841226,
+       "null_p95": 0.5308619275066545
+      }
+     },
+     "IT": {
+      "headline_share_only": {
+       "r": 0.7308014086178017,
+       "null_p95": 0.3667994678599476,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9780111593703629,
+       "share_of_reliability": 0.7472321778907788
+      },
+      "discernment_share_only": {
+       "model": 0.5206796787861911,
+       "human": 1.1089191077921057,
+       "null_p95": 0.24813956614315638
+      },
+      "headline_accuracy": {
+       "r": 0.8387126160106297,
+       "null_p95": 0.36954130216902076,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9906384289657945,
+       "share_of_reliability": 0.8466384823030012
+      },
+      "discernment_accuracy": {
+       "model": 1.2374200621567941,
+       "human": 1.7123689687823167,
+       "null_p95": 0.5153217552257934
+      }
+     },
+     "MX": {
+      "headline_share_only": {
+       "r": 0.828428391344465,
+       "null_p95": 0.352493191363787,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.971775573477664,
+       "share_of_reliability": 0.8524894162340315
+      },
+      "discernment_share_only": {
+       "model": 0.6180066655627181,
+       "human": 1.2438522788686726,
+       "null_p95": 0.28347844887829293
+      },
+      "headline_accuracy": {
+       "r": 0.8633403238621404,
+       "null_p95": 0.3591433154427038,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9831632605488896,
+       "share_of_reliability": 0.8781250871601394
+      },
+      "discernment_accuracy": {
+       "model": 1.2665048722919354,
+       "human": 1.4652273225220478,
+       "null_p95": 0.5185641000984955
+      }
+     },
+     "NG": {
+      "headline_share_only": {
+       "r": 0.7435714018566081,
+       "null_p95": 0.3535662949520996,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9460858589313038,
+       "share_of_reliability": 0.785944948692653
+      },
+      "discernment_share_only": {
+       "model": 0.5798469958394739,
+       "human": 0.6610873875686076,
+       "null_p95": 0.27994858516571225
+      },
+      "headline_accuracy": {
+       "r": 0.831077263295128,
+       "null_p95": 0.3605708259906384,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.983483226308693,
+       "share_of_reliability": 0.8450345070087365
+      },
+      "discernment_accuracy": {
+       "model": 1.1853705086142567,
+       "human": 1.3702024664302863,
+       "null_p95": 0.46617678173074495
+      }
+     },
+     "PN": {
+      "headline_share_only": {
+       "r": 0.7749683715744979,
+       "null_p95": 0.36267681598217827,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9571835409084613,
+       "share_of_reliability": 0.8096340340735245
+      },
+      "discernment_share_only": {
+       "model": 0.5779876980983034,
+       "human": 0.8061185034531935,
+       "null_p95": 0.28965018795384967
+      },
+      "headline_accuracy": {
+       "r": 0.831867409237831,
+       "null_p95": 0.36905005696947957,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9855714759727396,
+       "share_of_reliability": 0.8440457435284379
+      },
+      "discernment_accuracy": {
+       "model": 1.29062514467005,
+       "human": 1.5525260886746586,
+       "null_p95": 0.5769864550697156
+      }
+     },
+     "RU": {
+      "headline_share_only": {
+       "r": 0.6868262759227604,
+       "null_p95": 0.3624477070145008,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9557447597887254,
+       "share_of_reliability": 0.7186293923019661
+      },
+      "discernment_share_only": {
+       "model": 0.47218173414708486,
+       "human": 0.6204201513341299,
+       "null_p95": 0.2316098248865273
+      },
+      "headline_accuracy": {
+       "r": 0.873270485927029,
+       "null_p95": 0.3709306603989824,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.989048030678621,
+       "share_of_reliability": 0.8829404223451587
+      },
+      "discernment_accuracy": {
+       "model": 1.1686191699545847,
+       "human": 1.2740728601776774,
+       "null_p95": 0.4860111752898482
+      }
+     },
+     "SA": {
+      "headline_share_only": {
+       "r": 0.7359543634225136,
+       "null_p95": 0.35507168814320184,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9406466126587627,
+       "share_of_reliability": 0.7823919775167414
+      },
+      "discernment_share_only": {
+       "model": 0.5854370175062948,
+       "human": 0.7734382441829251,
+       "null_p95": 0.28825460595370067
+      },
+      "headline_accuracy": {
+       "r": 0.813671802684843,
+       "null_p95": 0.3503123859417823,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9670114650709984,
+       "share_of_reliability": 0.8414293233070435
+      },
+      "discernment_accuracy": {
+       "model": 1.2410287431362605,
+       "human": 1.0435942938132658,
+       "null_p95": 0.5291642470691095
+      }
+     },
+     "UK": {
+      "headline_share_only": {
+       "r": 0.7129269862226894,
+       "null_p95": 0.33507778524200793,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9502550690408108,
+       "share_of_reliability": 0.7502480222939711
+      },
+      "discernment_share_only": {
+       "model": 0.40334394482579716,
+       "human": 0.6547883200846387,
+       "null_p95": 0.2081188930281336
+      },
+      "headline_accuracy": {
+       "r": 0.8652135804159032,
+       "null_p95": 0.35255523127526833,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9930506181588102,
+       "share_of_reliability": 0.8712683569142463
+      },
+      "discernment_accuracy": {
+       "model": 1.210140986672716,
+       "human": 1.9950616953997122,
+       "null_p95": 0.5235300219992265
+      }
+     },
+     "ZA": {
+      "headline_share_only": {
+       "r": 0.7094333443549591,
+       "null_p95": 0.3575566368410273,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9336763772446786,
+       "share_of_reliability": 0.7598278821710464
+      },
+      "discernment_share_only": {
+       "model": 0.5300437081853646,
+       "human": 0.5973324826379951,
+       "null_p95": 0.23722044934143216
+      },
+      "headline_accuracy": {
+       "r": 0.8335281091404062,
+       "null_p95": 0.35823816338931275,
+       "p": 0.0004997501249375312,
+       "items": 23,
+       "human_reliability": 0.9875958829146921,
+       "share_of_reliability": 0.8439971485911973
+      },
+      "discernment_accuracy": {
+       "model": 1.2517143774972874,
+       "human": 1.680457171598181,
+       "null_p95": 0.5171841065719933
+      }
+     }
+    },
+    "individual": {
+     "r": 0.12969466146089742,
+     "null_p95": 0.005946161938575007
+    },
+    "effects": {
+     "prompt": {
+      "model_pooled": -0.03354554055501667,
+      "model_null_p95": 0.015594665654887771,
+      "human_pooled": 0.09014970165578617,
+      "human_ci": [
+       0.05275586910716463,
+       0.1280952517455992
+      ],
+      "per_country": {
+       "AR": {
+        "model": -0.07879244082152104,
+        "human": -0.0020407678407825536,
+        "human_ci": [
+         -0.1505664676863095,
+         0.15543987477639923
+        ]
+       },
+       "AU": {
+        "model": 0.0644125851241224,
+        "human": 0.18229620905636157,
+        "human_ci": [
+         0.03854412367786776,
+         0.3221052518920736
+        ]
+       },
+       "BR": {
+        "model": -0.12860968228522474,
+        "human": 0.039904027388371066,
+        "human_ci": [
+         -0.09619042847273632,
+         0.18881440126556195
+        ]
+       },
+       "CN": {
+        "model": 0.015564004244212004,
+        "human": 0.09151047781000177,
+        "human_ci": [
+         -0.026016719916255825,
+         0.2124875440859048
+        ]
+       },
+       "EG": {
+        "model": -0.0634895342660422,
+        "human": -0.09457520351362492,
+        "human_ci": [
+         -0.2653466270882514,
+         0.05972426824233149
+        ]
+       },
+       "ES": {
+        "model": -0.026687433825879125,
+        "human": 0.19080189134969805,
+        "human_ci": [
+         0.03435151690487999,
+         0.3584851149770025
+        ]
+       },
+       "IN": {
+        "model": -0.06982300967475297,
+        "human": 0.13701746556789773,
+        "human_ci": [
+         0.015014018359748417,
+         0.25281626189642675
+        ]
+       },
+       "IT": {
+        "model": -0.013872180479665985,
+        "human": 0.1380898859883044,
+        "human_ci": [
+         -0.02328586783957572,
+         0.2924550976144668
+        ]
+       },
+       "MX": {
+        "model": -0.08168139202439573,
+        "human": -0.07121594625781613,
+        "human_ci": [
+         -0.21198312107088202,
+         0.06906780059599406
+        ]
+       },
+       "NG": {
+        "model": -0.06754131406068398,
+        "human": 0.10824252805790024,
+        "human_ci": [
+         -0.04336856327807904,
+         0.2412505129145966
+        ]
+       },
+       "PN": {
+        "model": -0.008685988112298038,
+        "human": 0.0528796016609161,
+        "human_ci": [
+         -0.08604242030234863,
+         0.18450684224600794
+        ]
+       },
+       "RU": {
+        "model": -0.02856872480411221,
+        "human": 0.09724123218906655,
+        "human_ci": [
+         -0.04193505028222879,
+         0.235504404248301
+        ]
+       },
+       "SA": {
+        "model": 0.006549124842146092,
+        "human": 0.08363315969743157,
+        "human_ci": [
+         -0.05869616870792581,
+         0.23899706312593746
+        ]
+       },
+       "UK": {
+        "model": -0.016627717506971784,
+        "human": 0.1483934374869449,
+        "human_ci": [
+         0.0013162794524903328,
+         0.2871779607695424
+        ]
+       },
+       "ZA": {
+        "model": -0.005329404674182747,
+        "human": 0.25006752619612227,
+        "human_ci": [
+         0.10179805329012091,
+         0.41868852581976046
+        ]
+       }
+      }
+     },
+     "tips": {
+      "model_pooled": 0.004729055420641259,
+      "model_null_p95": 0.015244020589448546,
+      "human_pooled": 0.05794294751581012,
+      "human_ci": [
+       0.016117043006377743,
+       0.09277553527458807
+      ],
+      "per_country": {
+       "AR": {
+        "model": -0.019871323763368753,
+        "human": 0.0009515261818915377,
+        "human_ci": [
+         -0.14915126191558606,
+         0.15403176014885636
+        ]
+       },
+       "AU": {
+        "model": 0.06844616317498753,
+        "human": 0.08882245194913141,
+        "human_ci": [
+         -0.053794858977431,
+         0.2246823384767601
+        ]
+       },
+       "BR": {
+        "model": -0.002849672133507397,
+        "human": 0.12629643169577331,
+        "human_ci": [
+         -0.01790467857793337,
+         0.2711450960009633
+        ]
+       },
+       "CN": {
+        "model": 0.018024139539864592,
+        "human": 0.028113223391751152,
+        "human_ci": [
+         -0.07950784854666539,
+         0.13872783719952345
+        ]
+       },
+       "EG": {
+        "model": 0.0004899797746840129,
+        "human": 0.022093597136854104,
+        "human_ci": [
+         -0.14826364539816303,
+         0.1936216670123898
+        ]
+       },
+       "ES": {
+        "model": 0.016050771647291295,
+        "human": 0.14995966567082597,
+        "human_ci": [
+         -0.006402678987975918,
+         0.314367875752341
+        ]
+       },
+       "IN": {
+        "model": -0.04934875177069209,
+        "human": 0.14188750958825702,
+        "human_ci": [
+         7.210830941238954e-05,
+         0.2786915770791969
+        ]
+       },
+       "IT": {
+        "model": 0.03192933637389972,
+        "human": 0.17902904178383894,
+        "human_ci": [
+         0.02767943902659389,
+         0.3438767071232208
+        ]
+       },
+       "MX": {
+        "model": -0.03643383663845867,
+        "human": -0.025569372838685656,
+        "human_ci": [
+         -0.1771787812344623,
+         0.13342298354599888
+        ]
+       },
+       "NG": {
+        "model": -0.02985880446019662,
+        "human": 0.03984799201739353,
+        "human_ci": [
+         -0.09876537529157929,
+         0.1914033195798463
+        ]
+       },
+       "PN": {
+        "model": 0.025626807225906045,
+        "human": 0.01484951316862615,
+        "human_ci": [
+         -0.13045610380867978,
+         0.14903899118916727
+        ]
+       },
+       "RU": {
+        "model": 0.02180581172176055,
+        "human": -0.010405832702255147,
+        "human_ci": [
+         -0.14504714403960156,
+         0.12013597982008224
+        ]
+       },
+       "SA": {
+        "model": 0.004417808087378017,
+        "human": -0.03262111481347452,
+        "human_ci": [
+         -0.18330826888914703,
+         0.11268664794139553
+        ]
+       },
+       "UK": {
+        "model": 0.010164451933402763,
+        "human": 0.02180679307590605,
+        "human_ci": [
+         -0.11116913067300353,
+         0.15783157436610953
+        ]
+       },
+       "ZA": {
+        "model": 0.012342950596667901,
+        "human": 0.12408278743131795,
+        "human_ci": [
+         -0.036514778932218724,
+         0.290487537937131
+        ]
+       }
+      }
+     }
+    }
+   },
+   "verdict": {
+    "countries": 15,
+    "needed": 12,
+    "counts": {
+     "headline_sharing": 15,
+     "headline_accuracy": 15,
+     "discernment": 15
+    },
+    "individual_ok": true,
+    "item_and_person": true,
+    "intervention": {
+     "prompt": "FAIL",
+     "tips": "FAIL"
+    },
+    "sign_agreement_on_reliable_countries": {
+     "prompt": {
+      "reliable_countries": 5,
+      "same_sign": 1
+     },
+     "tips": {
+      "reliable_countries": 2,
+      "same_sign": 1
+     }
+    }
+   },
+   "by_language": {
+    "translated": {
+     "sharing": 0.7359543634225136,
+     "accuracy": 0.851939297373584,
+     "discernment_gap": -0.189755789255047,
+     "countries": 9
+    },
+    "english": {
+     "sharing": 0.7111801652888242,
+     "accuracy": 0.8323026862177672,
+     "discernment_gap": -0.33336104599625815,
+     "countries": 4
+    },
+    "mixed": {
+     "sharing": 0.7753166040804315,
+     "accuracy": 0.8214351705258334,
+     "discernment_gap": 0.06688414854931657,
+     "countries": 2
+    }
+   }
+  },
+  "both_new": {
+   "result": {
+    "per_country": {
+     "AR": {
+      "headline_share_only": {
+       "r": 0.7482964451667865,
+       "null_p95": 0.3735180222539125,
+       "p": 0.0009995002498750624,
+       "items": 22,
+       "human_reliability": 0.9711041972348894,
+       "share_of_reliability": 0.7705624662085458
+      },
+      "discernment_share_only": {
+       "model": 0.6506160025199472,
+       "human": 0.8429378173866215,
+       "null_p95": 0.30351365862274543
+      },
+      "headline_accuracy": {
+       "r": 0.8353547631099697,
+       "null_p95": 0.3627325955598746,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9837422351366077,
+       "share_of_reliability": 0.8491602101377378
+      },
+      "discernment_accuracy": {
+       "model": 1.1927610622563396,
+       "human": 1.3079726276567225,
+       "null_p95": 0.606152854268054
+      }
+     },
+     "AU": {
+      "headline_share_only": {
+       "r": 0.7356393236355427,
+       "null_p95": 0.375753526587811,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.8932743138354986,
+       "share_of_reliability": 0.8235312627281196
+      },
+      "discernment_share_only": {
+       "model": 0.5179966506265958,
+       "human": 0.4180097615126206,
+       "null_p95": 0.2327815481399276
+      },
+      "headline_accuracy": {
+       "r": 0.8988430355573285,
+       "null_p95": 0.37932034925185043,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9874278760599667,
+       "share_of_reliability": 0.9102872800633203
+      },
+      "discernment_accuracy": {
+       "model": 1.2459116092431364,
+       "human": 1.460086510295589,
+       "null_p95": 0.6053298992076614
+      }
+     },
+     "BR": {
+      "headline_share_only": {
+       "r": 0.7879277819822864,
+       "null_p95": 0.3742009100022653,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9818881230611625,
+       "share_of_reliability": 0.8024618726681613
+      },
+      "discernment_share_only": {
+       "model": 0.6768760542017755,
+       "human": 1.2309325808631213,
+       "null_p95": 0.31345970740205675
+      },
+      "headline_accuracy": {
+       "r": 0.8376924333977159,
+       "null_p95": 0.34487594859614296,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9892960108569502,
+       "share_of_reliability": 0.8467561015151452
+      },
+      "discernment_accuracy": {
+       "model": 1.2226081874417645,
+       "human": 1.6558395027589117,
+       "null_p95": 0.5831142708514379
+      }
+     },
+     "CN": {
+      "headline_share_only": {
+       "r": 0.8921200559627297,
+       "null_p95": 0.36545890558674465,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9717418182685338,
+       "share_of_reliability": 0.9180628426101127
+      },
+      "discernment_share_only": {
+       "model": 0.5236699561801048,
+       "human": 0.7908075456627413,
+       "null_p95": 0.2665346159412895
+      },
+      "headline_accuracy": {
+       "r": 0.8215827995947926,
+       "null_p95": 0.3754314574888236,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9841489672941166,
+       "share_of_reliability": 0.8348154871855488
+      },
+      "discernment_accuracy": {
+       "model": 1.164476045221107,
+       "human": 1.1096190436746438,
+       "null_p95": 0.5791314904503707
+      }
+     },
+     "EG": {
+      "headline_share_only": {
+       "r": 0.8708085208466732,
+       "null_p95": 0.37941164460501037,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9623636841416252,
+       "share_of_reliability": 0.904864278646784
+      },
+      "discernment_share_only": {
+       "model": 0.6461966586360792,
+       "human": 0.8090751955023254,
+       "null_p95": 0.3098589276668187
+      },
+      "headline_accuracy": {
+       "r": 0.8228120767810364,
+       "null_p95": 0.3741244899371341,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9766931460125532,
+       "share_of_reliability": 0.842446862804606
+      },
+      "discernment_accuracy": {
+       "model": 1.1915913098941981,
+       "human": 0.9861451586051944,
+       "null_p95": 0.6379842789061126
+      }
+     },
+     "ES": {
+      "headline_share_only": {
+       "r": 0.8249542029137087,
+       "null_p95": 0.36047170191307437,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9666850811776576,
+       "share_of_reliability": 0.8533846430201589
+      },
+      "discernment_share_only": {
+       "model": 0.60129852859178,
+       "human": 0.8284891702067121,
+       "null_p95": 0.28058403434487683
+      },
+      "headline_accuracy": {
+       "r": 0.8408085908629934,
+       "null_p95": 0.39523537960038835,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9842475044761178,
+       "share_of_reliability": 0.8542654027967568
+      },
+      "discernment_accuracy": {
+       "model": 1.2462805850896759,
+       "human": 1.2737446644655455,
+       "null_p95": 0.6074891353899041
+      }
+     },
+     "IN": {
+      "headline_share_only": {
+       "r": 0.7037767747628436,
+       "null_p95": 0.3682842000271566,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9169827029058507,
+       "share_of_reliability": 0.767491875836509
+      },
+      "discernment_share_only": {
+       "model": 0.7494991498169727,
+       "human": 0.3907568688439609,
+       "null_p95": 0.36634410739313883
+      },
+      "headline_accuracy": {
+       "r": 0.7514572798715574,
+       "null_p95": 0.3730849337497892,
+       "p": 0.0009995002498750624,
+       "items": 22,
+       "human_reliability": 0.9586173955176592,
+       "share_of_reliability": 0.783896978487195
+      },
+      "discernment_accuracy": {
+       "model": 1.2592510260496907,
+       "human": 0.7054268114174937,
+       "null_p95": 0.6075604007301912
+      }
+     },
+     "IT": {
+      "headline_share_only": {
+       "r": 0.8390361345175112,
+       "null_p95": 0.3621096247446882,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9816189742593399,
+       "share_of_reliability": 0.8547472660159086
+      },
+      "discernment_share_only": {
+       "model": 0.6246649350764795,
+       "human": 1.109642620586245,
+       "null_p95": 0.28491677798511633
+      },
+      "headline_accuracy": {
+       "r": 0.8200213621624878,
+       "null_p95": 0.34620600105381627,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9910723964193161,
+       "share_of_reliability": 0.8274081339821134
+      },
+      "discernment_accuracy": {
+       "model": 1.1912940718304625,
+       "human": 1.525583317999995,
+       "null_p95": 0.5714710162885844
+      }
+     },
+     "MX": {
+      "headline_share_only": {
+       "r": 0.819727535438764,
+       "null_p95": 0.3660562088211735,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9658131397823924,
+       "share_of_reliability": 0.848743407677656
+      },
+      "discernment_share_only": {
+       "model": 0.7155892341862913,
+       "human": 0.9281485583401872,
+       "null_p95": 0.35170637711168967
+      },
+      "headline_accuracy": {
+       "r": 0.7712728675839501,
+       "null_p95": 0.3756895256331051,
+       "p": 0.0009995002498750624,
+       "items": 22,
+       "human_reliability": 0.9796653750035489,
+       "share_of_reliability": 0.7872819508203565
+      },
+      "discernment_accuracy": {
+       "model": 1.198918652565668,
+       "human": 1.0876638769861997,
+       "null_p95": 0.5421478817352804
+      }
+     },
+     "NG": {
+      "headline_share_only": {
+       "r": 0.6860849269111923,
+       "null_p95": 0.3648227077138506,
+       "p": 0.0009995002498750624,
+       "items": 22,
+       "human_reliability": 0.9490554006757959,
+       "share_of_reliability": 0.7229134636636073
+      },
+      "discernment_share_only": {
+       "model": 0.6150834857088063,
+       "human": 0.39196381009821746,
+       "null_p95": 0.2878840923935148
+      },
+      "headline_accuracy": {
+       "r": 0.6901198685538003,
+       "null_p95": 0.37217107716976905,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9787182589496767,
+       "share_of_reliability": 0.7051261813531615
+      },
+      "discernment_accuracy": {
+       "model": 1.161220863250099,
+       "human": 0.873995615526018,
+       "null_p95": 0.5735228864198035
+      }
+     },
+     "PN": {
+      "headline_share_only": {
+       "r": 0.6950476406823036,
+       "null_p95": 0.35900062170822533,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9651155194831049,
+       "share_of_reliability": 0.7201704113664612
+      },
+      "discernment_share_only": {
+       "model": 0.6746407472364395,
+       "human": 0.5555191525614007,
+       "null_p95": 0.3248565970258281
+      },
+      "headline_accuracy": {
+       "r": 0.7793029163528657,
+       "null_p95": 0.3683125331938063,
+       "p": 0.0009995002498750624,
+       "items": 22,
+       "human_reliability": 0.985393654705236,
+       "share_of_reliability": 0.790854408927548
+      },
+      "discernment_accuracy": {
+       "model": 1.246803246969371,
+       "human": 1.226489267493787,
+       "null_p95": 0.6158346126541431
+      }
+     },
+     "RU": {
+      "headline_share_only": {
+       "r": 0.765873974506911,
+       "null_p95": 0.35558166810204916,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.954814889418451,
+       "share_of_reliability": 0.8021177539170778
+      },
+      "discernment_share_only": {
+       "model": 0.5290817778386043,
+       "human": 0.5864422132703084,
+       "null_p95": 0.2642583278152867
+      },
+      "headline_accuracy": {
+       "r": 0.7921265437325264,
+       "null_p95": 0.3580195549976334,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9905254668913422,
+       "share_of_reliability": 0.7997033596910239
+      },
+      "discernment_accuracy": {
+       "model": 1.1426162871028458,
+       "human": 1.1269052934340014,
+       "null_p95": 0.5573294503423476
+      }
+     },
+     "SA": {
+      "headline_share_only": {
+       "r": 0.8110713559257542,
+       "null_p95": 0.36210395810921353,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9476577222670012,
+       "share_of_reliability": 0.855869515826344
+      },
+      "discernment_share_only": {
+       "model": 0.6374483183650632,
+       "human": 0.5760013261338037,
+       "null_p95": 0.3249872054324497
+      },
+      "headline_accuracy": {
+       "r": 0.83522800569199,
+       "null_p95": 0.37138558477726163,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9702934418017253,
+       "share_of_reliability": 0.8607993929558732
+      },
+      "discernment_accuracy": {
+       "model": 1.222924202893104,
+       "human": 0.8769962686194002,
+       "null_p95": 0.5933046026840546
+      }
+     },
+     "UK": {
+      "headline_share_only": {
+       "r": 0.8627062298682239,
+       "null_p95": 0.37067803345521566,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.942275125033281,
+       "share_of_reliability": 0.9155566213612539
+      },
+      "discernment_share_only": {
+       "model": 0.5219355482966015,
+       "human": 0.6384588348407796,
+       "null_p95": 0.23836342157429632
+      },
+      "headline_accuracy": {
+       "r": 0.9455851383446877,
+       "null_p95": 0.3917502691447555,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9939142547060871,
+       "share_of_reliability": 0.9513749640549316
+      },
+      "discernment_accuracy": {
+       "model": 1.245389363382038,
+       "human": 1.9411596279844932,
+       "null_p95": 0.6008983953834182
+      }
+     },
+     "ZA": {
+      "headline_share_only": {
+       "r": 0.612200253230066,
+       "null_p95": 0.3590595247599226,
+       "p": 0.0014992503748125937,
+       "items": 22,
+       "human_reliability": 0.9250281749666323,
+       "share_of_reliability": 0.6618179530068361
+      },
+      "discernment_share_only": {
+       "model": 0.6750233503335323,
+       "human": 0.46363571624290056,
+       "null_p95": 0.3051107594459165
+      },
+      "headline_accuracy": {
+       "r": 0.7773395730213601,
+       "null_p95": 0.36326266692003406,
+       "p": 0.0004997501249375312,
+       "items": 22,
+       "human_reliability": 0.9871160120268277,
+       "share_of_reliability": 0.7874855270813231
+      },
+      "discernment_accuracy": {
+       "model": 1.222309166339826,
+       "human": 1.3166228474028663,
+       "null_p95": 0.6044237214652488
+      }
+     }
+    },
+    "individual": {
+     "r": 0.12507642117255724,
+     "null_p95": 0.007514276698005608
+    },
+    "effects": {
+     "prompt": {
+      "model_pooled": -0.06033184728365851,
+      "model_null_p95": 0.016422250661435368,
+      "human_pooled": 0.12703398934646057,
+      "human_ci": [
+       0.08687961944649063,
+       0.1621758613393657
+      ],
+      "per_country": {
+       "AR": {
+        "model": -0.08080060136249001,
+        "human": 0.2008440634625206,
+        "human_ci": [
+         0.052618494103779945,
+         0.35541219272180996
+        ]
+       },
+       "AU": {
+        "model": 0.014811712362085228,
+        "human": 0.1746977670557941,
+        "human_ci": [
+         0.03584393671066447,
+         0.3058988385291845
+        ]
+       },
+       "BR": {
+        "model": -0.14370026740744413,
+        "human": 0.09710770115087053,
+        "human_ci": [
+         -0.05111122045395859,
+         0.24210608677005543
+        ]
+       },
+       "CN": {
+        "model": 0.025131629765792418,
+        "human": 0.13339433426501435,
+        "human_ci": [
+         0.0048989620639938725,
+         0.2565841089315422
+        ]
+       },
+       "EG": {
+        "model": -0.05191195916505764,
+        "human": -0.16333153588121485,
+        "human_ci": [
+         -0.32075152649625593,
+         -0.022545688658619008
+        ]
+       },
+       "ES": {
+        "model": -0.02104889813826949,
+        "human": 0.1053478128500136,
+        "human_ci": [
+         -0.03208466524140824,
+         0.24440896795898873
+        ]
+       },
+       "IN": {
+        "model": -0.11090254655428922,
+        "human": 0.10893151814023039,
+        "human_ci": [
+         -0.016060837102158085,
+         0.2345599698935009
+        ]
+       },
+       "IT": {
+        "model": -0.07354487334232207,
+        "human": 0.078319268199051,
+        "human_ci": [
+         -0.05761300091567715,
+         0.21968712265567691
+        ]
+       },
+       "MX": {
+        "model": -0.10163657088609801,
+        "human": 0.008604571985800114,
+        "human_ci": [
+         -0.13269758959310746,
+         0.14692554298004049
+        ]
+       },
+       "NG": {
+        "model": -0.061635373288811746,
+        "human": 0.09188681984425173,
+        "human_ci": [
+         -0.06542522498498711,
+         0.2366178408019322
+        ]
+       },
+       "PN": {
+        "model": -0.08180978064233635,
+        "human": 0.2776973037265842,
+        "human_ci": [
+         0.14089546792719437,
+         0.4136263968432716
+        ]
+       },
+       "RU": {
+        "model": -0.05405058321678169,
+        "human": 0.08132943517863112,
+        "human_ci": [
+         -0.0474712274490228,
+         0.2038685967695841
+        ]
+       },
+       "SA": {
+        "model": 0.0028719492259177137,
+        "human": 0.16577174245040283,
+        "human_ci": [
+         0.023973692884283773,
+         0.30286315456781093
+        ]
+       },
+       "UK": {
+        "model": -0.06027401198512239,
+        "human": 0.23893978592491782,
+        "human_ci": [
+         0.08683415792955815,
+         0.38570012820956895
+        ]
+       },
+       "ZA": {
+        "model": -0.10647753461965026,
+        "human": 0.3059692518440409,
+        "human_ci": [
+         0.1467154890059008,
+         0.46566764329416716
+        ]
+       }
+      }
+     },
+     "tips": {
+      "model_pooled": -0.0028686450444577777,
+      "model_null_p95": 0.018738384796379105,
+      "human_pooled": 0.07451149683925147,
+      "human_ci": [
+       0.042451252160111135,
+       0.10982792630023129
+      ],
+      "per_country": {
+       "AR": {
+        "model": -0.05966737703012459,
+        "human": 0.06984799137986553,
+        "human_ci": [
+         -0.07438834251532996,
+         0.21251701834332243
+        ]
+       },
+       "AU": {
+        "model": 0.015961774479063884,
+        "human": 0.09685543886700732,
+        "human_ci": [
+         -0.022825062730765032,
+         0.22100791208987838
+        ]
+       },
+       "BR": {
+        "model": -0.007370802127410592,
+        "human": 0.04910494435302226,
+        "human_ci": [
+         -0.10131991007977002,
+         0.1984220673787465
+        ]
+       },
+       "CN": {
+        "model": 0.03603918652271387,
+        "human": -0.007542430607776041,
+        "human_ci": [
+         -0.12696921862636387,
+         0.12397627548049882
+        ]
+       },
+       "EG": {
+        "model": 0.020946350767910626,
+        "human": -0.05495229604509566,
+        "human_ci": [
+         -0.2078750487253155,
+         0.09504963569580009
+        ]
+       },
+       "ES": {
+        "model": 0.081210478791641,
+        "human": 0.15472885369109246,
+        "human_ci": [
+         0.02335546400035845,
+         0.2906421669378546
+        ]
+       },
+       "IN": {
+        "model": -0.055257207035420475,
+        "human": 0.04654368642511697,
+        "human_ci": [
+         -0.08268982441698558,
+         0.18446721196292368
+        ]
+       },
+       "IT": {
+        "model": -0.02843021240018828,
+        "human": 0.04774319628398915,
+        "human_ci": [
+         -0.0937013611967341,
+         0.18909743931096756
+        ]
+       },
+       "MX": {
+        "model": -0.059152528009891014,
+        "human": 0.0032662909001648366,
+        "human_ci": [
+         -0.14906798468609567,
+         0.16160276988027583
+        ]
+       },
+       "NG": {
+        "model": 0.017163179220682334,
+        "human": 0.1286329977887628,
+        "human_ci": [
+         -0.012033521596317598,
+         0.2767436151035387
+        ]
+       },
+       "PN": {
+        "model": 0.0295701809740061,
+        "human": 0.2003236022785213,
+        "human_ci": [
+         0.07075866115035047,
+         0.33727753101661057
+        ]
+       },
+       "RU": {
+        "model": 0.02980189492446872,
+        "human": 0.11868970978607152,
+        "human_ci": [
+         -0.00469871809798702,
+         0.25315351881531556
+        ]
+       },
+       "SA": {
+        "model": 0.0014408020037999236,
+        "human": 0.0635324591369022,
+        "human_ci": [
+         -0.07075659664093119,
+         0.1939578757760394
+        ]
+       },
+       "UK": {
+        "model": -0.031060248933609813,
+        "human": 0.08606270380570935,
+        "human_ci": [
+         -0.04645907013343102,
+         0.2254887058649466
+        ]
+       },
+       "ZA": {
+        "model": -0.03422514781450836,
+        "human": 0.11483530454541802,
+        "human_ci": [
+         -0.04302920842579675,
+         0.2685161160656337
+        ]
+       }
+      }
+     }
+    }
+   },
+   "verdict": {
+    "countries": 15,
+    "needed": 12,
+    "counts": {
+     "headline_sharing": 15,
+     "headline_accuracy": 15,
+     "discernment": 15
+    },
+    "individual_ok": true,
+    "item_and_person": true,
+    "intervention": {
+     "prompt": "FAIL",
+     "tips": "FAIL"
+    },
+    "sign_agreement_on_reliable_countries": {
+     "prompt": {
+      "reliable_countries": 8,
+      "same_sign": 4
+     },
+     "tips": {
+      "reliable_countries": 2,
+      "same_sign": 2
+     }
+    }
+   },
+   "by_language": {
+    "translated": {
+     "sharing": 0.819727535438764,
+     "accuracy": 0.8228120767810364,
+     "discernment_gap": 0.01571099366884443,
+     "countries": 9
+    },
+    "english": {
+     "sharing": 0.7108621252733676,
+     "accuracy": 0.8380913042893443,
+     "discernment_gap": -0.1542442910577464,
+     "countries": 4
+    },
+    "mixed": {
+     "sharing": 0.6994122077225736,
+     "accuracy": 0.7653800981122116,
+     "discernment_gap": 0.2870690970538905,
+     "countries": 2
+    }
+   }
+  }
+ }
+}

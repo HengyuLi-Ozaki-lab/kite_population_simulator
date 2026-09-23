@@ -1,0 +1,12 @@
+# USD per million tokens, keyed by backend name then model id.
+# Jev: https://docs.typesafe.ai/models (input only; output tokens are free).
+jev:
+  jev-1.13.0: {input_per_mtok: 0.042, output_per_mtok: 0.0}
+
+mock:
+  mock-1: {input_per_mtok: 0.0, output_per_mtok: 0.0}
+  uniform: {input_per_mtok: 0.0, output_per_mtok: 0.0}
+
+# LLM baselines: before the first baseline run, add one entry per model under
+# `adapter-openai:` / `adapter-anthropic:` using the numbers on the provider's pricing page
+# that day. Runs refuse to start for a model that has no entry here.

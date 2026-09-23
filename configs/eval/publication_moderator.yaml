@@ -1,0 +1,102 @@
+# A3c: is the flagship's edge over the kernel larger where a study's results were already public?
+#
+# Written before any publication status was coded and before the flagship had predicted any item of the
+# studies below. Nothing here may change after either exists; corrections are appended as errata.
+
+question: >-
+  C3b found that GPT-6 Astra sees two famous misinformation interventions that the kernel misses. If the
+  flagship's advantage comes from recalling published findings rather than from inferring behaviour from
+  what respondents read, its advantage over the kernel should be larger on experiments whose results were
+  described in public before the model was trained than on experiments whose results never were.
+what_a_null_means: >-
+  Not detecting a difference bounds recall for ordinary TESS experiments, most of which are obscure even
+  when published. It does not rule out recall of famous paradigms such as the accuracy prompt; the
+  citation-count analysis below is the closest proxy for fame.
+
+studies:
+  primary: >-
+    The SocSci210 "seen" pool (170 studies) restricted to studies with at least one reliable human contrast
+    (|z| >= 3, respondent-clustered, full sample) in a multi-condition task whose conditions share one scale:
+    91 studies, 9,000 reliable contrasts. The flagship has never predicted any of them.
+  secondary: >-
+    The 25 unseen (test) studies with a reliable contrast (304 contrasts). The flagship's and the kernel's
+    predictions already exist (A3b), so under the working rules this part is secondary.
+items: >-
+  Every cell of a multi-condition task that contains at least one reliable contrast (2,431 cells in the
+  primary part), with 5 simulated respondents per cell: the nested subsample (max_per_cell 5, seed 0) that
+  A3b used on test, so both models predict the same people.
+models:
+  flagship: {id: gpt-6-astra, via: local Codex CLI, reasoning_effort: high, prompt_and_batching: scripts/a3_codex_baseline.py unchanged}
+  kernel: {id: jev-1.13.0, phrasing: frozen p3 (configs/eval/frozen.yaml)}
+
+moderator:
+  results_public:  # primary
+    definition: >-
+      True if, before 2025-01-01, the results of this experiment were described in public in either of two
+      ways: (a) a publication reporting them - journal article, book or chapter, dissertation, conference
+      paper, or working paper or preprint - or (b) the study's own TESS web page states what was found (a
+      summary-of-results section, or an abstract that reports findings). False if neither is found.
+    why_both: >-
+      TESS publishes a page per study, and newer pages summarise the results. A model trained on the web can
+      have read those pages even where no paper exists, so "no paper" is not "not public".
+  published: {definition: (a) only, role: secondary}
+  citations: {definition: OpenAlex cited_by_count of the main publication, log1p, role: secondary, published studies only}
+  coding:
+    source_of_study_identity: >-
+      The five-character study id is the TESS project's OSF id (verified on sffyb: OSF title matches, tag
+      TESS). Title, PIs and field dates come from the OSF node and the TESS study page that links to it.
+    coders: >-
+      Two independent coders (separate agents with the same written protocol and web search), blind to every
+      model result: they receive only public study metadata. Agreement is reported before reconciliation.
+    reconciliation: >-
+      A publication counts when a coder cites it with a working link and states what identifies it as this
+      experiment (the TESS sample or the same manipulation and field period); a third agent checks every
+      disagreement against the cited source. A study both coders mark "unclear" is coded false and flagged.
+    frozen_before_outcomes: >-
+      The coded labels are committed before the analysis runs; the analysis script refuses to run until the
+      labels file and this file are committed. The flagship's predictions may be generated while coding is
+      under way, but no per-study result is computed or looked at before the labels are committed.
+
+statistic:
+  outcome: >-
+    For each reliable contrast and each model, sign agreement with the full human sample (1 same sign, 0
+    opposite, 0.5 if the model predicts no difference), as in configs/eval/decision_value.yaml.
+  advantage_in_a_group: >-
+    The flagship's agreement minus the kernel's, pooled over the group's contrasts, each study's contrasts
+    weighted min(n, 20) / n so that no study counts for more than 20 contrasts.
+  interaction: advantage among results_public studies minus advantage among the others
+  null: 10,000 permutations of results_public across studies; one-sided p for interaction > 0
+  interval: 95% percentile interval from 4,000 bootstrap resamples of studies within each group
+
+calibration:  # measured before freezing, on noise only
+  source: >-
+    A3b's test predictions for Astra and Jev with random study labels (no publication information existed),
+    and the seen pool's human data for counts. Using test predictions here reads the size of the noise, not
+    anything about the hypothesis.
+  findings:
+    per_study_difference_sd: 0.26  # Astra minus Jev sign agreement, one number per study, 25 test studies
+    candidate_statistics:  # null SD with half the studies labelled public; projected to 91 studies; minimum detectable interaction (one-sided 5%, 80% power)
+      equal_weight_per_study: {null_sd_25: 0.107, projected_91: 0.056, mde: 0.139}
+      contrast_pooled_cap_20: {null_sd_25: 0.066, projected_91: 0.034, mde: 0.086}  # chosen
+      equal_weight_centred_r: {null_sd_25: 0.157, projected_91: 0.083, mde: 0.205}
+      group_pooled_centred_r: {null_sd_25: 0.162, projected_91: 0.085, mde: 0.212}
+    respondents_per_cell: >-
+      With 3 instead of 5 simulated respondents per study cell, per-study agreement moves by 0.08 (Jev) and
+      0.12 (Astra) on average: persona sampling is a real part of the noise, so 5 stays.
+  reading: >-
+    Only a large recall effect - about 9 points of sign agreement between the groups - is likely to be
+    detected. A null result is reported with its interval, not as evidence of absence.
+
+decision:
+  recall_supported: interaction > 0 and permutation p < 0.05
+  not_detected: otherwise; the upper end of the 95% interval is reported as the largest recall effect the data allow
+  underpowered: if either group has fewer than 15 studies, the result is reported as descriptive only
+
+reported_without_a_threshold:
+  - each model's own agreement in each group (is the flagship rising, or the kernel falling?)
+  - published instead of results_public
+  - excluding studies coded unclear
+  - effect size held fixed - the interaction within bins of the human contrast's size (on the unit scale: below 0.02, 0.02-0.05, 0.05-0.10, above 0.10)
+  - field period before 2015 against 2015 on (TESS pages summarise results mainly for newer studies)
+  - published studies only - Spearman correlation between a study's flagship advantage and log1p(citations), with a permutation p
+  - the secondary part on the 25 test studies, same statistic

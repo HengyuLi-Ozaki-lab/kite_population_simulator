@@ -1,0 +1,172 @@
+{
+ "scores": {
+  "n_predictions": 21722,
+  "n_respondents": 2118,
+  "n_items": 23,
+  "item_r_share_only": 0.7200918323344178,
+  "item_r_accuracy": 0.8708609358186303,
+  "discernment": {
+   "accuracy": {
+    "model": 1.2685755449835896,
+    "human": 1.4943271900797654
+   },
+   "prompt": {
+    "model": 0.39393531649346736,
+    "human": 0.7178463399879007
+   },
+   "share_only": {
+    "model": 0.42300183046575146,
+    "human": 0.5669575119808936
+   },
+   "tips": {
+    "model": 0.44096763464953215,
+    "human": 0.5146758172295467
+   }
+  },
+  "prompt_effect": {
+   "model": -0.029066513972284103,
+   "human": 0.1508888280070071
+  },
+  "tips_effect": {
+   "model": 0.017965804183780687,
+   "human": -0.05228169475134692
+  },
+  "individual_r": 0.2393328077489547,
+  "distance": 0.08316889783298705,
+  "distance_uniform": 0.11860189345286996
+ },
+ "nulls": {
+  "item_r_share_only": {
+   "null_p95": 0.3556655767504615,
+   "null_mean": 0.002872076505652248
+  },
+  "item_r_accuracy": {
+   "null_p95": 0.3624560391379584,
+   "null_mean": -0.00543955217927307
+  },
+  "discernment": {
+   "share_only": {
+    "null_p95": 0.21686441631763678,
+    "null_p05": -0.20856255162661158
+   },
+   "accuracy": {
+    "null_p95": 0.5657880482782137,
+    "null_p05": -0.5713396342595332
+   },
+   "prompt": {
+    "null_p95": 0.19300529240613726,
+    "null_p05": -0.18590017888368077
+   },
+   "tips": {
+    "null_p95": 0.23144534375636755,
+    "null_p05": -0.22250445573174682
+   }
+  },
+  "prompt_effect": {
+   "null_p95": 0.035140533692451716,
+   "null_p05": -0.03243140595226206
+  },
+  "tips_effect": {
+   "null_p95": 0.03506537547828727,
+   "null_p05": -0.037616338629204396
+  }
+ },
+ "stability": [
+  {
+   "respondents_per_condition": 25,
+   "predictions": 1022,
+   "item_r_share_only": 0.5921682388448247,
+   "item_r_accuracy": 0.8636382088846963,
+   "prompt_effect_model": -0.15554884253890444,
+   "tips_effect_model": -0.003774883627395642
+  },
+  {
+   "respondents_per_condition": 50,
+   "predictions": 2037,
+   "item_r_share_only": 0.6438622249079734,
+   "item_r_accuracy": 0.8634650551792629,
+   "prompt_effect_model": -0.11475069203825594,
+   "tips_effect_model": 0.03302073281728202
+  },
+  {
+   "respondents_per_condition": 100,
+   "predictions": 4079,
+   "item_r_share_only": 0.6986881037552637,
+   "item_r_accuracy": 0.8675741361812784,
+   "prompt_effect_model": -0.0806433762085561,
+   "tips_effect_model": 0.0923825876749631
+  },
+  {
+   "respondents_per_condition": 150,
+   "predictions": 6131,
+   "item_r_share_only": 0.6898291614944176,
+   "item_r_accuracy": 0.8691516347948531,
+   "prompt_effect_model": 0.020616140581593,
+   "tips_effect_model": 0.12174826194280541
+  },
+  {
+   "respondents_per_condition": "all",
+   "predictions": 21722,
+   "item_r_share_only": 0.7200918323344178,
+   "item_r_accuracy": 0.8708609358186303,
+   "prompt_effect_model": -0.029066513972284103,
+   "tips_effect_model": 0.017965804183780687
+  }
+ ],
+ "human_references": {
+  "item_means_share_only": {
+   "split_half_r": 0.817855822989229,
+   "spearman_brown": 0.899802737539846,
+   "items": 23
+  },
+  "item_means_accuracy": {
+   "split_half_r": 0.9682903583684451,
+   "spearman_brown": 0.9838897541225372,
+   "items": 23
+  },
+  "discernment": {
+   "accuracy": {
+    "estimate": 1.4943271900797654,
+    "ci": [
+     1.3717409157164169,
+     1.6124970441742665
+    ]
+   },
+   "prompt": {
+    "estimate": 0.7178463399879007,
+    "ci": [
+     0.6066724751800335,
+     0.8317647464138089
+    ]
+   },
+   "share_only": {
+    "estimate": 0.5669575119808936,
+    "ci": [
+     0.4640474985541176,
+     0.6659636589795392
+    ]
+   },
+   "tips": {
+    "estimate": 0.5146758172295467,
+    "ci": [
+     0.4084869544278165,
+     0.6243977072833585
+    ]
+   },
+   "prompt_effect": {
+    "estimate": 0.1508888280070071,
+    "ci": [
+     0.001799979480003734,
+     0.3061618158013763
+    ]
+   },
+   "tips_effect": {
+    "estimate": -0.05228169475134692,
+    "ci": [
+     -0.20040360089424886,
+     0.10456090900087768
+    ]
+   }
+  }
+ }
+}

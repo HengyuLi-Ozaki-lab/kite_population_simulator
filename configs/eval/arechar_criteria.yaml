@@ -1,0 +1,68 @@
+# Arechar et al. 2023: criteria for the held-out parts.
+# Written after the calibration run on US x half A (results/c2/20260922-004807-calibration) and before any
+# held-out rating was read. Committing this file is what releases the held-out parts from the loader.
+# The held-out parts are run once; each result is read against the criteria below and the file is not edited
+# afterwards (a criterion found to be wrong gets an appended erratum, per the project's working rules).
+
+design:  # frozen as calibrated; not re-tuned
+  kernel: jev-1.13.0
+  phrasing: p3 (one Noul per option, renormalised)
+  stimulus: >-
+    the US English headline, and the US instructions, pretest wording, neutral headline and tips, taken from
+    CRUS.qsf and given in the order participants read them (windtunnel.eval.arechar.context_for)
+  persona: the fields named in the split's addendum, rendered in words (windtunnel.eval.arechar.render_persona)
+respondents_per_country_condition: 100  # simulated, chosen by hash; every human reference uses all respondents
+parts: [new_headlines, new_countries, both_new]  # US x B; other fifteen x A; other fifteen x B
+
+calibration:  # US x A, 2,118 respondents, 21,722 predictions, $0.69
+  headline_level_sharing: {r: 0.720, null_p95: 0.356, human_reliability: 0.898}
+  headline_level_accuracy: {r: 0.871, null_p95: 0.353, human_reliability: 0.984}
+  discernment_accuracy_condition: {model: 1.269, human: 1.494, null_p95: 0.529}
+  discernment_share_only: {model: 0.423, human: 0.567}
+  prompt_effect: {model: -0.029, model_null_p95: 0.035, human: 0.151, human_ci: [-0.013, 0.305]}
+  tips_effect: {model: 0.018, model_null_p95: 0.036, human: -0.052, human_ci: [-0.206, 0.091]}
+  individual_level: {r: 0.239, null_p95: 0.010}
+  stability: headline-level agreement is flat from 100 simulated respondents per condition upward (0.70 sharing, 0.87 accuracy)
+
+gates:
+  item_and_person:  # does what the kernel knows about headlines and people carry to new headlines and new countries?
+    per_part:
+      headline_level: >-
+        For sharing (share-only condition) and for accuracy (accuracy condition): the correlation across headlines
+        between the model's mean expected rating and the human mean rating is above the item-shuffle null's 95th
+        percentile with permutation p < 0.01. In new_headlines this is one test per measure; in the two fifteen-
+        country parts it has to hold in at least 12 of 15 countries for each measure.
+      discernment: >-
+        In the accuracy condition the model rates true headlines above false ones by more than the truth-shuffle
+        null's 95th percentile - once in new_headlines, in at least 12 of 15 countries in the other parts.
+      individual_level: >-
+        Within (country, headline, condition), the correlation between the model's expected rating and the
+        person's rating is above the people-shuffle null's 95th percentile, pooled over the part.
+    passes_if: every per-part criterion holds in all three parts
+    note: >-
+      "12 of 15" is a design choice, not a calibrated number: no non-US data can be looked at before this file is
+      committed. Under the null each country passes about 5% of the time.
+  intervention:  # can the kernel tell whether an accuracy-type intervention works?
+    per_part_and_treatment: >-
+      For the prompt and for the tips, the effect on sharing discernment (treatment minus share-only), pooled with
+      equal weight per country: PASS if the model's pooled effect is above its condition-shuffle null's 95th
+      percentile AND the human pooled effect is positive with a 95% interval above zero. FAIL if the human effect
+      is reliably positive and the model's is not. NOT APPLICABLE if the human interval includes zero.
+    reported_without_a_threshold: per-country sign agreement on the countries whose human interval excludes zero
+    prediction_on_record: >-
+      The calibration makes a FAIL on the prompt likely: on US x A the model's effect was -0.029, inside its null
+      band, while people's was +0.151. The design is not re-tuned to change that - wording the context so that it
+      names the mechanism would tell the model the answer instead of testing whether it can infer it.
+
+moderator:  # reported for every measure, no threshold
+  questionnaire_language:
+    english: [US, UK, AU, ZA, NG]
+    mixed: [IN, PN]
+    translated: [BR, MX, AR, ES, IT, CN, EG, SA, RU]
+
+diagnostic_after_freezing:  # exploratory, on calibration data only, not a gate, never used to change the design
+  explicit_mechanism: >-
+    Re-run the prompt condition for 100 US respondents per condition with one sentence added to the context that
+    names the mechanism ("This made the respondent think about whether headlines are accurate."). If the model's
+    prompt effect then appears, it can represent the effect but does not infer it from what participants read; if
+    it still does not, sharing predictions do not respond to this kind of manipulation at all.

@@ -1,0 +1,83 @@
+# D3: paired flagship anchors on SocSci210 - frozen before the test-split anchor run.
+#
+# Research plan v4 §3 B. Development on the 91 seen studies (results/b/20260923-011209-dev-paired-gpt-6-astra,
+# 7,293 anchor items, analysis results/b/dev-20260923-022128.json); k, the slopes and the endpoint below are fixed
+# here before scripts/b_paired_anchors.py runs on the test split. Corrections are appended as errata, never edited in.
+#
+# What was seen of the test split before this file: the published A3 / A3b / G-A tables (kernel, Luna and Astra
+# against people), and today two model-only numbers computed without any human outcome - the correlation of the
+# kernel's and the 5-per-cell flagship's effects (0.608) and the flagship's own split-half agreement (first 3 vs
+# last 2 respondents per cell: 0.578; first 2 vs last 3: 0.612). No anchor prediction on the test split exists.
+
+question: >-
+  Does calling the flagship on three anchor personas per task, each under every condition of the task (paired), give
+  a kernel-simulated population the flagship's condition effects - at a small fraction of the flagship's calls per
+  state - and with them the flagship's decision quality against people?
+
+data:
+  test: >-
+    data/socsci210/prepared/test (37 studies). Kernel population = results/20260921-012513-socsci210-test-jev-p3-choice
+    (136,901 items, every respondent). Flagship reference = results/20260922-130953-socsci210-test-codex-gpt-6-astra-high
+    (3,615 items, 5 respondents per cell, unpaired). Equal-budget unpaired comparison = the first 3 of those 5 per cell.
+  anchors: >-
+    the first 3 respondents of each comparable (study, task) block in hash order (seed 0; nested, so k = 1, 2 are
+    subsets), each under every condition present in the block, with that condition's stimulus (the one shown to the
+    block's first respondent in hash order) and that condition's scale; one condition per Codex batch.
+  dev: 91 seen studies; kernel and flagship 5 per cell from results/a3c; 236 blocks, 2,195 effects
+
+hybrid:
+  k: 3
+  rule: >-
+    cell mean of the hybrid = the kernel's mean in the block's first condition + the flagship's paired shift (mean over
+    the k anchors of the anchor's position under the condition minus under the first condition); the first condition
+    keeps the kernel's mean. Positions are on the [0, 1] axis of the cell's scale (windtunnel.eval.metrics.mean_position).
+  dev_slopes: {kernel: 0.984, flagship5: 0.591, hybrid_k3: 0.556}  # people's effects on each system's effects, OLS on dev; leave-one-study-out sd <= 0.014
+  systems: [kernel, flagship5, flagship3, hybrid_k1, hybrid_k2, hybrid_k3]
+
+development_results:  # the basis for the choices above (dev split, raw effects)
+  table: >-
+    r_within_task / sign accuracy / captured gain / approx r vs flagship5 -
+    kernel 0.552 / 0.895 / 0.420 / 0.863; flagship5 0.607 / 0.939 / 0.529 / 1; flagship3 (unpaired, equal budget) 0.592 / 0.937 / 0.504 / -;
+    hybrid_k1 0.533 / 0.927 / 0.409 / 0.897; hybrid_k2 0.551 / 0.927 / 0.446 / 0.911; hybrid_k3 0.561 / 0.933 / 0.496 / 0.917
+  differences: >-
+    hybrid_k3 - kernel: sign accuracy +0.038 [+0.008, +0.084], captured gain +0.076 [-0.017, +0.179], r_within_task +0.008 [-0.087, +0.078],
+    approx r +0.054 [-0.027, +0.099]; hybrid_k3 - flagship5 (90%): sign -0.006 [-0.041, +0.007], gain -0.033 [-0.087, +0.028],
+    r -0.047 [-0.101, -0.009]; hybrid_k3 - flagship3 (equal budget, unpaired): sign -0.004, gain -0.008, r -0.031, all intervals include 0.
+  ceiling: the flagship's own split-half agreement on dev (3 vs 2 disjoint respondents) is 0.869; the paired k = 3 hybrid reaches 0.917 against the 5-per-cell run
+  why_k3: k = 3 is the largest run and best on every measure; k = 1 and k = 2 are reported as the anchor-count curve
+
+primary_endpoint:
+  name: approximation of the flagship's condition effects, gain over the kernel
+  statistic: >-
+    Pearson r between the hybrid's effects (every condition against the block's first) and the 5-per-cell flagship
+    run's effects, over the effects of the common blocks, minus the same correlation for the kernel
+  interval: 95% study bootstrap, 4,000 resamples
+  verdict: PASS if the difference is positive and the interval excludes 0; otherwise FAIL
+  reading: >-
+    on the test split the kernel's effects correlate 0.608 with the flagship's and the flagship agrees with itself at
+    about 0.6 from 2-3 unpaired respondents, so a paired 3-anchor hybrid is expected near 0.75; the claim is that the
+    anchors move the population toward the flagship, not that they reproduce it exactly
+  approx_r_at_least: 0.60  # also required for PASS: the hybrid must at least reach the flagship's own split-half agreement
+
+secondary_endpoints:
+  - human fidelity, hybrid_k3 minus kernel, 95% intervals: sign accuracy on reliable contrasts (expected positive, as on dev), captured gain, within-task condition-sensitivity r, raw effect MAE
+  - hybrid_k3 minus flagship5, 90% intervals, same measures (expected: sign and gain indistinguishable, r below)
+  - hybrid_k3 minus flagship3 (equal budget, unpaired), 95% intervals: does pairing matter for human fidelity
+  - calibrated effect MAE with the dev slopes applied (kernel x 0.984, flagship5 x 0.591, hybrid_k3 x 0.556)
+  - the anchor-count curve k = 1, 2, 3
+  - agreement diagnostic on reliable contrasts: share where kernel and hybrid order alike, accuracy when they agree and when they disagree
+  - cost: anchor items and Codex tokens; kernel population items and dollars; flagship on the whole population extrapolated from tokens per item
+
+analysis: {seed: 0, n_boot: 4000}
+
+power_note: >-
+  37 studies and 532 effects give intervals about 1.6 times wider than on dev; the human-fidelity differences between the
+  flagship and the kernel on this split were not distinguishable in A3b (sign +0.026 [-0.031, +0.083], gain +0.064
+  [-0.048, +0.168]), so the human-fidelity secondaries are expected to show direction, not significance. The primary
+  rests on the flagship's own effects, which are far less noisy than people's.
+
+procedure:
+  1: commit this file and scripts/b_paired_anchors.py
+  2: run the anchors on the test split once (scripts/b_paired_anchors.py astra --split test; 2,082 items, 129 batches)
+  3: analyse once (scripts/b_paired_anchors.py analyse --split test --astra <dir>) -> results/b/report.json
+  4: record in docs/decisions/D3.md, positive or negative, with any errata appended here

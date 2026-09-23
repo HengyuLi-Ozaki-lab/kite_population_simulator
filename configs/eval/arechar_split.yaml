@@ -1,0 +1,67 @@
+# Arechar et al. 2023: what may be looked at, and when.
+# Committed before any outcome data from this study was downloaded or opened; the audit that found the
+# study (docs/data/misinformation-data-audit.md) read file listings, the codebook and the US questionnaire,
+# and no ratings. windtunnel.eval.arechar enforces this file: until configs/eval/arechar_criteria.yaml is
+# committed, the loader returns only the calibration rows and columns.
+source: Arechar et al. 2023, Nature Human Behaviour 7, 1502-1513; OSF g65qu
+data: CR.csv - one row per respondent; country (alpha-2), condition, rating_1 .. rating_45 (20 filled per person)
+conditions: {1: share only, 2: accuracy prompt then share, 3: accuracy only, 4: digital-literacy tips then share}
+
+items:
+  index: k in rating_k, 1..45
+  halves:  # defined on the index alone, before any headline text or rating was seen
+    A: odd k (23 items)
+    B: even k (22 items)
+
+calibration:  # the only ratings that may be read before the held-out criteria are committed
+  countries: [US]
+  items: A
+  conditions: all four
+held_out:  # read once, after the criteria file is committed; each part reported separately and pooled
+  new_headlines: {countries: [US], items: B}
+  new_countries: {countries: the other fifteen, items: A}
+  both_new: {countries: the other fifteen, items: B}
+
+model:
+  kernel: jev-1.13.0
+  phrasing: p3, frozen on SocSci210 and not re-selected here
+  stimulus: >-
+    the US questionnaire's English headline text for every country, with the respondent's country in the
+    persona. Participants in most countries saw a translation; see the moderator below.
+  persona: >-
+    rendered from the codebook's demographic fields. The rendering may be adjusted during calibration and is
+    frozen together with the criteria.
+
+moderator:  # secondary, declared now
+  questionnaire_language: >-
+    English-only questionnaires: US, UK, AU, NG, ZA (from the file names CRUS, CPUK, CRAU, CRNG, CRZA and
+    their sizes; to be confirmed from the questionnaire text before any held-out rating is read). India and
+    the Philippines each had an English and a local-language version (CPINe/CPINh, CRPNe/CRPNt). The other
+    nine countries saw a translation into Spanish, Portuguese, Italian, Chinese, Arabic or Russian.
+  why: the model always reads English, so agreement may depend on whether people read what the model read.
+
+open_before_criteria: >-
+  Only what calibration needs: the calibration ratings, the demographic columns of calibration respondents,
+  the codebook and the questionnaires. Nulls and human split-half references for every gated measure are
+  measured on the calibration part first; thresholds are written relative to them (docs, jev working rules).
+
+addenda:  # appended, not edited in; each before any rating from this study was read
+  - date: 2026-09-21
+    persona_fields: >-
+      Only variables that the treatment could not have moved. In the survey flow the prompt and the tips
+      come after the social-media block and before the headlines; everything in the demographics and
+      comments blocks is measured after the headlines. The persona therefore uses: country; age and sex
+      (supplied by the panel at entry); social-media platforms used and kinds of news shared (asked before
+      the treatment); and education, socio-economic status, urban or rural residence and ethnic-minority
+      status (asked afterwards, but not movable by a one-screen prompt). It excludes every attitude asked
+      after the headlines - importance of accuracy and the other importance items, trust, risk, need for
+      cognition, the WVS items, vaccine intentions, religiosity, party cues, the CRT - and every question
+      about the treatment itself.
+    verified_from_the_questionnaires: >-
+      Loop row k is rating_k (each row carries its own index and its randomiser flag h<k>); the debrief
+      lists rows 31-45 as the true headlines; the English-language questionnaires are US, UK, AU, ZA, NG
+      and the English versions for India and the Philippines. The codebook has no variable saying which
+      version an Indian or Filipino respondent took, so those two countries are "mixed" for the moderator.
+      The Nigerian questionnaire rewords 14 headlines in plainer English (for example "corpse" becomes
+      "dead body"); UK, AU and ZA differ from the US text by one spelling each. The model reads the US text,
+      as declared.

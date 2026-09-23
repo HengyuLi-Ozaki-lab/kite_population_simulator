@@ -1,0 +1,80 @@
+# What a participant read before the sharing task in each arm of Epstein et al. 2021, as given to the model.
+#
+# Sources, all public: the five questionnaires (OSF hu4k2), the article's Figure 2 and its caption, and the
+# Methods text (HKS Misinformation Review 2(3), CC BY 4.0; local copies and hashes in
+# docs/data/epstein-schema.md). Every string marked verbatim is copied from one of them; the two strings
+# marked described paraphrase the Methods because the underlying material was an image sequence that is not
+# in the public files. Transcribed 2026-09-22, before the criteria were frozen and before any rating was read.
+#
+# Order of the model's state, as in the Arechar runs: the arm's screen(s) in the order participants saw them,
+# then the task instruction, then the card (source and headline) and the question.
+
+instruction:  # verbatim, questionnaire block "Instructions" (sharing arms) / accuracy-only arm
+  sharing: >-
+    You will be presented with a series of news headlines about the Coronavirus (COVID-19). We are interested in
+    whether you would consider sharing the information on social media (such as Facebook or Twitter).
+  accuracy: >-
+    You will be presented with a series of news headlines about the Coronavirus (COVID-19). We are interested in
+    whether you think the information accurate.
+
+question:  # verbatim, questionnaire loop block "Headline"; option order fixed for the model
+  sharing: {text: "Would you consider sharing this story online (for example, through Facebook or Twitter)?", options: ["No", "Yes"]}
+  accuracy: {text: "To the best of your knowledge, is the claim in the above headline accurate?", options: ["No", "Yes"]}
+
+screens:
+  control: []
+  accuracy_only: []
+  evaluation:  # questionnaire block acc_inst + one neutral true headline; the headline shown is the one in Figure 2
+    - kind: pretest_instruction
+      status: verbatim
+      text: >-
+        First, we would like to pretest an actual news headline for future studies. We are interested in whether
+        people think it is accurate or not. We only need you to give your opinion about the accuracy of a single
+        headline. We will then continue on to the primary task.
+    - kind: headline_rating
+      status: verbatim  # the article's Figure 2 sample; participants saw one of four neutral true headlines
+      source: ABCNEWS.GO.COM
+      headline: "Scientists discover the 'most massive neutron star ever detected'"
+      question: "To the best of your knowledge, is the above headline accurate?"
+      options: ["No", "Yes"]
+    - kind: feedback
+      status: verbatim  # questionnaire blocks "real neutral 1-4"; the answer given is not recorded per participant
+      text: "That was a true news headline."
+  long_evaluation:
+    - kind: described
+      status: described  # Methods, item 2; the eight headlines were images not in the public files
+      text: >-
+        Before the main task the respondent judged the accuracy of eight news headlines unrelated to COVID-19
+        (half true, half false). After each one they were told whether their answer was correct or incorrect and
+        whether the headline was "a real news headline" or "a fake news headline".
+  importance:
+    - kind: question
+      status: verbatim  # Figure 2 and questionnaire block imp_acc
+      text: >-
+        How important is it to you that you only share news articles on social media (such as Facebook and
+        Twitter) if they are accurate?
+      options: [Not at all important, Slightly important, Moderately important, Very important, Extremely important]
+  tips:
+    - kind: screen
+      status: verbatim  # Figure 2; an illustration accompanies the text
+      title: Think carefully about the news with these tips
+      text: "Be skeptical of headlines. Investigate the source. Watch for unusual formatting. Check the evidence."
+  generic_norms:
+    - kind: screen
+      status: verbatim  # Figure 2 caption; same illustration as partisan norms
+      text: >-
+        Did you know, over 80% of past survey respondents say it's important to think about accuracy before
+        sharing news on social media?
+  partisan_norms:
+    - kind: screen
+      status: verbatim  # Figure 2
+      text: >-
+        In an earlier study, we found that more than 8 out of 10 individuals think that it is "very important" or
+        "extremely important" to *only* share news articles on social media if they are accurate.
+        This was true for *both* Democrats and Republicans.
+  tips_norms:  # Methods, item 7: partisan norms then tips, in that order
+    - {ref: partisan_norms}
+    - {ref: tips}
+  importance_norms:  # Methods, item 8: importance and partisan norms in random order; the model gets importance first
+    - {ref: importance}
+    - {ref: partisan_norms}

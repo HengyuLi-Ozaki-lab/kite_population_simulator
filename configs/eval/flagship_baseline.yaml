@@ -1,0 +1,37 @@
+# A flagship LLM against the kernel, on items and criteria that already exist.
+# Written before the flagship's first prediction on any test or held-out item. Nothing here is tuned on the
+# flagship's output; the criteria are the ones frozen for the kernel, applied unchanged to another model.
+
+model: {id: gpt-6-astra, via: local Codex CLI (codex exec), reasoning_effort: high}
+why_high: >-
+  A two-batch pilot on development items used about the same number of tokens at low, medium and high effort
+  (44,178 / 44,161 / 44,827) and took 26 / 25 / 35 seconds a call, so the flagship gets its strongest setting at
+  almost no extra quota. A negative result is only informative if the flagship was given its best shot.
+cost_note: >-
+  Codex bills the user's subscription, not per token, and its token count includes the agent wrapper's own
+  prompt. Cost comparisons stay bracketed by list prices, as in docs/decisions/A3.md.
+
+socsci210:
+  items: the test split's nested five-per-cell subsample - the same 3,615 items Jev and GPT-5.6 Luna were scored on
+  prompt_and_batching: identical to scripts/a3_codex_baseline.py as used for Luna (no batch holds two items of a task)
+  criteria: configs/eval/decision_value.yaml, applied unchanged, plus the marginal and condition-sensitivity measures
+  common_blind_spot: >-
+    On the reliable contrasts (|z| >= 3 in the full human sample, 304 of them): the share that all three models
+    (Jev, Luna, flagship) get wrong, against the product of their three error rates - what "all wrong" would be if
+    their errors were independent. Reported with a study-bootstrap interval; no pass threshold.
+
+arechar:
+  part: both_new  # fifteen countries x even-numbered headlines: new countries and new headlines
+  respondents_per_country_condition: 30  # nested inside the kernel's 100; the kernel is also re-scored on these 30
+  conditions:
+    primary: [share_only, prompt]
+    secondary: [tips]  # run after the primary if the Codex quota allows
+  batching: every item in a batch has the same condition, a different headline and a different respondent
+  criteria: >-
+    configs/eval/arechar_criteria.yaml unchanged: the intervention gate per treatment (PASS if the model's pooled
+    effect clears its condition-shuffle null and people's is reliably positive), and headline-level sharing
+    agreement per country (at least 12 of 15 above the item-shuffle null).
+  power_note: >-
+    With 30 rather than 100 respondents per cell the model's null band is about 1.8 times wider (roughly +-0.03
+    against the kernel's +-0.016); people's pooled prompt effect on this part is +0.127, so an effect of about a
+    quarter of it would still register.

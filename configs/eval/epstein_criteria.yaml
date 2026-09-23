@@ -1,0 +1,109 @@
+# D1: the hybrid kernel on Epstein et al. 2021 - frozen before any prediction and before any rating is read.
+#
+# Research plan v3 §5 and v3.2. Development happened on Arechar (C2/C3/C3b/D0) and on SocSci210 (D2); nothing
+# here is chosen after looking at an Epstein outcome. `windtunnel.eval.epstein.load_ratings` refuses to read the
+# ratings until this file is committed; the run and analysis scripts refuse to run while it is uncommitted.
+# Corrections to this file are appended as errata, never edited in.
+
+data:
+  source: docs/data/epstein-schema.md  # Dataverse doi:10.7910/DVN/18SHLJ (CC0) + OSF hu4k2; hashes recorded there
+  participants: 9,070 completed, five waves, arms randomised within waves, each wave with its own control
+  items: 20 cards (10 false, 10 true); card text as shown, from the posted images; order corroborated by the article's Table 2
+  overlap_with_development_data: none (best similarity to any Arechar headline 0.57; no exact or near duplicate)
+  seen_before_freezing: >-
+    The article's published pooled effects (Figure 3) and the wave-1 control sharing rates (Figure 1) were seen while
+    transcribing the treatment screens. Per-wave arm outcomes have not been opened. The pipeline below contains no
+    choice a person makes after this point.
+
+run:
+  personas_per_wave: 200      # application pool: completed participants of the wave (any arm), chosen by hash of id
+  audit_per_wave: 30          # disjoint audit pool, same rule, next 30 in hash order
+  seed: 0
+  anchors_per_cell: 12        # (persona, headline) states per wave x cell, predicted by the flagship under the control and under every treatment of the wave
+  arms_per_wave: from the design; every persona is asked under every arm of its wave; accuracy_only (wave 1) is a secondary, item-level block
+  kernel: {id: jev-1.13.0, phrasing: p3 (one Noul per option, renormalised), options: ["No", "Yes"]}
+  state: >-
+    respondent = pretreatment persona (age, gender, race, Hispanic, education, party lean, region, in words);
+    survey.context = the arm's screens in the order participants read them, then the task instruction
+    (configs/eval/epstein_screens.yaml; Long Evaluation is described, all others verbatim);
+    survey.question = the card's source and headline, then the sharing question.
+  predictions: 73,600 kernel (64,000 application + 9,600 audit) ~ $2.3-2.5; flagship = anchors (12 x 6 cells x arms x 5 waves) + audit pool (30 x 20 x arms) ~ 11,000
+
+flagship: {id: gpt-6-astra, via: local Codex CLI, reasoning_effort: high, prompt_and_batching: scripts/c3_llm_arechar.py unchanged; one arm per batch, no persona or headline twice in a batch}
+
+correction:  # research plan v3 §4.4; D0 excluded a single global shift and 6 anchors per cell
+  cells: veracity x tertile of the kernel's control-arm P(yes) for the (persona, headline) state, tertile edges per wave and veracity  # six cells per wave
+  rule: >-
+    For each wave, treatment and cell: shift = flagship mean P(yes) on the anchor states under the treatment minus under the
+    control (paired states); target = kernel's control mean P(yes) in the cell (application pool) + shift; the kernel's
+    treated distributions in the cell are exponentially tilted with one alpha so that their mean equals the target.
+    This replaces the kernel's own treatment effect; it does not add to it.
+  tilt: {floor: 0.005, alpha_max: 10.0, values: [0, 1]}
+  infeasible: >-
+    If the target is outside the range reachable within the alpha cap, or fewer than 6 paired anchors exist in the cell,
+    the cell keeps the kernel's own treated predictions; the affected population weight is reported and the requested
+    and achieved effects are both shown.
+
+estimands:
+  scale: P(yes) to "Would you consider sharing this story online?" (binary), so the unit scale is the sharing scale
+  discernment: mean P(yes) on true cards minus mean P(yes) on false cards, over the application pool (model) or all completed participants (people)
+  effect: an arm's discernment minus that wave's control's discernment; true and false channels reported separately
+  decision: in each wave, the arm (control included) with the highest predicted discernment
+
+systems: [kernel, hybrid, flagship_audit]  # kernel_audit (kernel on the audit personas) is reported alongside as a check
+
+primary_endpoint:
+  name: within-wave policy value, hybrid minus kernel
+  definition: >-
+    mean over the five waves of people's discernment in the arm the hybrid chose minus people's discernment in the arm
+    the kernel chose (waves where both chose the same arm contribute zero)
+  interval: 2,000 participant resamples within wave x arm
+  verdict: the hybrid beats the kernel if the point estimate is positive and the interval excludes zero; otherwise not shown
+  known_weakness: five waves give five decisions; if the systems disagree in one wave only, the endpoint rests on that wave
+
+secondary_endpoints:
+  - each system's own policy value against a chance baseline (5,000 permutations of its arm scores within waves), with a one-sided p
+  - flagship_audit minus kernel, and hybrid minus flagship_audit, policy value
+  - MAE of the wave-relative effects (13 effects) and of the true and false channels, per system
+  - the same-judge comparison: a half-sample human pilot chooses on one half of the participants and every system is judged on the other half (200 splits)
+  - coverage of the D2 kernel discrepancy interval (beta 0.925, tau 0.037, sigma 0.080; 90% = +-1.645 sd around beta x) on the wave-relative effects of the kernel and of the hybrid
+  - correction failures and their population weight
+
+analysis: {seed: 0, n_boot: 2000, n_perm: 5000, n_splits: 200}
+
+power_note: >-
+  Arm sizes are known from the design (195 to 1,072 per arm). With a participant-level discernment SD of about 0.25 on the
+  binary scale, a two-arm difference of about 0.05 in discernment is detectable in the largest waves and about 0.07 in
+  wave 2; the published pooled effects are of the order of 0.03-0.06. The primary endpoint is therefore expected to be
+  underpowered for single waves, which is why the interval, not a threshold on p, carries the conclusion, and why the
+  effect MAE and the same-judge comparison are declared secondary rather than promoted afterwards.
+
+procedure:
+  1: commit this file, the screens, the task module and the scripts
+  2: run the kernel on every item (scripts/d1_epstein.py jev)
+  3: run the flagship on the anchors and the audit pool (scripts/d1_epstein.py astra)
+  4: lock the policies (scripts/d1_analysis.py predict) - writes results/d1/policies.json with the prediction files' hashes
+  5: only then open the ratings once (scripts/d1_analysis.py score)
+  6: record the result in docs/decisions/D1.md, positive or negative, with any errata appended here
+
+errata:  # appended after the run (2026-09-22); nothing above was edited. Result: docs/decisions/D1.md
+  - id: 1
+    where: secondary_endpoints, "MAE of the wave-relative effects (13 effects)"
+    correction: >-
+      The design has 10 wave-relative sharing effects (waves 2-5 carry 2+3+3+2 treatments; accuracy_only is not a
+      sharing arm and wave 1 has no sharing treatment). The analysis script never used the number 13 - it iterates
+      over the non-control sharing arms - and the report says n_effects = 10.
+  - id: 2
+    where: run.predictions
+    correction: flagship items were 10,080 (1,080 anchors + 9,000 audit, 543 batches), not ~11,000; the kernel cost $1.60, not $2.3-2.5.
+  - id: 3
+    where: procedure step 5, "open the ratings once"
+    correction: >-
+      The score stage ran twice. The first run (at 7b5a5a3) computed the report and crashed while writing it (a Path
+      object passed to json.dumps) before printing any number; the fix is one serialisation line (2e85cca), with no
+      analysis change. The second run read the same locked policies with the same seed and is the run on record.
+  - id: 4
+    where: secondary_endpoints, D2 coverage
+    correction: >-
+      Observation, not a change: the 90% half-width (1.645 x 0.088 = 0.145) exceeds the largest human wave-relative
+      effect (0.062), so 10/10 coverage carries no information about calibration on this design.

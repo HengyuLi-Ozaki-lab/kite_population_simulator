@@ -1,0 +1,31 @@
+# Chosen on the development split only, then frozen. Test runs must use exactly these values.
+#
+# Evidence: 20 development studies, 467 cells, 2335 predictions per configuration, jev-1.13.0.
+# p3 (one Noul per option, renormalised) won every column that matters:
+#
+#   config      dist    dist_pub  acc     ECE     r_cond  null p95  perm p  slope  spread
+#   p1/choice   0.1320  0.1401    0.7436  0.2489  0.517   0.189     0.0005  0.26   1.96
+#   p1/score    0.1338  0.1423    0.7469  0.2314  0.523   0.199     0.0005  0.29   1.82
+#   p2/choice   0.1346  0.1434    0.7440  0.2482  0.527   0.188     0.0005  0.26   2.00
+#   p2/score    0.1325  0.1425    0.7481  0.2296  0.533   0.198     0.0005  0.29   1.82
+#   p3/choice   0.1258  0.1369    0.7638  0.0268  0.640   0.275     0.0005  0.70   0.92
+#   uniform     0.1543  0.1670    0.7003  0.0435  -       -         -       -      0.00
+#   pooled      0.0278  0.0280    0.7788  0.0241  -       -         -       -      0.00
+#
+# Why p3, beyond the numbers: asking "which option is likeliest" is a relative judgement and
+# concentrates probability, which shows up as an ECE near 0.24. Asking each option "did they answer
+# this?" is an absolute judgement; renormalised it is calibrated (ECE 0.027), moves across
+# conditions about as much as people do (spread 0.92 against 1.8-2.0), and 0.70 of that movement is
+# real signal against 0.26-0.29. It also returns distributions that sum to 1 by construction: the
+# Choice and Score runs each had 44-54 answers out of 2335 whose probabilities summed outside 1e-3,
+# because the API rounds them to two decimals. p3 had none.
+#
+# Cost: $0.080 against $0.068 per 2335 predictions, +18%. All the Nouls ride in one request, so it
+# is not the "one request per option" that was feared when the plan was written.
+commit: 389b984
+dev_report: results/20260920-235728-socsci210-dev-jev-p3-choice
+note: >-
+  primitive is nominal for p3, which asks one Noul per option and ignores the choice/score
+  distinction; it is recorded so the frozen pair is fully specified.
+tasks:
+  socsci210: {phrasing: p3, primitive: choice}

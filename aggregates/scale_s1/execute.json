@@ -1,0 +1,125 @@
+{
+ "live": "results/c/20260923-113433-live",
+ "personas": 500,
+ "states": 20000,
+ "correction": [
+  {
+   "cell": "false:0",
+   "states": 1737,
+   "shift": -0.05333333333333337,
+   "requested": 0.18531699685200978,
+   "achieved": 0.1853169968520417,
+   "feasible": true
+  },
+  {
+   "cell": "false:1",
+   "states": 1660,
+   "shift": -0.04333333333333339,
+   "requested": 0.27421039924420404,
+   "achieved": 0.2742103992442069,
+   "feasible": true
+  },
+  {
+   "cell": "false:2",
+   "states": 1603,
+   "shift": -0.03416666666666668,
+   "requested": 0.44682506302001324,
+   "achieved": 0.44682506301995917,
+   "feasible": true
+  },
+  {
+   "cell": "true:0",
+   "states": 1725,
+   "shift": -0.044999999999999984,
+   "requested": 0.36878683981579635,
+   "achieved": 0.3687868398157735,
+   "feasible": true
+  },
+  {
+   "cell": "true:1",
+   "states": 1679,
+   "shift": -0.015000000000000013,
+   "requested": 0.46048295859034044,
+   "achieved": 0.4604829585904059,
+   "feasible": true
+  },
+  {
+   "cell": "true:2",
+   "states": 1596,
+   "shift": -0.05250000000000005,
+   "requested": 0.506926397701261,
+   "achieved": 0.5069263977012091,
+   "feasible": true
+  }
+ ],
+ "exact": {
+  "kernel": {
+   "control": 0.1384549509176482,
+   "tips": 0.16059205997895915,
+   "effect": 0.022137109061310944
+  },
+  "hybrid": {
+   "control": 0.1384549509176482,
+   "tips": 0.14500345091765093,
+   "effect": 0.006548500000002733
+  }
+ },
+ "throughput": [
+  {
+   "tier": "vectorised",
+   "agents": 10000,
+   "agent_steps": 200000,
+   "seconds": 0.007307959022000432,
+   "agent_steps_per_second": 27367422.203368258,
+   "effect": 0.02296999999999999
+  },
+  {
+   "tier": "vectorised",
+   "agents": 100000,
+   "agent_steps": 2000000,
+   "seconds": 0.07495833293069154,
+   "agent_steps_per_second": 26681489.8598299,
+   "effect": 0.02207500000000001
+  },
+  {
+   "tier": "vectorised",
+   "agents": 1000000,
+   "agent_steps": 20000000,
+   "seconds": 0.9039351659594104,
+   "agent_steps_per_second": 22125480.624235462,
+   "effect": 0.02201759999999997
+  },
+  {
+   "tier": "scalar",
+   "agents": 10000,
+   "agent_steps": 200000,
+   "seconds": 0.9492947090184316,
+   "agent_steps_per_second": 210682.72908294149,
+   "effect": 0.020759999999999945
+  }
+ ],
+ "peak_rss_mb": 684.625,
+ "crn": {
+  "agents": 10000,
+  "seeds": 100,
+  "effect_sd_crn": 0.0007169486453017309,
+  "effect_sd_independent": 0.003032822045554284
+ },
+ "wind_tunnel": {
+  "population": 1000000,
+  "kernel_effect_exact": 0.022137109061310944,
+  "hybrid_effect_exact": 0.006548500000002733,
+  "hybrid_effect_mc_sd_1e6": 7.797147170597821e-05,
+  "d2_interval_90_for_people": {
+   "kernel": [
+    -0.124516650609473,
+    0.16547030237289825
+   ],
+   "hybrid": [
+    -0.1389361139911831,
+    0.15105083899118815
+   ]
+  },
+  "note": "kernel-only and D1-corrected effects of the tips screen on wave-3 personas never seen by the flagship; the interval is the D2 discrepancy model, not a claim about these people"
+ }
+}

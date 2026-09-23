@@ -1,0 +1,53 @@
+# B2: does the individual layer replicate beyond the one study it was found on?
+# Written before any model output for these studies existed. scripts/b2_replication.py refuses to run
+# while this file or the script has uncommitted changes, and echoes this file into its output.
+#
+# Background: on sffyb (docs/decisions/E3c.md, B1.md) a simulated person who sees their own last three
+# drawn answers recovered most of the real inter-item coherence, at the price of bending the population's
+# marginals; a rank-preserving map per cell onto the independent-answering marginal repaired the marginals
+# and kept about 97% of the coherence. That was found on the study that exposed the problem.
+
+studies: [m52pd, 3xy9j, gx6hp, ef6my, 5mt6r, ac9jm]
+selection_rule: >-
+  SocSci210 seen pool only; not used in any earlier individual-level experiment (mp3dr, nj5dx, sffyb,
+  9263n, r5hwx); no respondent answers one task number twice; 6-14 questions; 2-6 conditions; every
+  condition keeps at least 100 people who answered every question after taking 150 per condition;
+  ranked by number of questions, then study id; the first six. Fifteen studies qualified.
+
+people: 150 per (study, condition); correlations over people who answered every question
+arms:
+  independent: window 0, seed 0 - each answer drawn from the kernel's distribution for that person and question
+  raw_memory: window 3, seed 0 - the person's own last three drawn answers are in the state
+  corrected: the raw_memory draws mapped per cell, rank-preserving with random tie-breaking, onto the
+    independent arm's mean predicted distribution for that cell
+
+measures:  # per study, conditions pooled with weights equal to their number of question pairs
+  magnitude: mean |Spearman r| over question pairs, simulated / real
+  structure: correlation between the real and the simulated pairwise correlations
+  distance: mean over cells of the Wasserstein distance between the drawn answers and the human answers (options on [0, 1])
+
+nulls:
+  coherence: the independent arm re-simulated with seeds 1-40 (free - its requests do not depend on any draw)
+  marginals: the independent arm's answers redrawn 200 times from the same predicted distributions (as in B1)
+
+criteria:
+  per_study:
+    coherence_gain: corrected magnitude above the 95th percentile of the null magnitudes, AND corrected
+      structure above the 95th percentile of the null structures
+    marginals_kept: corrected distance at or below the 95th percentile of the redraw floor
+  overall:
+    replicates: coherence_gain in at least 5 of 6 studies AND marginals_kept in at least 5 of 6
+    partial: coherence_gain in 3 or 4 of 6, with marginals_kept in at least 5 of 6
+    fails: anything else
+
+reported_without_a_threshold:  # no calibrated reference exists for these yet
+  - raw_memory drift, as the share of the kernel's advantage over a uniform guess that it gives back (mean predicted distributions, no sampling noise)
+  - share of the raw_memory coherence that the correction keeps
+  - local concentration (adjacent / distant pairs, questions in task order) against the same ratio in the real answers
+  - distant-pair coherence against real, the closest measure here of a stable disposition
+  - human split-half structure (half the people against the other half), as a reliability reference for structure
+
+budget_usd: 6
+dropped_from_the_plan: >-
+  The plan's third arm was an LLM-summarised memory. E3d found it no more accurate than the raw history at
+  this length, and B1 made the corrected arm the one that has to replicate, so it is not run here.

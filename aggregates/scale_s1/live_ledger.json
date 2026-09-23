@@ -1,0 +1,14 @@
+{
+  "calls": 1,
+  "cache_hits": 0,
+  "cache_misses": 2,
+  "input_tokens": 519,
+  "output_tokens": 40,
+  "usd": 2.2e-05,
+  "reserved_usd": 0.0,
+  "answers": 2,
+  "malformed_distributions": 0,
+  "wall_seconds": 0.636,
+  "latency_ms_p50": 294.44541700650007,
+  "latency_ms_p95": 294.44541700650007
+}

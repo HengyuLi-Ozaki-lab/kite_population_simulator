@@ -1,0 +1,159 @@
+% Figure 1: the KITE architecture (Kernel, Intervention anchors, Tabulated execution, Error propagation).
+% Drawn in TikZ and compiled with LuaLaTeX so that it shares Helvetica Neue with Figures 2-5:
+%   cd docs/paper/arxiv/figures && lualatex fig1_architecture.tex
+% scripts/paper_figures.py writes fig1_numbers.tex from results/ and compiles this file; no number is typed here.
+\documentclass[border=1pt]{standalone}
+\usepackage{fontspec}
+\setsansfont{Helvetica Neue}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+\input{fig1_numbers}
+
+\definecolor{kernel}{HTML}{D2551A}
+\definecolor{flag}{HTML}{6D3FD1}
+\definecolor{exec}{HTML}{2A3942}
+\definecolor{human}{HTML}{1F7A4D}
+\definecolor{ink}{HTML}{22282C}
+\definecolor{mute}{HTML}{4F565B}
+\definecolor{faint}{HTML}{80878C}
+\definecolor{rule}{HTML}{C9CED2}
+\definecolor{panelbg}{HTML}{F4F5F6}
+
+\newcommand{\fs}[2]{\fontsize{#1}{#2}\selectfont}
+\hyphenpenalty=10000 \exhyphenpenalty=10000
+\pgfdeclarelayer{panels}\pgfdeclarelayer{cards}
+\pgfsetlayers{panels,cards,main}
+
+\tikzset{
+  every node/.style={inner sep=0pt, outer sep=0pt},
+  ttl/.style={anchor=base west, font=\fs{7.8}{9}\bfseries, text=ink},
+  bdy/.style={anchor=north west, align=left, font=\fs{6.2}{7.7}, text=mute, text width=#1 cm},
+  num/.style={anchor=base west, font=\fs{8.8}{10}\bfseries, text=#1},
+  capt/.style={anchor=base west, font=\fs{5.8}{6.8}, text=faint},
+  badge/.style={circle, fill=#1, text=white, font=\fs{8.2}{8.2}\bfseries, minimum size=12.5pt},
+  comp/.style={draw=#1!55, line width=0.6pt, rounded corners=4pt, top color=white, bottom color=#1!8},
+  artf/.style={draw=rule, line width=0.6pt, rounded corners=4pt, fill=white},
+  flow/.style={-{Stealth[length=5pt, width=4pt]}, line width=0.85pt, draw=mute},
+  small arrow/.style={-{Stealth[length=3.4pt, width=3pt]}, line width=0.6pt},
+  lab/.style={font=\fs{5.7}{6.7}\itshape, text=#1},
+}
+
+\begin{document}
+\begin{tikzpicture}[x=1cm, y=1cm]
+% ---------------- geometry: two rows, two panels ----------------
+\def\yB{0.25}\def\yBt{2.75}   % bottom row of cards
+\def\yT{3.35}\def\yTt{5.95}   % top row of cards
+\def\yM{4.65}\def\yL{1.5}     % arrow heights
+\begin{pgfonlayer}{panels}
+  \fill[panelbg, rounded corners=7pt] (0,0) rectangle (8.1,6.62);
+  \fill[panelbg, rounded corners=7pt] (8.4,0) rectangle (16.4,6.62);
+\end{pgfonlayer}
+\node[anchor=base west, font=\fs{6.6}{7.6}\bfseries\addfontfeatures{LetterSpace=12}, text=ink] at (0.25,6.24) {PREDICT};
+\node[anchor=base west, font=\fs{6.6}{7.6}, text=faint] at (1.62,6.24) {once per unique state};
+\node[anchor=base west, font=\fs{6.6}{7.6}\bfseries\addfontfeatures{LetterSpace=12}, text=ink] at (8.65,6.24) {EXECUTE};
+\node[anchor=base west, font=\fs{6.6}{7.6}, text=faint] at (10.07,6.24) {any number of agents};
+
+% ---------------- K: the behavioural kernel (tall) ----------------
+\begin{pgfonlayer}{cards}\draw[comp=kernel] (0.25,\yB) rectangle (3.35,\yTt);\end{pgfonlayer}
+\node[badge=kernel] at (0.68,5.51) {K};
+\node[ttl] at (1.0,5.4) {Kernel};
+\node[bdy=2.7] at (0.45,5.05) {Jev returns a typed answer distribution for every unique persona × content × situation × condition};
+\foreach \h [count=\i from 0] in {0.36,0.70,1.00,0.62,0.28} {
+  \fill[kernel!80, rounded corners=0.6pt] ({0.98+\i*0.34},2.2) rectangle ++(0.24,{\h*1.0});
+}
+\draw[rule, line width=0.6pt] (0.86,2.2) -- (2.76,2.2);
+\node[capt, anchor=base] at (1.81,1.93) {P(answer\,|\,state)};
+\node[num=kernel] at (0.45,1.4) {\KPrice};
+\node[capt] at (0.45,1.14) {per 1,000 predictions};
+\node[num=kernel] at (0.45,0.42+0.26) {\KLatency};
+\node[capt] at (0.45,0.42) {median latency per call};
+
+% ---------------- the state table (an artefact, not a component) ----------------
+\begin{pgfonlayer}{cards}\draw[artf] (3.9,\yT) rectangle (7.85,\yTt);\end{pgfonlayer}
+\node[ttl] at (4.12,5.4) {State table};
+\node[bdy=2.3] at (4.12,5.05) {one row per unique state, queried once and reused by every agent};
+\begin{scope}[shift={(6.55,3.68)}]
+  \foreach \r in {0,...,5} \foreach \c in {0,...,4} {
+    \pgfmathsetmacro{\fillc}{ifthenelse(\r==5,"rule!70","white")}
+    \draw[rule, line width=0.35pt, fill=\fillc] (\c*0.22,\r*0.22) rectangle ++(0.22,0.22);
+  }
+  \fill[flag!55] (2*0.22,3*0.22) rectangle ++(0.22,0.22);
+  \fill[flag!55] (0*0.22,1*0.22) rectangle ++(0.22,0.22);
+  \fill[flag!55] (3*0.22,0*0.22) rectangle ++(0.22,0.22);
+\end{scope}
+\node[capt, anchor=base east] at (7.65,3.47) {corrected cells};
+\fill[flag!55] (6.04,3.47) rectangle ++(0.14,0.14);
+
+% ---------------- I: intervention anchors ----------------
+\begin{pgfonlayer}{cards}\draw[comp=flag] (3.9,\yB) rectangle (7.85,\yBt);\end{pgfonlayer}
+\node[badge=flag] at (4.33,2.31) {I};
+\node[ttl] at (4.65,2.2) {Intervention anchors};
+\node[bdy=2.35] at (4.12,1.86) {a flagship LLM predicts sparse paired states under control and treatment};
+\begin{scope}[shift={(6.62,0.08)}]
+  \node[draw=flag!70, fill=white, rounded corners=2.5pt, minimum width=0.94cm, minimum height=0.3cm, font=\fs{5.5}{6.5}, text=flag] (pc) at (0.47,1.62) {control};
+  \node[draw=flag!70, fill=flag!12, rounded corners=2.5pt, minimum width=0.94cm, minimum height=0.3cm, font=\fs{5.5}{6.5}, text=flag] (pt) at (0.47,0.98) {treatment};
+  \draw[small arrow, flag] (pc.south) -- (pt.north);
+  \node[font=\fs{6.6}{7}\bfseries, text=flag, anchor=west] at (0.53,1.3) {Δ};
+\end{scope}
+\node[num=flag] (ia) at (4.12,0.42) {\KAnchors};
+\node[capt] at ($(ia.base east)+(0.1,0)$) {of the states};
+
+% ---------------- T: tabulated execution ----------------
+\begin{pgfonlayer}{cards}\draw[comp=exec] (8.65,\yT) rectangle (12.6,\yTt);\end{pgfonlayer}
+\node[badge=exec] at (9.08,5.51) {T};
+\node[ttl] at (9.4,5.4) {Tabulated execution};
+\node[bdy=2.8] at (8.87,5.05) {event-keyed draws, with common random numbers across conditions};
+\pgfmathsetseed{7}
+\foreach \r in {0,...,4} \foreach \c in {0,...,3} {
+  \pgfmathsetmacro{\u}{rnd}
+  \pgfmathsetmacro{\col}{ifthenelse(\u<0.4,"exec","exec!22")}
+  \fill[\col] ({11.83+\c*0.19},{3.96+\r*0.19}) circle (0.056);
+}
+\node[num=exec] (ta) at (8.87,3.78) {\KExec};
+\node[capt] at (8.87,3.54) {for 10\textsuperscript{6} agents × 20 decisions};
+
+% ---------------- E: error propagation ----------------
+\begin{pgfonlayer}{cards}\draw[comp=human] (8.65,\yB) rectangle (12.6,\yBt);\end{pgfonlayer}
+\node[badge=human] at (9.08,2.31) {E};
+\node[ttl] at (9.4,2.2) {Error propagation};
+\node[bdy=2.5] at (8.87,1.86) {one shared draw per study and arm:\\[1pt] θ\,=\,βx\,+\,b\,+\,u};
+\begin{scope}[shift={(11.9,0.98)}]
+  \fill[human!22] plot[domain=-0.33:0.33, samples=40, smooth] (\x,{0.74*exp(-(\x*\x)/(2*0.2*0.2))}) -- (0.33,0) -- (-0.33,0) -- cycle;
+  \draw[human, line width=0.8pt] plot[domain=-0.55:0.55, samples=60, smooth] (\x,{0.74*exp(-(\x*\x)/(2*0.2*0.2))});
+  \draw[rule, line width=0.6pt] (-0.6,0) -- (0.6,0);
+\end{scope}
+\node[num=human] at (8.87,0.68) {\KCovA\ / \KCovB};
+\node[capt] at (8.87,0.42) {coverage of unseen human effects};
+
+% ---------------- outcomes (an artefact, tall) ----------------
+\begin{pgfonlayer}{cards}\draw[artf] (13.15,\yB) rectangle (16.15,\yTt);\end{pgfonlayer}
+\node[ttl] at (13.37,5.4) {Outcomes};
+\node[bdy=2.6] at (13.37,5.05) {intervention effects and decisions, each with two uncertainties};
+\begin{scope}[shift={(13.66,2.2)}]
+  \fill[human!20, rounded corners=1.5pt] (-0.15,0) rectangle (0.15,1.95);
+  \fill[kernel!85, rounded corners=0.8pt] (-0.055,0.8) rectangle (0.055,1.16);
+  \fill[ink] (0,0.98) circle (0.055);
+  \node[anchor=north west, align=left, font=\fs{5.9}{6.9}\bfseries, text=human] at (0.32,1.95) {shared\\discrepancy};
+  \node[anchor=north west, align=left, font=\fs{5.6}{6.6}, text=faint] at (0.32,1.42) {does not shrink\\with agents};
+  \node[anchor=north west, align=left, font=\fs{5.9}{6.9}\bfseries, text=kernel] at (0.32,0.76) {Monte Carlo};
+  \node[anchor=north west, align=left, font=\fs{5.6}{6.6}, text=faint] at (0.32,0.48) {shrinks as\\agents grow};
+\end{scope}
+\node[num=ink] at (13.37,1.36) {−\KEffErr};
+\node[capt] at (13.37,1.1) {effect error, Epstein};
+\node[num=ink] (g1) at (13.37,0.68) {\KGainA};
+\draw[small arrow, ink] ($(g1.base east)+(0.07,0.11)$) -- ++(0.3,0);
+\node[num=ink] at ($(g1.base east)+(0.44,0)$) {\KGainB};
+\node[capt] at (13.37,0.42) {decision gain, SocSci210};
+
+% ---------------- flows ----------------
+\draw[flow] (3.35,\yM) -- (3.9,\yM);
+\draw[flow] (7.85,\yM) -- (8.65,\yM);
+\draw[flow] (12.6,\yM) -- (13.15,\yM);
+\draw[flow, draw=flag] (5.3,\yBt) -- (5.3,\yT);
+\node[lab=flag, anchor=west, align=left] at (5.45,3.05) {tilts each cell to the\\flagship's paired effect};
+\draw[flow] (10.4,\yT) -- (10.4,\yBt);
+\node[lab=faint, anchor=west] at (10.55,3.05) {model effect x};
+\draw[flow, draw=human] (12.6,\yL) -- (13.15,\yL);
+\end{tikzpicture}
+\end{document}

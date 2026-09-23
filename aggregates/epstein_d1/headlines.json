@@ -1,0 +1,157 @@
+{
+ "criteria": "configs/eval/epstein_headline_criteria.yaml",
+ "units": 200,
+ "arms": [
+  "2:evaluation",
+  "2:long_evaluation",
+  "3:evaluation",
+  "3:generic_norms",
+  "3:tips",
+  "4:partisan_norms",
+  "4:tips",
+  "4:tips_norms",
+  "5:importance",
+  "5:importance_norms"
+ ],
+ "stats": {
+  "kernel": {
+   "within_arm_pearson": 0.021952056638288156,
+   "within_arm_spearman": 0.09400585014625368,
+   "within_arm_sign_agreement": 0.545,
+   "within_arm_veracity_pearson": -0.19341873146740735,
+   "false_only_within_arm_pearson": -0.2375955006383342,
+   "true_only_within_arm_pearson": -0.10759098485113085
+  },
+  "hybrid": {
+   "within_arm_pearson": 0.15715631193899715,
+   "within_arm_spearman": 0.23495237380934525,
+   "within_arm_sign_agreement": 0.62,
+   "within_arm_veracity_pearson": -0.1466361002202082,
+   "false_only_within_arm_pearson": -0.25989606445994584,
+   "true_only_within_arm_pearson": 0.013246191009340045
+  },
+  "flagship_audit": {
+   "within_arm_pearson": 0.39221376406662484,
+   "within_arm_spearman": 0.3800878947303555,
+   "within_arm_sign_agreement": 0.635,
+   "within_arm_veracity_pearson": 0.14610592061677694,
+   "false_only_within_arm_pearson": 0.18555758993715485,
+   "true_only_within_arm_pearson": 0.08464699709402809
+  },
+  "baseline": {
+   "within_arm_pearson": 0.3828119535669612,
+   "within_arm_spearman": 0.3474759985772317,
+   "within_arm_sign_agreement": 0.68,
+   "within_arm_veracity_pearson": 0.04058718085438601,
+   "false_only_within_arm_pearson": 0.015617654105888442,
+   "true_only_within_arm_pearson": 0.11793097242683977
+  }
+ },
+ "ci95": {
+  "kernel": {
+   "within_arm": [
+    -0.11209870315165721,
+    0.13777791432882416
+   ],
+   "within_arm_veracity": [
+    -0.2712089041671446,
+    -0.004077130749629308
+   ]
+  },
+  "hybrid": {
+   "within_arm": [
+    -0.0014350345927031714,
+    0.24126521492726313
+   ],
+   "within_arm_veracity": [
+    -0.23282954918185558,
+    0.018738555712096656
+   ]
+  },
+  "flagship_audit": {
+   "within_arm": [
+    0.1783158839802263,
+    0.43287284446897567
+   ],
+   "within_arm_veracity": [
+    -0.030959897917655528,
+    0.23690223470849817
+   ]
+  },
+  "baseline": {
+   "within_arm": [
+    0.158346100621381,
+    0.43312227143943177
+   ],
+   "within_arm_veracity": [
+    -0.1296663639547697,
+    0.17743852767270657
+   ]
+  }
+ },
+ "differences": {
+  "hybrid-kernel": {
+   "within_arm": {
+    "point": 0.135204255300709,
+    "ci": [
+     0.006937774539125571,
+     0.19505832840395082
+    ]
+   },
+   "within_arm_veracity": {
+    "point": 0.04678263124719914,
+    "ci": [
+     -0.07598276004734006,
+     0.13449891319780224
+    ]
+   }
+  },
+  "hybrid-flagship_audit": {
+   "within_arm": {
+    "point": -0.2350574521276277,
+    "ci": [
+     -0.2942906530737854,
+     -0.07576261229171086
+    ]
+   },
+   "within_arm_veracity": {
+    "point": -0.29274202083698514,
+    "ci": [
+     -0.3566952905422527,
+     -0.060302862952574
+    ]
+   }
+  },
+  "hybrid-baseline": {
+   "within_arm": {
+    "point": -0.22565564162796403,
+    "ci": [
+     -0.30874418145188276,
+     -0.04262342912557643
+    ]
+   },
+   "within_arm_veracity": {
+    "point": -0.1872232810745942,
+    "ci": [
+     -0.3157865561148345,
+     0.05112906755013346
+    ]
+   }
+  }
+ },
+ "human_split_half_reliability_within_arm": 0.39160284204210155,
+ "attenuation_corrected_within_arm": {
+  "kernel": 0.03507941134684608,
+  "hybrid": 0.25113596430166846,
+  "flagship_audit": 0.6267580387702972,
+  "baseline": 0.6117339349536393
+ },
+ "primary": {
+  "statistic": 0.15715631193899715,
+  "ci95": [
+   -0.0014350345927031714,
+   0.24126521492726313
+  ],
+  "verdict": "NOT SHOWN"
+ }
+}
