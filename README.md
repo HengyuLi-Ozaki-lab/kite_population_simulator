@@ -4,6 +4,9 @@
 Population experiments on a typed behavioral kernel (TypeSafe's Jev, `jev-1.13.0`), with sparse flagship-LLM
 corrections and propagated human–model discrepancy.
 
+**Showcase:** [hengyuli-ozaki-lab.github.io/kite_population_simulator](https://hengyuli-ozaki-lab.github.io/kite_population_simulator/),
+the architecture and the held-out results on one page.
+
 This repository accompanies the preprint
 
 > Hengyu Li (2026). *KITE: Scaling Jev Population Experiments with Sparse Flagship Calibration.* arXiv preprint
