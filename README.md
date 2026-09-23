@@ -76,10 +76,7 @@ the Arechar OSF project state no licence, so their original terms apply.
 
 ## Use of generative AI
 
-Beyond the models evaluated here, generative AI tools were used throughout the project: Claude (Anthropic, via Claude
-Code) for research planning, analysis code and evaluation records, and GPT-6 Astra (OpenAI, via the Codex CLI) for
-design discussions and for drafting the manuscript text. The author directed the work and takes full responsibility
-for all content.
+Beyond the models evaluated here, generative AI tools were used throughout the project: Claude (Anthropic, via Claude Code) for analysis code and evaluation records. The author directed the work and takes full responsibility for all content.
 
 ## Citation
 
