@@ -18,6 +18,8 @@ is drawn from. It does not contain survey microdata or the Jev response cache (s
 
 ## The architecture
 
+![KITE's architecture running the method once: the inputs feed the kernel (K), which fills the state table once per unique state; the flagship's paired anchor calls (I) tilt the treated row; the population runs from the table (T); the shared human–model gap widens the interval (E).](docs/readme/kite-architecture.gif)
+
 - **Kernel.** Jev returns a typed answer distribution for a described respondent in a described situation. KITE asks
   it once per unique state (persona × content × situation × condition) and stores the answer in a state table.
 - **Intervention anchors.** A flagship LLM predicts a sparse set of *paired* states — the same persona and content
@@ -29,6 +31,14 @@ is drawn from. It does not contain survey microdata or the Jev response cache (s
 - **Error propagation.** The measured human–model discrepancy on condition effects,
   θ = β·x + b(study) + u(arm), is drawn once per study and arm and shared by every agent, so intervals describe
   uncertainty about people rather than Monte Carlo noise (`scripts/d2_discrepancy_model.py`).
+
+## Results at a glance
+
+![KITE results at a glance. A: intervention-effect error −41%, kernel 0.0305 to hybrid 0.0180 (Epstein 2021, held out). B: captured decision gain +0.12, 0.27 to 0.39 (SocSci210, 37 unseen experiments). C: held-out coverage of nominal 90% intervals 96%, against 36% from sampling error alone. D: 10⁶ agents × 20 steps from the state table in 0.90 s.](docs/readme/kite-results.png)
+
+Every number is read on held-out human experiments, with the criteria committed before the results were read. The
+values are in [`aggregates/`](aggregates/), and the
+[showcase](https://hengyuli-ozaki-lab.github.io/kite_population_simulator/) walks through each result.
 
 ## Layout
 
