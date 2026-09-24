@@ -460,7 +460,12 @@ body { overflow-x: hidden; }
 .k-margin { display: grid; grid-template-columns: minmax(0, 1fr) 256px; gap: 44px; align-items: start; }
 .k-notes { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--nav-h) + 32px); min-width: 0; }
 .k-gap { margin-top: 20px; }
-.k-colophon { border-top: 1px solid var(--hair-2); }  /* the last chapter is a band too: a hairline parts them */
+.k-colophon { border-top: 1px solid var(--hair-2); }
+.k-act .kg { margin-top: 44px; }  /* Act I opens with the four results on one figure (summary_figure.py) */
+.k-glance-files { margin-top: 12px; }
+.k-glance-files a, .k-cite a { color: var(--accent); }
+.k-cite { grid-column: 1 / -1; margin: 4px 0 0; padding-top: 20px; border-top: 1px solid var(--hair-2); font: 400 12.5px/1.6 var(--font-mono); color: var(--ink-2); }
+.k-cite i { font-family: var(--font-serif); font-size: 15px; color: var(--ink); }  /* the last chapter is a band too: a hairline parts them */
 @media (max-width: 1040px) {
   .k-margin { grid-template-columns: 1fr; }
   .k-notes { position: static; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 28px; }
@@ -582,6 +587,45 @@ circle.f-false { fill: var(--plate); stroke: var(--data-false); stroke-width: 1.
   .k-plate[data-enter] .chart > svg { animation: k-draw var(--dur-slow) var(--ease-settle) both; }
   @keyframes k-draw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
 }
+
+.kg { container-type: inline-size; box-sizing: border-box; margin: 0; padding: 34px 36px 26px; border-radius: var(--radius-lg); background: var(--band); color: var(--ink); font-family: var(--font-sans); text-align: left; }
+.kg * { box-sizing: border-box; }
+.kg-top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 24px; margin-bottom: 22px; }
+.kg-brand { display: flex; align-items: center; gap: 12px; }
+.kg-brand svg { width: 16px; height: 23px; fill: none; stroke: var(--accent); stroke-width: 1.7; stroke-linejoin: round; }
+.kg-title { margin: 0; font: 650 28px/1.1 var(--font-sans); letter-spacing: -.03em; color: var(--ink); }
+.kg-title em { font-style: normal; background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.kg-note { margin: 0 0 3px; max-width: 26em; text-align: right; font-size: 13px; line-height: 1.45; color: var(--ink-2); }
+.kg-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.kg-card { display: flex; flex-direction: column; min-width: 0; padding: 20px 22px 16px; border-radius: 18px; background: var(--surface); box-shadow: 0 1px 2px rgba(11, 12, 15, .05); }
+.kg-eyebrow { display: flex; align-items: center; gap: 8px; margin: 0; font: 500 11px/1.4 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.kg-eyebrow b { padding: 2px 8px; border-radius: 999px; background: var(--accent-tint); color: var(--accent); font-weight: 600; letter-spacing: .06em; }
+.kg-head { display: flex; align-items: baseline; gap: 14px; margin: 10px 0 8px; }
+.kg-big { font: 650 44px/1 var(--font-sans); letter-spacing: -.04em; white-space: nowrap; background: linear-gradient(90deg, var(--ink) 40%, var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.kg-claim { margin: 0; font: 600 14.5px/1.35 var(--font-sans); letter-spacing: -.01em; color: var(--ink); }
+.kg-claim span { display: block; font-weight: 400; color: var(--ink-2); }
+.kg-chart { display: block; width: 100%; height: auto; margin: 6px 0 8px; overflow: visible; }
+.kg-foot { margin: auto 0 0; padding-top: 9px; border-top: 1px solid var(--hair); font: 400 11px/1.55 var(--font-mono); color: var(--muted); }
+.kg-foot b { font-weight: 600; color: var(--ink); }
+.kg-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 16px; margin-top: 16px; font: 400 11px/1.4 var(--font-mono); color: var(--muted); }
+.kg-bottom a { color: inherit; text-decoration: none; }
+.kg-key { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; }
+.kg-key span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.kg-key s { display: inline-block; width: 10px; height: 10px; border-radius: 3px; text-decoration: none; }
+.kg-key .x { background: var(--data-hybrid); } .kg-key .k { background: var(--data-kernel); } .kg-key .a { background: var(--data-flagship); } .kg-key .n { background: var(--data-null); }
+.kg-chart text { font-family: var(--font-mono); }
+.kg-chart .tick { font-size: 10.5px; fill: var(--muted); }
+.kg-chart .row { font-family: var(--font-sans); font-size: 12px; fill: var(--ink-2); }
+.kg-chart .val { font-size: 11.5px; fill: var(--ink); font-weight: 500; }
+.kg-chart .note { font-size: 10.5px; fill: var(--ink-2); }
+.kg-chart .grid { stroke: var(--hair); stroke-width: 1; }
+.kg-chart .floor, .kg-chart .nominal { stroke: var(--ink-2); stroke-width: 1.2; stroke-dasharray: 4 3; }
+.kg-chart .x { fill: var(--data-hybrid); } .kg-chart .k { fill: var(--data-kernel); } .kg-chart .a { fill: var(--data-flagship); } .kg-chart .n { fill: var(--data-null); }
+@container (max-width: 820px) {
+  .kg-grid { grid-template-columns: minmax(0, 1fr); }
+  .kg-note { text-align: left; }
+}
+@media (max-width: 560px) { .kg { padding: 22px 16px 18px; border-radius: 22px; } .kg-card { padding: 18px 16px 14px; } .kg-big { font-size: 38px; } .kg-title { font-size: 24px; } }
 </style>
 </head>
 <body>
@@ -590,7 +634,7 @@ circle.f-false { fill: var(--plate); stroke: var(--data-false); stroke-width: 1.
   <div class="k-wrap">
     <a class="k-mark" href="#top"><svg viewBox="0 0 13 19" aria-hidden="true"><path d="M6.5 1 L12 5.5 L6.5 18 L1 5.5 Z"/></svg><b>KITE</b><span>Social wind tunnel</span></a>
     <nav class="k-nav-links" aria-label="Page">
-      <a href="#method">Method</a><a href="#act-1">Results</a><a href="#act-2">Scale</a><a href="#act-3">Why anchors</a><a href="#act-4">Frontier</a><a href="#colophon">Data</a>
+      <a href="#method">Method</a><a href="#act-1">Results</a><a href="#act-2">Scale</a><a href="#act-3">Why anchors</a><a href="#act-4">Frontier</a><a href="#colophon">Data</a><a href="https://arxiv.org/abs/2609.27535">Paper ↗</a>
     </nav>
     <details class="k-toc">
       <summary>Contents</summary>
@@ -620,7 +664,7 @@ circle.f-false { fill: var(--plate); stroke: var(--data-false); stroke-width: 1.
     <p class="k-kicker">Kernel · Intervention anchors · Tabulated execution · Error propagation</p>
     <h1 class="k-h1">Predict once. <em>Execute a million times.</em></h1>
     <p class="k-sub">Spend the flagship model only where the kernel cannot see, and carry the systematic gap between model and people into every conclusion as shared error. Every number on this page is read on held-out human experiments.</p>
-    <div class="k-cta"><a class="k-btn" href="#act-1">See the results</a><a class="k-link" href="#method">How it works <span class="k-arrow">→</span></a></div>
+    <div class="k-cta"><a class="k-btn" href="#act-1">See the results</a><a class="k-link" href="#method">How it works <span class="k-arrow">→</span></a><a class="k-link" href="https://arxiv.org/abs/2609.27535">Read the paper <span class="k-arrow">↗</span></a></div>
     <p class="k-hero-meta"><span><b>Epstein 2021</b> · 9,070 people · 8 interventions</span><span><b>SocSci210</b> · 37 held-out experiments</span><span><b>Arechar 2023</b> · 16 countries</span><span>Criteria frozen before results were read</span></p>
     <figure class="k-hero-panel k-arch" id="arch" aria-labelledby="arch-cap">
       <figcaption class="k-sr" id="arch-cap">KITE architecture. Personas, content and conditions go to K, the kernel: Jev, asked once per unique state (73,600 predictions, $1.60 on Epstein), which fills the state table under control and treatment. I, the anchors: GPT-6 Astra makes paired calls on 1.7% of states (1,080 anchors), and the treated row is tilted to the flagship's paired effect. T runs the population from the table: 10⁶ agents × 20 steps in 0.90 s. E carries the gap between model and people into every conclusion: held-out coverage of nominal 90% intervals rises from 36% to 96%.</figcaption>
@@ -693,6 +737,8 @@ circle.f-false { fill: var(--plate); stroke: var(--data-false); stroke-width: 1.
     <h2 class="k-act-title">Results</h2>
     <p class="k-act-sub">Effect error −41%. Decision gain +0.12. Coverage 36% → 96%.</p>
     <p class="k-act-lede">Every criterion was committed before any result was read, and each test ran once. Every number is read on held-out human experiments.</p>
+    <figure class="kg" id="glance" aria-label="KITE results at a glance"><div class="kg-top"><div class="kg-brand"><svg viewBox="0 0 14 20" aria-hidden="true"><path d="M7 1 L13 6 L7 19 L1 6 Z"/></svg><p class="kg-title">KITE · results <em>at a glance</em></p></div></div><div class="kg-grid"><div class="kg-card"><p class="kg-eyebrow"><b>A</b>Epstein 2021 · held out</p><div class="kg-head"><span class="kg-big">−41%</span><p class="kg-claim">Intervention-effect error<span>kernel → hybrid, ten within-wave effects</span></p></div><svg class="kg-chart" viewBox="0 0 402 160" role="img" aria-label="Effect MAE: kernel, flagship audit, hybrid"><line class="grid" x1="110.0" x2="110.0" y1="20" y2="132"/><text class="tick" x="110.0" y="148" text-anchor="middle">0.00</text><line class="grid" x1="176.9" x2="176.9" y1="20" y2="132"/><text class="tick" x="176.9" y="148" text-anchor="middle">0.01</text><line class="grid" x1="243.7" x2="243.7" y1="20" y2="132"/><text class="tick" x="243.7" y="148" text-anchor="middle">0.02</text><line class="grid" x1="310.6" x2="310.6" y1="20" y2="132"/><text class="tick" x="310.6" y="148" text-anchor="middle">0.03</text><text class="row" x="100" y="45" text-anchor="end">Kernel (Jev)</text><rect class="k" x="110" y="32" width="203.9" height="18" rx="4"/><text class="val" x="320.9" y="45">0.0305</text><text class="row" x="100" y="81" text-anchor="end">Flagship audit</text><rect class="a" x="110" y="68" width="133.6" height="18" rx="4"/><text class="val" x="250.6" y="81">0.0200</text><text class="row" x="100" y="117" text-anchor="end">Hybrid (KITE)</text><rect class="x" x="110" y="104" width="120.3" height="18" rx="4"/><text class="val" x="237.3" y="117">0.0180</text><line class="floor" x1="188.2" x2="188.2" y1="14" y2="134"/><text class="note" x="193.2" y="13">perfect-model floor 0.0117</text></svg><p class="kg-foot">Kernel − hybrid <b>+0.0125</b> [+0.0064, +0.0167], participant bootstrap · 9,070 people · 1,080 paired anchors = 1.7% of states</p></div><div class="kg-card"><p class="kg-eyebrow"><b>B</b>SocSci210 · 37 unseen experiments</p><div class="kg-head"><span class="kg-big">+0.12</span><p class="kg-claim">Captured decision gain<span>0.27 → 0.39 for the hybrid</span></p></div><svg class="kg-chart" viewBox="0 0 402 150" role="img" aria-label="Captured decision gain: kernel, flagship, hybrid"><line class="grid" x1="34" x2="392" y1="124.0" y2="124.0"/><text class="tick" x="28" y="128.0" text-anchor="end">0.0</text><line class="grid" x1="34" x2="392" y1="102.4" y2="102.4"/><text class="tick" x="28" y="106.4" text-anchor="end">0.1</text><line class="grid" x1="34" x2="392" y1="80.8" y2="80.8"/><text class="tick" x="28" y="84.8" text-anchor="end">0.2</text><line class="grid" x1="34" x2="392" y1="59.2" y2="59.2"/><text class="tick" x="28" y="63.2" text-anchor="end">0.3</text><line class="grid" x1="34" x2="392" y1="37.6" y2="37.6"/><text class="tick" x="28" y="41.6" text-anchor="end">0.4</text><line class="grid" x1="34" x2="392" y1="16.0" y2="16.0"/><text class="tick" x="28" y="20.0" text-anchor="end">0.5</text><rect class="k" x="66.2" y="66.2" width="54.9" height="57.8" rx="4"/><text class="val" x="93.7" y="60.2" text-anchor="middle">0.268</text><text class="row" x="93.7" y="143" text-anchor="middle">Kernel</text><rect class="a" x="185.6" y="51.3" width="54.9" height="72.7" rx="4"/><text class="val" x="213.0" y="45.3" text-anchor="middle">0.336</text><text class="row" x="213.0" y="143" text-anchor="middle">Flagship, 5/cell</text><rect class="x" x="304.9" y="40.6" width="54.9" height="83.4" rx="4"/><text class="val" x="332.3" y="34.6" text-anchor="middle">0.386</text><text class="row" x="332.3" y="143" text-anchor="middle">Hybrid (KITE)</text></svg><p class="kg-foot">Hybrid − kernel <b>+0.119</b> [+0.014, +0.224], study bootstrap · flagship calls for 1–3 personas per task</p></div><div class="kg-card"><p class="kg-eyebrow"><b>C</b>Error propagation · 91 seen → 37 unseen studies</p><div class="kg-head"><span class="kg-big">96%</span><p class="kg-claim">Coverage of nominal 90% intervals<span>sampling error alone: 36%</span></p></div><svg class="kg-chart" viewBox="0 0 402 150" role="img" aria-label="Coverage of nominal intervals: sampling error alone vs discrepancy model"><line class="grid" x1="34" x2="392" y1="124.0" y2="124.0"/><text class="tick" x="28" y="128.0" text-anchor="end">0</text><line class="grid" x1="34" x2="392" y1="96.5" y2="96.5"/><text class="tick" x="28" y="100.5" text-anchor="end">25</text><line class="grid" x1="34" x2="392" y1="69.0" y2="69.0"/><text class="tick" x="28" y="73.0" text-anchor="end">50</text><line class="grid" x1="34" x2="392" y1="41.5" y2="41.5"/><text class="tick" x="28" y="45.5" text-anchor="end">75</text><line class="grid" x1="34" x2="392" y1="14.0" y2="14.0"/><text class="tick" x="28" y="18.0" text-anchor="end">100%</text><rect class="n" x="55.5" y="108.6" width="35.8" height="15.4" rx="4"/><text class="val" x="73.4" y="102.6" text-anchor="middle">14%</text><rect class="x" x="96.1" y="50.4" width="35.8" height="73.6" rx="4"/><text class="val" x="114.0" y="44.4" text-anchor="middle">67%</text><line class="nominal" x1="45.9" x2="141.4" y1="69.0" y2="69.0"/><text class="row" x="93.7" y="143" text-anchor="middle">nominal 50%</text><rect class="n" x="174.8" y="92.3" width="35.8" height="31.7" rx="4"/><text class="val" x="192.7" y="86.3" text-anchor="middle">29%</text><rect class="x" x="215.4" y="21.5" width="35.8" height="102.5" rx="4"/><text class="val" x="233.3" y="15.5" text-anchor="middle">93%</text><line class="nominal" x1="165.3" x2="260.7" y1="36.0" y2="36.0"/><text class="row" x="213.0" y="143" text-anchor="middle">nominal 80%</text><rect class="n" x="294.1" y="84.2" width="35.8" height="39.8" rx="4"/><text class="val" x="312.0" y="78.2" text-anchor="middle">36%</text><rect class="x" x="334.7" y="18.5" width="35.8" height="105.5" rx="4"/><text class="val" x="352.6" y="12.5" text-anchor="middle">96%</text><line class="nominal" x1="284.6" x2="380.1" y1="25.0" y2="25.0"/><text class="row" x="332.3" y="143" text-anchor="middle">nominal 90%</text></svg><p class="kg-foot">People's effect = β · model effect + study term + condition term (β 0.925, τ 0.037, σ 0.080), read on 532 held-out effects</p></div><div class="kg-card"><p class="kg-eyebrow"><b>D</b>Tabulated execution · one laptop</p><div class="kg-head"><span class="kg-big">0.90 s</span><p class="kg-claim">10⁶ agents × 20 steps<span>run from the state table</span></p></div><svg class="kg-chart" viewBox="0 0 402 150" role="img" aria-label="Seconds for 20 steps from the table, log axis"><line class="grid" x1="159.8" x2="159.8" y1="6" y2="122"/><text class="tick" x="159.8" y="138" text-anchor="middle">10 ms</text><line class="grid" x1="239.9" x2="239.9" y1="6" y2="122"/><text class="tick" x="239.9" y="138" text-anchor="middle">0.1 s</text><line class="grid" x1="319.9" x2="319.9" y1="6" y2="122"/><text class="tick" x="319.9" y="138" text-anchor="middle">1 s</text><text class="row" x="108" y="28" text-anchor="end">10⁴ agents</text><rect class="x" x="118" y="15" width="30.9" height="17" rx="4"/><text class="val" x="155.9" y="28">7 ms</text><text class="row" x="108" y="56" text-anchor="end">10⁵ agents</text><rect class="x" x="118" y="43" width="111.9" height="17" rx="4"/><text class="val" x="236.9" y="56">0.07 s</text><text class="row" x="108" y="84" text-anchor="end">10⁶ agents</text><rect class="x" x="118" y="71" width="198.4" height="17" rx="4"/><text class="val" x="323.4" y="84">0.90 s</text><text class="row" x="108" y="112" text-anchor="end">Scalar 10⁴ agents</text><rect class="n" x="118" y="99" width="200.1" height="17" rx="4"/><text class="val" x="325.1" y="112">0.95 s</text></svg><p class="kg-foot">New kernel predictions: <b>$0.023</b> per 1,000 · 500 people × 20 cards × 2 conditions = 20,000 fresh states for $0.32</p></div></div><div class="kg-bottom"><span class="kg-key"><span><s class="x"></s>KITE</span><span><s class="k"></s>Kernel alone</span><span><s class="a"></s>Flagship</span><span><s class="n"></s>Baseline</span></span><a href="https://github.com/HengyuLi-Ozaki-lab/kite_population_simulator">github.com/HengyuLi-Ozaki-lab/kite_population_simulator</a></div></figure>
+    <p class="k-src k-glance-files">The same figure as <a href="https://hengyuli-ozaki-lab.github.io/kite_population_simulator/kite-results.png">PNG</a> and <a href="https://hengyuli-ozaki-lab.github.io/kite_population_simulator/kite-results.pdf">PDF</a>; the paper is <a href="https://arxiv.org/abs/2609.27535">arXiv:2609.27535</a>.</p>
   </div>
 </section>
 
@@ -1159,6 +1205,7 @@ circle.f-false { fill: var(--plate); stroke: var(--data-false); stroke-width: 1.
     <div><h4>Colophon · Data and sources</h4><p>SocSci210 (Kolluri et al., 2025): 91 seen studies for development, 37 unseen studies held out. Arechar et al. 2023 (OSF g65qu): the US calibration set and 15 held-out countries. Epstein et al. 2021 (Harvard Dataverse, CC0): 5 waves, 9,070 people. The page carries aggregate statistics only; headlines appear as topic tags, with no original text and no respondent-level data.</p></div>
     <div><h4>Method · Models and cost</h4><p>Kernel = jev-1.13.0, phrasing p3 (one Noul per option), $0.023 per 1k new predictions, p50 213 ms. Flagship = GPT-6 Astra (high reasoning effort), run through a local Codex; at list prices it costs <span id="cost-ratio"></span>× the kernel per 1k predictions. GPT-5.6 Luna is the cheapest tier, not a flagship. Kernel spend on the three held-out experiments: Epstein $1.60, SocSci210 full population $4.53, the scale demo $0.32.</p></div>
     <div><h4>Protocol · Criteria and errata</h4><p>Every held-out test's criteria file was committed before any result was read (Epstein, SocSci210 paired anchors, and the three Arechar held-out parts); errata are appended, never rewritten. Primary and secondary endpoints are reported as declared: Epstein's policy-value primary endpoint was not shown, and SocSci210's approximation-gain primary endpoint passed. Whether the intervention effects the flagship sees come from inference or from memory of the literature is not yet separated.<span id="commit"></span></p></div>
+    <p class="k-cite">Cite as: Hengyu Li (2026). <i>KITE: Scaling Jev Population Experiments with Sparse Flagship Calibration.</i> arXiv:2609.27535 [cs.MA]. <a href="https://arxiv.org/abs/2609.27535">arxiv.org/abs/2609.27535</a></p>
     <p class="k-sig">Facta, non verba — the numbers come from held-out experiments, not from the demo.</p>
   </div>
 </footer>
@@ -2507,7 +2554,7 @@ function svgIn(el, w, h) { el.innerHTML = ''; return d3.select(el).append('svg')
   });
 
   /* the nav link of the act being read */
-  const links = Array.from(document.querySelectorAll('.k-nav-links a'));
+  const links = Array.from(document.querySelectorAll('.k-nav-links a[href^="#"]'));  // the paper link leaves the page
   const marks = links.map(a => document.querySelector(a.getAttribute('href')));
   let pending = false;
   const current = () => {
