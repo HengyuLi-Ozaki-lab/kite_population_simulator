@@ -4,13 +4,14 @@
 Population experiments on a typed behavioral kernel (TypeSafe's Jev, `jev-1.13.0`), with sparse flagship-LLM
 corrections and propagated human–model discrepancy.
 
+**Paper:** [arXiv:2609.27535](https://arxiv.org/abs/2609.27535) ·
 **Showcase:** [hengyuli-ozaki-lab.github.io/kite_population_simulator](https://hengyuli-ozaki-lab.github.io/kite_population_simulator/),
 the architecture and the held-out results on one page.
 
 This repository accompanies the preprint
 
-> Hengyu Li (2026). *KITE: Scaling Jev Population Experiments with Sparse Flagship Calibration.* arXiv preprint
-> (identifier to be added on posting).
+> Hengyu Li (2026). *KITE: Scaling Jev Population Experiments with Sparse Flagship Calibration.*
+> arXiv:2609.27535 [cs.MA]. https://arxiv.org/abs/2609.27535
 
 It contains the `kite` Python package, the script behind every evaluation, the frozen criteria files with their
 appended errata, the evaluation records, the manuscript source, and the aggregate results that every table and figure
@@ -37,7 +38,7 @@ is drawn from. It does not contain survey microdata or the Jev response cache (s
 ![KITE results at a glance. A: intervention-effect error −41%, kernel 0.0305 to hybrid 0.0180 (Epstein 2021, held out). B: captured decision gain +0.12, 0.27 to 0.39 (SocSci210, 37 unseen experiments). C: held-out coverage of nominal 90% intervals 96%, against 36% from sampling error alone. D: 10⁶ agents × 20 steps from the state table in 0.90 s.](docs/readme/kite-results.png)
 
 Every number is read on held-out human experiments, with the criteria committed before the results were read. The
-values are in [`aggregates/`](aggregates/), and the
+values are in [`aggregates/`](aggregates/), the figure is also a [PDF](docs/readme/kite-results.pdf), and the
 [showcase](https://hengyuli-ozaki-lab.github.io/kite_population_simulator/) walks through each result.
 
 ## Layout
@@ -95,11 +96,13 @@ Beyond the models evaluated here, generative AI tools were used throughout the p
 
 ```bibtex
 @misc{li2026kite,
-  author = {Li, Hengyu},
-  title  = {{KITE}: Scaling {Jev} Population Experiments with Sparse Flagship Calibration},
-  year   = {2026},
-  note   = {arXiv preprint},
-  url    = {https://github.com/HengyuLi-Ozaki-lab/kite_population_simulator}
+  author        = {Li, Hengyu},
+  title         = {{KITE}: Scaling {Jev} Population Experiments with Sparse Flagship Calibration},
+  year          = {2026},
+  eprint        = {2609.27535},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.MA},
+  url           = {https://arxiv.org/abs/2609.27535}
 }
 ```
 
