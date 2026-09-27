@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software or its evaluation records, please cite the preprint below."
+title: "KITE: population experiments on Jev with sparse flagship calibration"
+type: software
+authors:
+  - family-names: Li
+    given-names: Hengyu
+    affiliation: The University of Tokyo
+version: 0.2.0
+date-released: 2026-09-27
+license: MIT
+repository-code: "https://github.com/HengyuLi-Ozaki-lab/kite_population_simulator"
+url: "https://hengyuli-ozaki-lab.github.io/kite_population_simulator/"
+keywords:
+  - agent-based simulation
+  - computational social science
+  - large language models
+  - survey experiments
+  - forecasting
+preferred-citation:
+  type: article
+  title: "KITE: Scaling Jev Population Experiments with Sparse Flagship Calibration"
+  authors:
+    - family-names: Li
+      given-names: Hengyu
+      affiliation: The University of Tokyo
+  year: 2026
+  journal: arXiv
+  doi: "10.48550/arXiv.2609.27535"
+  url: "https://arxiv.org/abs/2609.27535"

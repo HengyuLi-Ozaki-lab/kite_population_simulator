@@ -1,0 +1,27 @@
+{
+  "title": "KITE: population experiments on Jev with sparse flagship calibration (code, evaluation records and forecast ledger)",
+  "upload_type": "software",
+  "description": "Code, frozen criteria, evaluation records and aggregate results for the preprint 'KITE: Scaling Jev Population Experiments with Sparse Flagship Calibration' (arXiv:2609.27535), and the protocol of its prospective forecast ledger: forecasts of experiments whose results are not yet public are sealed with salted SHA-256 digests and revealed after the results are out, under scoring rules fixed before any forecast.",
+  "creators": [
+    {
+      "name": "Li, Hengyu",
+      "affiliation": "The University of Tokyo"
+    }
+  ],
+  "license": "mit",
+  "keywords": [
+    "agent-based simulation",
+    "computational social science",
+    "large language models",
+    "survey experiments",
+    "forecasting",
+    "uncertainty quantification"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "arXiv:2609.27535",
+      "relation": "isSupplementTo",
+      "scheme": "arxiv"
+    }
+  ]
+}

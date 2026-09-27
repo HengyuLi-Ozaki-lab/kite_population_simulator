@@ -52,6 +52,7 @@ values are in [`aggregates/`](aggregates/), the figure is also a [PDF](docs/read
 | `docs/data/` | data provenance: schemas, file hashes, audits, what was seen before each freeze |
 | `docs/paper/arxiv/` | manuscript source, bibliography and figures (`figures/fig1_architecture.tex` is TikZ, compiled with LuaLaTeX) |
 | `aggregates/` | the aggregate results behind the paper — see [`aggregates/README.md`](aggregates/README.md) |
+| `forecasts/` | the prospective forecast ledger: protocol and scoring rules, sealed digests, revealed forecasts |
 | `tests/` | unit tests (no API key or data needed) |
 
 Records and the paper sections they support: G1, G-A (decision value) and A2–A6 → §5; C2 (Arechar, incl. the flagship
@@ -80,6 +81,14 @@ uv run kite --help
 
 Outputs are not bit-for-bit reproducible: the kernel and the flagship are hosted models, so version pins and recorded
 run hashes document what was computed but cannot guarantee identical answers later.
+
+## Prospective forecast ledger
+
+The held-out evaluations above use studies whose results were published before the models were trained, so they
+cannot rule out that a model remembers results. The ledger in [`forecasts/`](forecasts/README.md) forecasts studies
+whose results are not yet public. Each forecast is sealed with a salted SHA-256 digest and a UTC time, and the record
+is revealed only after the study's results are out, so anyone can check it against the digest. The protocol and
+scoring rules were fixed on 2026-09-27, before any forecast; each batch is published as a release archived on Zenodo.
 
 ## Data and terms
 

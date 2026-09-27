@@ -10,3 +10,6 @@ api.txt
 .ruff_cache/
 .pytest_cache/
 *.egg-info/
+
+# Sealed forecasts stay private until their results are public (forecasts/README.md)
+forecasts/sealed/
