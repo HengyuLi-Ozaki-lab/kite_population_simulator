@@ -88,7 +88,9 @@ The held-out evaluations above use studies whose results were published before t
 cannot rule out that a model remembers results. The ledger in [`forecasts/`](forecasts/README.md) forecasts studies
 whose results are not yet public. Each forecast is sealed with a salted SHA-256 digest and a UTC time, and the record
 is revealed only after the study's results are out, so anyone can check it against the digest. The protocol and
-scoring rules were fixed on 2026-09-27, before any forecast; each batch is published as a release archived on Zenodo.
+scoring rules were fixed on 2026-09-27, before any forecast; each batch is published as a release archived on Zenodo
+(protocol release: [doi:10.5281/zenodo.22999043](https://doi.org/10.5281/zenodo.22999043); all versions:
+[doi:10.5281/zenodo.22999042](https://doi.org/10.5281/zenodo.22999042)).
 
 ## Data and terms
 
