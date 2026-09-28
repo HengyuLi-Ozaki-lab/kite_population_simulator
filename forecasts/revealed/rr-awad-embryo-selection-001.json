@@ -1,0 +1,138 @@
+{
+  "record": {
+    "forecast_id": "rr-awad-embryo-selection-001",
+    "group": "post_cutoff",
+    "study": {
+      "source": "Registered report, Stage 1 in-principle acceptance 2025-10-07, Nature Human Behaviour (published 2026-08)",
+      "title": "Public Perceptions of Polygenic Testing and Embryo Selection for Non-Medical Traits",
+      "protocol": "https://springernature.figshare.com/articles/journal_contribution/30383854",
+      "protocol_sha256": "29cdeef9b5e6093f2462cebd7532cb1585f2f905e82ef81213123fad93bd4071",
+      "read_on": "2026-09-28",
+      "notes": "Post-cutoff forecast (results public after the kernel's 2026-01-01 cutoff), not prospective: the Stage 1 protocol with pilot results was public from 2025-10, and the forecaster saw headline results in search snippets before building it (the kernel's outputs are mechanical). Implantation task only (Study 1a, US), approximated by the 9 trade-off dilemmas per attribute pair in both positions; the willingness question's wording is in Supplementary Fig. 1, which we do not have."
+    },
+    "population": {
+      "source": "SocSci210 test-split respondents (NORC AmeriSpeak, US adults) with gender, age and education",
+      "n": 100,
+      "seed": 1
+    },
+    "materials": {
+      "requests": 10800,
+      "distinct_texts": 108,
+      "texts_sha256": "09cfcf3f1cd8d4bb461c266c5174b9d6cc33ed2fc97c1fd7f609258764645fbe"
+    },
+    "position_bias_A": 0.00559,
+    "effects": [
+      {
+        "id": "avoidance:heart_disease",
+        "measure": "choice probability per level of chance",
+        "contrast": "avoiding higher chances of Heart Disease",
+        "kernel_effect": 0.08235,
+        "predicted_effect": 0.07617,
+        "interval80": [
+          -0.0371,
+          0.18944
+        ],
+        "interval90": [
+          -0.06921,
+          0.22155
+        ],
+        "p_positive": 0.8056
+      },
+      {
+        "id": "avoidance:vision_impairment",
+        "measure": "choice probability per level of chance",
+        "contrast": "avoiding higher chances of Vision Impairment",
+        "kernel_effect": 0.06221,
+        "predicted_effect": 0.05754,
+        "interval80": [
+          -0.05573,
+          0.17082
+        ],
+        "interval90": [
+          -0.08784,
+          0.20292
+        ],
+        "p_positive": 0.7425
+      },
+      {
+        "id": "avoidance:low_iq",
+        "measure": "choice probability per level of chance",
+        "contrast": "avoiding higher chances of Low IQ",
+        "kernel_effect": 0.06748,
+        "predicted_effect": 0.06241,
+        "interval80": [
+          -0.05086,
+          0.17568
+        ],
+        "interval90": [
+          -0.08297,
+          0.20779
+        ],
+        "p_positive": 0.76
+      },
+      {
+        "id": "avoidance:antisocial",
+        "measure": "choice probability per level of chance",
+        "contrast": "avoiding higher chances of Antisocial Behaviour",
+        "kernel_effect": 0.11696,
+        "predicted_effect": 0.10818,
+        "interval80": [
+          -0.00509,
+          0.22145
+        ],
+        "interval90": [
+          -0.0372,
+          0.25356
+        ],
+        "p_positive": 0.8895
+      },
+      {
+        "id": "avoidance:non_medical_minus_medical",
+        "measure": "choice probability per level of chance",
+        "contrast": "non-medical minus medical",
+        "kernel_effect": 0.01994,
+        "predicted_effect": 0.01844,
+        "interval80": [
+          -0.09483,
+          0.13171
+        ],
+        "interval90": [
+          -0.12694,
+          0.16382
+        ],
+        "p_positive": 0.5826
+      }
+    ],
+    "models": {
+      "kernel": "jev-1.13.0",
+      "kernel_training_cutoff": "2026-01-01",
+      "phrasing": "p3",
+      "flagship": null,
+      "discrepancy": {
+        "source": "D2 jev fit_seen (91 seen SocSci210 studies)",
+        "beta": 0.9249304558258878,
+        "tau": 0.03680381185921599,
+        "sigma": 0.08035500127218577
+      },
+      "kite_commit": "220b878697286c71593e957efd36a74f86624e72",
+      "run_ledger": {
+        "calls": 10800,
+        "cache_hits": 0,
+        "cache_misses": 21600,
+        "input_tokens": 7284672,
+        "output_tokens": 432000,
+        "usd": 0.305956,
+        "reserved_usd": 0.0,
+        "answers": 21600,
+        "malformed_distributions": 0,
+        "wall_seconds": 669.346,
+        "latency_ms_p50": 199.41104156896472,
+        "latency_ms_p95": 289.51895763166243
+      }
+    },
+    "created": "2026-09-28T08:19:22+00:00"
+  },
+  "salt": "1ccb845cc238ada005b59bd96d9f22ac",
+  "digest": "1bfc5790147ea4420e789f8bd222ac40f0f3c11349d2ca56be373cc45767ec46",
+  "sealed_at": "2026-09-28T08:19:43+00:00"
+}

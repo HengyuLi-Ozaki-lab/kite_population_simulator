@@ -1,0 +1,92 @@
+{
+  "forecast_id": "rr-awad-embryo-selection-001",
+  "group": "post_cutoff",
+  "sealed_at": "2026-09-28T08:19:43+00:00",
+  "scored": "2026-09-28T16:53:57+00:00",
+  "primary": {
+    "effects": 5,
+    "sign_accuracy_reliable": "4/4",
+    "spearman_within_study": 0.8,
+    "coverage80": "1/5",
+    "coverage90": "2/5",
+    "mae": 0.2003,
+    "largest_effect_hit": false,
+    "largest_predicted": "avoidance:antisocial",
+    "largest_observed": "avoidance:heart_disease",
+    "per_effect": {
+      "avoidance:heart_disease": {
+        "predicted": 0.07617,
+        "observed": 0.403,
+        "in80": false,
+        "in90": false
+      },
+      "avoidance:vision_impairment": {
+        "predicted": 0.05754,
+        "observed": 0.188,
+        "in80": false,
+        "in90": true
+      },
+      "avoidance:low_iq": {
+        "predicted": 0.06241,
+        "observed": 0.322,
+        "in80": false,
+        "in90": false
+      },
+      "avoidance:antisocial": {
+        "predicted": 0.10818,
+        "observed": 0.361,
+        "in80": false,
+        "in90": false
+      },
+      "avoidance:non_medical_minus_medical": {
+        "predicted": 0.01844,
+        "observed": 0.05,
+        "in80": true,
+        "in90": true
+      }
+    }
+  },
+  "sensitivity_symmetric_per_level": {
+    "effects": 5,
+    "sign_accuracy_reliable": "4/4",
+    "spearman_within_study": 0.8,
+    "coverage80": "2/5",
+    "coverage90": "4/5",
+    "mae": 0.1053,
+    "largest_effect_hit": false,
+    "largest_predicted": "avoidance:antisocial",
+    "largest_observed": "avoidance:heart_disease",
+    "per_effect": {
+      "avoidance:heart_disease": {
+        "predicted": 0.07617,
+        "observed": 0.262,
+        "in80": false,
+        "in90": false
+      },
+      "avoidance:vision_impairment": {
+        "predicted": 0.05754,
+        "observed": 0.1,
+        "in80": true,
+        "in90": true
+      },
+      "avoidance:low_iq": {
+        "predicted": 0.06241,
+        "observed": 0.204,
+        "in80": false,
+        "in90": true
+      },
+      "avoidance:antisocial": {
+        "predicted": 0.10818,
+        "observed": 0.233,
+        "in80": false,
+        "in90": true
+      },
+      "avoidance:non_medical_minus_medical": {
+        "predicted": 0.01844,
+        "observed": 0.05,
+        "in80": true,
+        "in90": true
+      }
+    }
+  }
+}

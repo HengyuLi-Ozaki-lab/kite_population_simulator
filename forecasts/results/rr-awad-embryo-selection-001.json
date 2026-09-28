@@ -1,0 +1,18 @@
+{
+  "forecast_id": "rr-awad-embryo-selection-001",
+  "study": "Awad et al., Public perceptions of polygenic testing and embryo selection for non-medical traits, Nature Human Behaviour (published 2026-08-26), https://www.nature.com/articles/s41562-026-02562-w; data and code https://osf.io/vb9c2",
+  "read_on": "2026-09-29",
+  "estimand": "Study 1a (US, N = 1,467; implantation arm), change in the probability of choosing an embryo when its chance of the attribute is significantly above average versus average, sign flipped so that avoidance is positive (the paper's H3/H4 estimand).",
+  "observed": {
+    "avoidance:heart_disease": {"value": 0.403, "source": "Fig. 3a, read from the published figure (axis ticks -0.4, -0.2, 0 at 64 px per 0.2)", "reliable": true},
+    "avoidance:vision_impairment": {"value": 0.188, "source": "Fig. 3a, read from the published figure", "reliable": true},
+    "avoidance:low_iq": {"value": 0.322, "source": "Fig. 3a, read from the published figure", "reliable": true},
+    "avoidance:antisocial": {"value": 0.361, "source": "Fig. 3a, read from the published figure", "reliable": true},
+    "avoidance:non_medical_minus_medical": {"value": 0.050, "ci95": [0.011, 0.089], "source": "H4 interaction, beta = -0.050, 95% CI [-0.089, -0.011], t = -2.51 (sign flipped)", "reliable": false}
+  },
+  "checks": "Fig. 3a readings agree with the exact text: pooled non-medical avoidance 0.341 [0.316, 0.366] (mean of low IQ and antisocial readings 0.342); heart disease minus low IQ 0.080 [0.025, 0.135] (readings 0.081); heart disease minus antisocial 0.04 [-0.013, 0.093] (readings 0.042). Per-attribute error bars in Fig. 3a are about +-0.035, so every per-attribute avoidance has |z| > 10.",
+  "sensitivity_symmetric_per_level": {
+    "note": "The forecast is a linear per-level coefficient; the paper's effects are asymmetric (below-average chances: heart disease +0.121, antisocial +0.105, low IQ +0.085, vision +0.013, read from Fig. 3a). The symmetric per-level effect is the mean of the above and below magnitudes.",
+    "avoidance:heart_disease": 0.262, "avoidance:vision_impairment": 0.100, "avoidance:low_iq": 0.204, "avoidance:antisocial": 0.233
+  }
+}
