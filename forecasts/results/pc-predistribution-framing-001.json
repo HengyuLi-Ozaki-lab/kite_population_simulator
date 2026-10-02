@@ -1,0 +1,231 @@
+{
+  "forecast_id": "pc-predistribution-framing-001",
+  "study": "SocArXiv 10.31235/osf.io/gkr5e / PNAS 10.1073/pnas.2617191123; data OSF kndq7 /Replication package/Study2/Data/01_clean_distribution_2025-02-26.csv (sha256 cfe30a1ea3cb8a5a04388cdc8215a6fd574b185b708663e55806283bf6fdaccb)",
+  "read_on": "2026-09-30",
+  "estimand": "Differences in PolicySupport (mean of the two 0-100 items, divided by 100) between framings; pooled contrasts paired within respondent, per-policy contrasts between respondents.",
+  "data_notes": "1009 respondents, 5971 rows (respondent x policy) in the authors' cleaned file.",
+  "observed": {
+    "pooled:predistribution-redistribution": {
+      "value": 0.03091,
+      "se": 0.00594,
+      "z": 5.2,
+      "reliable": true,
+      "n": 996,
+      "source": "per-respondent mean PolicySupport (0-100) by framing, paired difference over respondents, divided by 100"
+    },
+    "pooled:predistribution-control": {
+      "value": 0.00357,
+      "se": 0.00597,
+      "z": 0.6,
+      "reliable": false,
+      "n": 992,
+      "source": "per-respondent mean PolicySupport (0-100) by framing, paired difference over respondents, divided by 100"
+    },
+    "pooled:redistribution-control": {
+      "value": -0.02622,
+      "se": 0.00608,
+      "z": -4.31,
+      "reliable": true,
+      "n": 994,
+      "source": "per-respondent mean PolicySupport (0-100) by framing, paired difference over respondents, divided by 100"
+    },
+    "college:predistribution-redistribution": {
+      "value": 0.02779,
+      "se": 0.02216,
+      "z": 1.25,
+      "reliable": false,
+      "n": [
+        325,
+        352
+      ],
+      "source": "PolicySupport for college, framing groups compared between respondents, divided by 100"
+    },
+    "college:predistribution-control": {
+      "value": 0.00557,
+      "se": 0.0223,
+      "z": 0.25,
+      "reliable": false,
+      "n": [
+        325,
+        321
+      ],
+      "source": "PolicySupport for college, framing groups compared between respondents, divided by 100"
+    },
+    "college:redistribution-control": {
+      "value": -0.02223,
+      "se": 0.02268,
+      "z": -0.98,
+      "reliable": false,
+      "n": [
+        352,
+        321
+      ],
+      "source": "PolicySupport for college, framing groups compared between respondents, divided by 100"
+    },
+    "eitc:predistribution-redistribution": {
+      "value": 0.0574,
+      "se": 0.02051,
+      "z": 2.8,
+      "reliable": false,
+      "n": [
+        336,
+        340
+      ],
+      "source": "PolicySupport for eitc, framing groups compared between respondents, divided by 100"
+    },
+    "eitc:predistribution-control": {
+      "value": -0.01435,
+      "se": 0.01883,
+      "z": -0.76,
+      "reliable": false,
+      "n": [
+        336,
+        316
+      ],
+      "source": "PolicySupport for eitc, framing groups compared between respondents, divided by 100"
+    },
+    "eitc:redistribution-control": {
+      "value": -0.07175,
+      "se": 0.02033,
+      "z": -3.53,
+      "reliable": true,
+      "n": [
+        340,
+        316
+      ],
+      "source": "PolicySupport for eitc, framing groups compared between respondents, divided by 100"
+    },
+    "m4a:predistribution-redistribution": {
+      "value": 0.09115,
+      "se": 0.0238,
+      "z": 3.83,
+      "reliable": true,
+      "n": [
+        314,
+        314
+      ],
+      "source": "PolicySupport for m4a, framing groups compared between respondents, divided by 100"
+    },
+    "m4a:predistribution-control": {
+      "value": 0.02528,
+      "se": 0.02197,
+      "z": 1.15,
+      "reliable": false,
+      "n": [
+        314,
+        365
+      ],
+      "source": "PolicySupport for m4a, framing groups compared between respondents, divided by 100"
+    },
+    "m4a:redistribution-control": {
+      "value": -0.06587,
+      "se": 0.02346,
+      "z": -2.81,
+      "reliable": false,
+      "n": [
+        314,
+        365
+      ],
+      "source": "PolicySupport for m4a, framing groups compared between respondents, divided by 100"
+    },
+    "minwage:predistribution-redistribution": {
+      "value": 0.02796,
+      "se": 0.02334,
+      "z": 1.2,
+      "reliable": false,
+      "n": [
+        340,
+        326
+      ],
+      "source": "PolicySupport for minwage, framing groups compared between respondents, divided by 100"
+    },
+    "minwage:predistribution-control": {
+      "value": 0.01848,
+      "se": 0.02291,
+      "z": 0.81,
+      "reliable": false,
+      "n": [
+        340,
+        332
+      ],
+      "source": "PolicySupport for minwage, framing groups compared between respondents, divided by 100"
+    },
+    "minwage:redistribution-control": {
+      "value": -0.00947,
+      "se": 0.02345,
+      "z": -0.4,
+      "reliable": false,
+      "n": [
+        326,
+        332
+      ],
+      "source": "PolicySupport for minwage, framing groups compared between respondents, divided by 100"
+    },
+    "proact:predistribution-redistribution": {
+      "value": -0.00641,
+      "se": 0.022,
+      "z": -0.29,
+      "reliable": false,
+      "n": [
+        347,
+        311
+      ],
+      "source": "PolicySupport for proact, framing groups compared between respondents, divided by 100"
+    },
+    "proact:predistribution-control": {
+      "value": -0.01999,
+      "se": 0.02081,
+      "z": -0.96,
+      "reliable": false,
+      "n": [
+        347,
+        335
+      ],
+      "source": "PolicySupport for proact, framing groups compared between respondents, divided by 100"
+    },
+    "proact:redistribution-control": {
+      "value": -0.01358,
+      "se": 0.0219,
+      "z": -0.62,
+      "reliable": false,
+      "n": [
+        311,
+        335
+      ],
+      "source": "PolicySupport for proact, framing groups compared between respondents, divided by 100"
+    },
+    "progtax:predistribution-redistribution": {
+      "value": -0.00613,
+      "se": 0.02289,
+      "z": -0.27,
+      "reliable": false,
+      "n": [
+        331,
+        349
+      ],
+      "source": "PolicySupport for progtax, framing groups compared between respondents, divided by 100"
+    },
+    "progtax:predistribution-control": {
+      "value": 0.01103,
+      "se": 0.02339,
+      "z": 0.47,
+      "reliable": false,
+      "n": [
+        331,
+        317
+      ],
+      "source": "PolicySupport for progtax, framing groups compared between respondents, divided by 100"
+    },
+    "progtax:redistribution-control": {
+      "value": 0.01716,
+      "se": 0.02347,
+      "z": 0.73,
+      "reliable": false,
+      "n": [
+        349,
+        317
+      ],
+      "source": "PolicySupport for progtax, framing groups compared between respondents, divided by 100"
+    }
+  }
+}

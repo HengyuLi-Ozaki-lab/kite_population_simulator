@@ -1,6 +1,6 @@
 [project]
 name = "kite"
-version = "0.5.0"
+version = "0.6.0"
 description = "Social Wind Tunnel: calibrated decision models as behavioral kernels for population simulation"
 requires-python = ">=3.12"
 dependencies = [

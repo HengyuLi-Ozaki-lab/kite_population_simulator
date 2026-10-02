@@ -30,8 +30,9 @@ def score(predicted: dict, observed: dict[str, float], reliable: set[str], ranke
     in90 = [predicted[i]["interval90"][0] <= observed[i] <= predicted[i]["interval90"][1] for i in ids]
     signs = [np.sign(predicted[i]["predicted_effect"]) == np.sign(observed[i]) for i in ids if i in reliable]
     rho = spearmanr([predicted[i]["predicted_effect"] for i in ranked], [observed[i] for i in ranked]).statistic if len(ranked) > 2 else None
-    top_pred = max(ranked, key=lambda i: predicted[i]["predicted_effect"])
-    top_obs = max(ranked, key=lambda i: observed[i])
+    pool = ranked or ids  # with no reliable contrast, the largest effect is taken over all of them
+    top_pred = max(pool, key=lambda i: predicted[i]["predicted_effect"])
+    top_obs = max(pool, key=lambda i: observed[i])
     return {
         "effects": len(ids),
         "sign_accuracy_reliable": f"{sum(signs)}/{len(signs)}",
@@ -58,9 +59,12 @@ def main() -> None:
     if not verify(revealed["record"], revealed["salt"], line["digest"]):
         raise SystemExit(f"{fid}: the revealed record does not match its ledger digest")
     results = json.loads((ROOT / "results" / f"{fid}.json").read_text(encoding="utf-8"))
-    predicted = {e["id"]: e for e in revealed["record"]["effects"]}
-    observed = {k: v["value"] for k, v in results["observed"].items()}
+    effects = revealed["record"]["effects"]
+    secondary = {e["id"] for e in effects if e.get("secondary")}  # the record says these are scored separately
+    predicted = {e["id"]: e for e in effects}
+    observed_all = {k: v["value"] for k, v in results["observed"].items()}
     reliable = {k for k, v in results["observed"].items() if v.get("reliable")}
+    observed = {k: v for k, v in observed_all.items() if k not in secondary}
     ranked = [k for k in observed if k in predicted and k in reliable]
     out = {
         "forecast_id": fid,
@@ -69,6 +73,10 @@ def main() -> None:
         "scored": datetime.now(UTC).isoformat(timespec="seconds"),
         "primary": score(predicted, observed, reliable, ranked),
     }
+    extra = {k: v for k, v in observed_all.items() if k in secondary}
+    if extra:
+        extra_ranked = [k for k in extra if k in predicted and k in reliable]
+        out["secondary"] = score(predicted, extra, reliable, extra_ranked) if extra_ranked else score(predicted, extra, reliable, list(extra))
     sens = results.get("sensitivity_symmetric_per_level")
     if sens:
         alt = {**observed, **{k: v for k, v in sens.items() if k in predicted}}
@@ -76,6 +84,8 @@ def main() -> None:
     (ROOT / "scores").mkdir(exist_ok=True)
     (ROOT / "scores" / f"{fid}.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
     print(json.dumps({k: v for k, v in out["primary"].items() if k != "per_effect"}, indent=1))
+    if "secondary" in out:
+        print("secondary:", json.dumps({k: v for k, v in out["secondary"].items() if k != "per_effect"}))
     if sens:
         print("sensitivity:", json.dumps({k: v for k, v in out["sensitivity_symmetric_per_level"].items() if k != "per_effect"}))
 

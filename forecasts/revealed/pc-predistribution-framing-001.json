@@ -1,0 +1,526 @@
+{
+  "record": {
+    "forecast_id": "pc-predistribution-framing-001",
+    "group": "post_cutoff",
+    "study": {
+      "source": "SocArXiv preprint 10.31235/osf.io/gkr5e (earliest public version 2026-05-21); PNAS 10.1073/pnas.2617191123; preregistered 2025-03-02 (OSF kndq7), fielded about Feb-Mar 2025",
+      "materials": "OSF kndq7: Preregistration_20250226_Predistribution.pdf (sha256 fa75ff9ed46b4aa986192c5efc836963d418614a5373e6271fef8ffdc508680c), section 'Policies'",
+      "read_on": "2026-09-30",
+      "notes": "Blinded extraction from the preregistration by a separate agent; the forecaster did not read the abstract, title page or results. Texts follow the preregistration (title, background paragraph, and the added framing sentence); the fielded display (labels, bold) is unconfirmed, and the progressive-tax raising-earnings sentence is kept as printed ('Making the income tax structure means ...'), which may be a typo in the preregistration. Only the two PolicySupport items are forecast (candidate support and mediators are not)."
+    },
+    "population": {
+      "source": "SocSci210 test-split respondents (NORC AmeriSpeak, US adults)",
+      "general": "200 with gender, age and education, half men (seed 13); every persona answers all 18 texts"
+    },
+    "materials": {
+      "requests": 7200,
+      "distinct_texts": 36,
+      "texts_sha256": "9381c293604f408dbbf242c0124f3495723dcbb63d4748aaff68aba32a3e4c83"
+    },
+    "conditions": [
+      {
+        "id": "college:control",
+        "policy": "college",
+        "framing": "control",
+        "support_unit": 0.5543
+      },
+      {
+        "id": "college:predistribution",
+        "policy": "college",
+        "framing": "predistribution",
+        "support_unit": 0.56672
+      },
+      {
+        "id": "college:redistribution",
+        "policy": "college",
+        "framing": "redistribution",
+        "support_unit": 0.55733
+      },
+      {
+        "id": "eitc:control",
+        "policy": "eitc",
+        "framing": "control",
+        "support_unit": 0.55615
+      },
+      {
+        "id": "eitc:predistribution",
+        "policy": "eitc",
+        "framing": "predistribution",
+        "support_unit": 0.56005
+      },
+      {
+        "id": "eitc:redistribution",
+        "policy": "eitc",
+        "framing": "redistribution",
+        "support_unit": 0.54278
+      },
+      {
+        "id": "m4a:control",
+        "policy": "m4a",
+        "framing": "control",
+        "support_unit": 0.53822
+      },
+      {
+        "id": "m4a:predistribution",
+        "policy": "m4a",
+        "framing": "predistribution",
+        "support_unit": 0.54136
+      },
+      {
+        "id": "m4a:redistribution",
+        "policy": "m4a",
+        "framing": "redistribution",
+        "support_unit": 0.53613
+      },
+      {
+        "id": "minwage:control",
+        "policy": "minwage",
+        "framing": "control",
+        "support_unit": 0.54787
+      },
+      {
+        "id": "minwage:predistribution",
+        "policy": "minwage",
+        "framing": "predistribution",
+        "support_unit": 0.55431
+      },
+      {
+        "id": "minwage:redistribution",
+        "policy": "minwage",
+        "framing": "redistribution",
+        "support_unit": 0.5409
+      },
+      {
+        "id": "proact:control",
+        "policy": "proact",
+        "framing": "control",
+        "support_unit": 0.53146
+      },
+      {
+        "id": "proact:predistribution",
+        "policy": "proact",
+        "framing": "predistribution",
+        "support_unit": 0.53149
+      },
+      {
+        "id": "proact:redistribution",
+        "policy": "proact",
+        "framing": "redistribution",
+        "support_unit": 0.53781
+      },
+      {
+        "id": "progtax:control",
+        "policy": "progtax",
+        "framing": "control",
+        "support_unit": 0.53952
+      },
+      {
+        "id": "progtax:predistribution",
+        "policy": "progtax",
+        "framing": "predistribution",
+        "support_unit": 0.54522
+      },
+      {
+        "id": "progtax:redistribution",
+        "policy": "progtax",
+        "framing": "redistribution",
+        "support_unit": 0.5429
+      }
+    ],
+    "effects": [
+      {
+        "id": "pooled:predistribution-redistribution",
+        "measure": "PolicySupport (mean of two 0-100 items)",
+        "contrast": "predistribution - redistribution, pooled over six policies",
+        "kernel_effect": 0.00688,
+        "predicted_effect": 0.00637,
+        "interval80": [
+          -0.1069,
+          0.11964
+        ],
+        "interval90": [
+          -0.13901,
+          0.15175
+        ],
+        "p_positive": 0.5287
+      },
+      {
+        "id": "pooled:predistribution-control",
+        "measure": "PolicySupport (mean of two 0-100 items)",
+        "contrast": "predistribution - control, pooled over six policies",
+        "kernel_effect": 0.00527,
+        "predicted_effect": 0.00488,
+        "interval80": [
+          -0.10839,
+          0.11815
+        ],
+        "interval90": [
+          -0.1405,
+          0.15026
+        ],
+        "p_positive": 0.522
+      },
+      {
+        "id": "pooled:redistribution-control",
+        "measure": "PolicySupport (mean of two 0-100 items)",
+        "contrast": "redistribution - control, pooled over six policies",
+        "kernel_effect": -0.00161,
+        "predicted_effect": -0.00149,
+        "interval80": [
+          -0.11476,
+          0.11178
+        ],
+        "interval90": [
+          -0.14687,
+          0.14389
+        ],
+        "p_positive": 0.4933
+      },
+      {
+        "id": "college:predistribution-redistribution",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "predistribution - redistribution, college",
+        "kernel_effect": 0.00939,
+        "predicted_effect": 0.00869,
+        "interval80": [
+          -0.10459,
+          0.12196
+        ],
+        "interval90": [
+          -0.1367,
+          0.15407
+        ],
+        "p_positive": 0.5391
+      },
+      {
+        "id": "college:predistribution-control",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "predistribution - control, college",
+        "kernel_effect": 0.01242,
+        "predicted_effect": 0.01149,
+        "interval80": [
+          -0.10178,
+          0.12476
+        ],
+        "interval90": [
+          -0.13389,
+          0.15687
+        ],
+        "p_positive": 0.5517
+      },
+      {
+        "id": "college:redistribution-control",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "redistribution - control, college",
+        "kernel_effect": 0.00303,
+        "predicted_effect": 0.0028,
+        "interval80": [
+          -0.11047,
+          0.11608
+        ],
+        "interval90": [
+          -0.14258,
+          0.14818
+        ],
+        "p_positive": 0.5127
+      },
+      {
+        "id": "eitc:predistribution-redistribution",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "predistribution - redistribution, eitc",
+        "kernel_effect": 0.01727,
+        "predicted_effect": 0.01597,
+        "interval80": [
+          -0.0973,
+          0.12925
+        ],
+        "interval90": [
+          -0.12941,
+          0.16135
+        ],
+        "p_positive": 0.5717
+      },
+      {
+        "id": "eitc:predistribution-control",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "predistribution - control, eitc",
+        "kernel_effect": 0.00389,
+        "predicted_effect": 0.0036,
+        "interval80": [
+          -0.10967,
+          0.11687
+        ],
+        "interval90": [
+          -0.14178,
+          0.14898
+        ],
+        "p_positive": 0.5162
+      },
+      {
+        "id": "eitc:redistribution-control",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "redistribution - control, eitc",
+        "kernel_effect": -0.01338,
+        "predicted_effect": -0.01237,
+        "interval80": [
+          -0.12564,
+          0.1009
+        ],
+        "interval90": [
+          -0.15775,
+          0.13301
+        ],
+        "p_positive": 0.4443
+      },
+      {
+        "id": "m4a:predistribution-redistribution",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "predistribution - redistribution, m4a",
+        "kernel_effect": 0.00524,
+        "predicted_effect": 0.00484,
+        "interval80": [
+          -0.10843,
+          0.11811
+        ],
+        "interval90": [
+          -0.14054,
+          0.15022
+        ],
+        "p_positive": 0.5218
+      },
+      {
+        "id": "m4a:predistribution-control",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "predistribution - control, m4a",
+        "kernel_effect": 0.00314,
+        "predicted_effect": 0.0029,
+        "interval80": [
+          -0.11037,
+          0.11617
+        ],
+        "interval90": [
+          -0.14248,
+          0.14828
+        ],
+        "p_positive": 0.5131
+      },
+      {
+        "id": "m4a:redistribution-control",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "redistribution - control, m4a",
+        "kernel_effect": -0.0021,
+        "predicted_effect": -0.00194,
+        "interval80": [
+          -0.11521,
+          0.11133
+        ],
+        "interval90": [
+          -0.14732,
+          0.14344
+        ],
+        "p_positive": 0.4913
+      },
+      {
+        "id": "minwage:predistribution-redistribution",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "predistribution - redistribution, minwage",
+        "kernel_effect": 0.01342,
+        "predicted_effect": 0.01241,
+        "interval80": [
+          -0.10086,
+          0.12568
+        ],
+        "interval90": [
+          -0.13297,
+          0.15779
+        ],
+        "p_positive": 0.5558
+      },
+      {
+        "id": "minwage:predistribution-control",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "predistribution - control, minwage",
+        "kernel_effect": 0.00644,
+        "predicted_effect": 0.00596,
+        "interval80": [
+          -0.10731,
+          0.11923
+        ],
+        "interval90": [
+          -0.13942,
+          0.15134
+        ],
+        "p_positive": 0.5269
+      },
+      {
+        "id": "minwage:redistribution-control",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "redistribution - control, minwage",
+        "kernel_effect": -0.00697,
+        "predicted_effect": -0.00645,
+        "interval80": [
+          -0.11972,
+          0.10682
+        ],
+        "interval90": [
+          -0.15183,
+          0.13893
+        ],
+        "p_positive": 0.4709
+      },
+      {
+        "id": "proact:predistribution-redistribution",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "predistribution - redistribution, proact",
+        "kernel_effect": -0.00632,
+        "predicted_effect": -0.00585,
+        "interval80": [
+          -0.11912,
+          0.10742
+        ],
+        "interval90": [
+          -0.15123,
+          0.13953
+        ],
+        "p_positive": 0.4736
+      },
+      {
+        "id": "proact:predistribution-control",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "predistribution - control, proact",
+        "kernel_effect": 3e-05,
+        "predicted_effect": 3e-05,
+        "interval80": [
+          -0.11324,
+          0.1133
+        ],
+        "interval90": [
+          -0.14535,
+          0.14541
+        ],
+        "p_positive": 0.5001
+      },
+      {
+        "id": "proact:redistribution-control",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "redistribution - control, proact",
+        "kernel_effect": 0.00636,
+        "predicted_effect": 0.00588,
+        "interval80": [
+          -0.10739,
+          0.11915
+        ],
+        "interval90": [
+          -0.1395,
+          0.15126
+        ],
+        "p_positive": 0.5265
+      },
+      {
+        "id": "progtax:predistribution-redistribution",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "predistribution - redistribution, progtax",
+        "kernel_effect": 0.00232,
+        "predicted_effect": 0.00215,
+        "interval80": [
+          -0.11112,
+          0.11542
+        ],
+        "interval90": [
+          -0.14323,
+          0.14753
+        ],
+        "p_positive": 0.5097
+      },
+      {
+        "id": "progtax:predistribution-control",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "predistribution - control, progtax",
+        "kernel_effect": 0.0057,
+        "predicted_effect": 0.00528,
+        "interval80": [
+          -0.10799,
+          0.11855
+        ],
+        "interval90": [
+          -0.1401,
+          0.15066
+        ],
+        "p_positive": 0.5238
+      },
+      {
+        "id": "progtax:redistribution-control",
+        "measure": "PolicySupport",
+        "secondary": true,
+        "contrast": "redistribution - control, progtax",
+        "kernel_effect": 0.00338,
+        "predicted_effect": 0.00313,
+        "interval80": [
+          -0.11014,
+          0.1164
+        ],
+        "interval90": [
+          -0.14225,
+          0.14851
+        ],
+        "p_positive": 0.5141
+      }
+    ],
+    "best_condition": {
+      "control": 0.2432,
+      "predistribution": 0.3958,
+      "redistribution": 0.3609
+    },
+    "scoring_notes": "Confirmatory contrast (preregistered): predistribution - redistribution on PolicySupport, pooled over the six policies; exploratory: predistribution - control. Effects on the unit scale (0-100 divided by 100); the published coefficient (points on 0-100) divides by 100. The design is within respondent; each persona reads all 18 policy x framing texts independently (the kernel has no memory between requests), so per-policy effects are paired within persona. Per-policy effects are secondary. best_condition treats the control as the reference (no discrepancy draw).",
+    "models": {
+      "kernel": "jev-1.13.0",
+      "kernel_training_cutoff": "2026-01-01",
+      "phrasing": "p3",
+      "flagship": null,
+      "discrepancy": {
+        "source": "D2 jev fit_seen (91 seen SocSci210 studies); kept after E2c",
+        "beta": 0.9249304558258878,
+        "tau": 0.03680381185921599,
+        "sigma": 0.08035500127218577
+      },
+      "kite_commit": "8765d221525fef69a3c998941756becd658c3479",
+      "run_ledgers": {
+        "main": {
+          "calls": 7200,
+          "cache_hits": 0,
+          "cache_misses": 72000,
+          "input_tokens": 9108956,
+          "output_tokens": 1324800,
+          "usd": 0.382576,
+          "reserved_usd": 0.0,
+          "answers": 72000,
+          "malformed_distributions": 0,
+          "wall_seconds": 448.322,
+          "latency_ms_p50": 179.0193960769102,
+          "latency_ms_p95": 234.95097901904956
+        }
+      }
+    },
+    "created": "2026-09-30T11:13:41+00:00"
+  },
+  "salt": "174d1f1757c5b2cd92a0f34bf83ae334",
+  "digest": "17d104087bcf238630841f55be8badb0371ea1e8abd9cef9457fc67fece2f4ba",
+  "sealed_at": "2026-09-30T11:13:45+00:00"
+}

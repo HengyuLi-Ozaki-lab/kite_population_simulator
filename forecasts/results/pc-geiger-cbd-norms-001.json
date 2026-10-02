@@ -1,0 +1,278 @@
+{
+  "forecast_id": "pc-geiger-cbd-norms-001",
+  "study": "PsyArXiv 10.31234/osf.io/y42db, Study 3; data OSF wqab7 /Study3/2_data/data_S3.csv (sha256 13715c1e0dcdec376737d0349a634d0d9afcb7b9fa1ad3175f6fe96cf4c98f3b)",
+  "read_on": "2026-09-30",
+  "estimand": "Difference in mean support (1-7, 'don't know' already absent from the file) between each message and the control, divided by 6; m8-m10 against Democrats and Republicans in the control. Unweighted (rule fixed before reading the data).",
+  "data_notes": "13708 respondents, all flagged complete, consented, passing the attention check, not duplicate or fraud; none excluded. pol has three codes in the file; 1 = Democrat, 2 = Independent, 3 = Republican is inferred from the group sizes against the recruitment design (no codebook read).",
+  "observed": {
+    "support:m1-control": {
+      "value": 0.03925,
+      "se": 0.0089,
+      "z": 4.41,
+      "reliable": true,
+      "n": [
+        910,
+        4482
+      ],
+      "source": "data_S3.csv: cond == 'science' vs cond missing (control); support 1-7, unweighted"
+    },
+    "belief:m1": {
+      "value": 0.11203,
+      "se": 0.00597,
+      "z": 18.76,
+      "reliable": true,
+      "n": 910,
+      "source": "data_S3.csv: cond == 'science', post_norm_science minus norm_science within respondent, divided by 100"
+    },
+    "support:m2-control": {
+      "value": 0.06229,
+      "se": 0.00848,
+      "z": 7.34,
+      "reliable": true,
+      "n": [
+        904,
+        4482
+      ],
+      "source": "data_S3.csv: cond == 'country' vs cond missing (control); support 1-7, unweighted"
+    },
+    "belief:m2": {
+      "value": 0.35213,
+      "se": 0.0086,
+      "z": 40.96,
+      "reliable": true,
+      "n": 904,
+      "source": "data_S3.csv: cond == 'country', post_norm_country minus norm_country within respondent, divided by 193"
+    },
+    "support:m3-control": {
+      "value": -0.00164,
+      "se": 0.00937,
+      "z": -0.18,
+      "reliable": false,
+      "n": [
+        901,
+        4482
+      ],
+      "source": "data_S3.csv: cond == 'public_belief' vs cond missing (control); support 1-7, unweighted"
+    },
+    "belief:m3": {
+      "value": -0.02235,
+      "se": 0.00573,
+      "z": -3.9,
+      "reliable": true,
+      "n": 901,
+      "source": "data_S3.csv: cond == 'public_belief', post_norm_belief minus norm_belief within respondent, divided by 100"
+    },
+    "support:m4-control": {
+      "value": -0.00861,
+      "se": 0.00968,
+      "z": -0.89,
+      "reliable": false,
+      "n": [
+        909,
+        4482
+      ],
+      "source": "data_S3.csv: cond == 'public_problem' vs cond missing (control); support 1-7, unweighted"
+    },
+    "belief:m4": {
+      "value": 0.18119,
+      "se": 0.00621,
+      "z": 29.17,
+      "reliable": true,
+      "n": 909,
+      "source": "data_S3.csv: cond == 'public_problem', post_norm_problem minus norm_problem within respondent, divided by 100"
+    },
+    "support:m5-control": {
+      "value": 0.02543,
+      "se": 0.00862,
+      "z": 2.95,
+      "reliable": false,
+      "n": [
+        905,
+        4482
+      ],
+      "source": "data_S3.csv: cond == 'public_action' vs cond missing (control); support 1-7, unweighted"
+    },
+    "belief:m5": {
+      "value": 0.11206,
+      "se": 0.006,
+      "z": 18.66,
+      "reliable": true,
+      "n": 905,
+      "source": "data_S3.csv: cond == 'public_action', post_norm_action minus norm_action within respondent, divided by 100"
+    },
+    "support:m6-control": {
+      "value": 0.00507,
+      "se": 0.00929,
+      "z": 0.55,
+      "reliable": false,
+      "n": [
+        907,
+        4482
+      ],
+      "source": "data_S3.csv: cond == 'public_cbd' vs cond missing (control); support 1-7, unweighted"
+    },
+    "belief:m6": {
+      "value": 0.05693,
+      "se": 0.00581,
+      "z": 9.8,
+      "reliable": true,
+      "n": 907,
+      "source": "data_S3.csv: cond == 'public_cbd', post_norm_cbd minus norm_cbd within respondent, divided by 100"
+    },
+    "support:m7-control": {
+      "value": -0.02178,
+      "se": 0.00967,
+      "z": -2.25,
+      "reliable": false,
+      "n": [
+        896,
+        4482
+      ],
+      "source": "data_S3.csv: cond == 'public_anger' vs cond missing (control); support 1-7, unweighted"
+    },
+    "belief:m7": {
+      "value": 0.04169,
+      "se": 0.00676,
+      "z": 6.17,
+      "reliable": true,
+      "n": 896,
+      "source": "data_S3.csv: cond == 'public_anger', post_norm_anger minus norm_anger within respondent, divided by 100"
+    },
+    "support:m8-control": {
+      "value": -0.11293,
+      "se": 0.01001,
+      "z": -11.29,
+      "reliable": true,
+      "n": [
+        955,
+        3719
+      ],
+      "source": "data_S3.csv: cond == 'ig_sign' vs cond missing (control), Democrats and Republicans (pol 1, 3); support 1-7, unweighted"
+    },
+    "support:m8-control:Democrat": {
+      "value": -0.06327,
+      "se": 0.00916,
+      "z": -6.91,
+      "reliable": true,
+      "n": [
+        517,
+        2601
+      ],
+      "source": "as above, Democrats only"
+    },
+    "support:m8-control:Republican": {
+      "value": -0.07188,
+      "se": 0.01608,
+      "z": -4.47,
+      "reliable": true,
+      "n": [
+        438,
+        1118
+      ],
+      "source": "as above, Republicans only"
+    },
+    "belief:m8": {
+      "value": -0.35959,
+      "se": 0.00758,
+      "z": -47.43,
+      "reliable": true,
+      "n": 955,
+      "source": "data_S3.csv: cond == 'ig_sign', post_norm_ig_sign minus norm_ig_sign within respondent, divided by 100"
+    },
+    "support:m9-control": {
+      "value": -0.08263,
+      "se": 0.01006,
+      "z": -8.21,
+      "reliable": true,
+      "n": [
+        971,
+        3719
+      ],
+      "source": "data_S3.csv: cond == 'og_sign' vs cond missing (control), Democrats and Republicans (pol 1, 3); support 1-7, unweighted"
+    },
+    "support:m9-control:Democrat": {
+      "value": -0.02505,
+      "se": 0.00914,
+      "z": -2.74,
+      "reliable": false,
+      "n": [
+        524,
+        2601
+      ],
+      "source": "as above, Democrats only"
+    },
+    "support:m9-control:Republican": {
+      "value": -0.04977,
+      "se": 0.01591,
+      "z": -3.13,
+      "reliable": true,
+      "n": [
+        447,
+        1118
+      ],
+      "source": "as above, Republicans only"
+    },
+    "belief:m9": {
+      "value": -0.22529,
+      "se": 0.00882,
+      "z": -25.55,
+      "reliable": true,
+      "n": 971,
+      "source": "data_S3.csv: cond == 'og_sign', post_norm_og_sign minus norm_og_sign within respondent, divided by 100"
+    },
+    "support:m10-control": {
+      "value": -0.02134,
+      "se": 0.00939,
+      "z": -2.27,
+      "reliable": false,
+      "n": [
+        968,
+        3719
+      ],
+      "source": "data_S3.csv: cond == 'og_values' vs cond missing (control), Democrats and Republicans (pol 1, 3); support 1-7, unweighted"
+    },
+    "support:m10-control:Democrat": {
+      "value": 0.0249,
+      "se": 0.0076,
+      "z": 3.28,
+      "reliable": true,
+      "n": [
+        516,
+        2601
+      ],
+      "source": "as above, Democrats only"
+    },
+    "support:m10-control:Republican": {
+      "value": 0.02892,
+      "se": 0.01562,
+      "z": 1.85,
+      "reliable": false,
+      "n": [
+        452,
+        1118
+      ],
+      "source": "as above, Republicans only"
+    },
+    "belief:m10": {
+      "value": 0.22116,
+      "se": 0.00708,
+      "z": 31.25,
+      "reliable": true,
+      "n": 968,
+      "source": "data_S3.csv: cond == 'og_values', post_norm_og_values minus norm_og_values within respondent, divided by 100"
+    }
+  },
+  "sensitivity_weighted": {
+    "note": "Same contrasts with the authors' weights (weights_full for m1-m7, weights_party for m8-m10).",
+    "support:m1-control": 0.0452,
+    "support:m2-control": 0.06528,
+    "support:m3-control": -0.00723,
+    "support:m4-control": -0.01765,
+    "support:m5-control": 0.02164,
+    "support:m6-control": -0.00765,
+    "support:m7-control": -0.03748,
+    "support:m8-control": -0.12153,
+    "support:m9-control": -0.08654,
+    "support:m10-control": -0.02645
+  }
+}

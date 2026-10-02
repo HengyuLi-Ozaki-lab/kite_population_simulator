@@ -1,0 +1,610 @@
+{
+  "record": {
+    "forecast_id": "pc-geiger-cbd-norms-001",
+    "group": "post_cutoff",
+    "study": {
+      "source": "PsyArXiv preprint 10.31234/osf.io/y42db, Study 3 (earliest public version 2026-08-31; preregistered 2025-09-25, fielded 2025-10-20 to 2025-11-20)",
+      "materials": "OSF wqab7: /Study3/1_materials/Survey_Study3.qsf (sha256 a75ae41894a13099505447776524ae1f49e0e9d18a5c233f16235a600f711e48), /Study3/0_preregistration/experimental_materials_table1.pdf (sha256 a71966139590ce5eddceddafa05706e3ec15cb9b408bfcb21a8e41691a9166df); preregistration osf.io/67f5h",
+      "read_on": "2026-09-30",
+      "notes": "Blinded extraction: a separate agent downloaded the approved materials and wrote the spec without results; the forecaster did not read the abstract, results or Table 1's titration column. Only the Democrats' survey copy exists (the authors used the same procedure for all three party surveys). Control respondents in the survey answer three belief items before the support item; here the control sees the definition page and the support item only. Treated personas give the prior estimate first (stage 1), then read the message quoting it, then answer the post estimate and support separately. 'Don't know' is not offered to the kernel."
+    },
+    "population": {
+      "source": "SocSci210 test-split respondents (NORC AmeriSpeak, US adults)",
+      "general": "200 with gender, age and education, half men (seed 11): control and m1-m7",
+      "partisan": "100 Democrats and 100 Republicans including leaners (seed 12): control and m8-m10 with party-matched texts"
+    },
+    "materials": {
+      "requests": 6400,
+      "distinct_texts": 324,
+      "texts_sha256": "a77b4ad766edd585683391b6fcd400eb6b8b54e067c0e429ed67b56f8a3f0652"
+    },
+    "conditions": [
+      {
+        "id": "general:control",
+        "pool": "general",
+        "condition": "control",
+        "support_unit": 0.51491,
+        "support_1_7": 4.0894
+      },
+      {
+        "id": "general:m1",
+        "pool": "general",
+        "condition": "m1",
+        "support_unit": 0.5412,
+        "support_1_7": 4.2472
+      },
+      {
+        "id": "general:m2",
+        "pool": "general",
+        "condition": "m2",
+        "support_unit": 0.53185,
+        "support_1_7": 4.1911
+      },
+      {
+        "id": "general:m3",
+        "pool": "general",
+        "condition": "m3",
+        "support_unit": 0.54794,
+        "support_1_7": 4.2877
+      },
+      {
+        "id": "general:m4",
+        "pool": "general",
+        "condition": "m4",
+        "support_unit": 0.55967,
+        "support_1_7": 4.358
+      },
+      {
+        "id": "general:m5",
+        "pool": "general",
+        "condition": "m5",
+        "support_unit": 0.5683,
+        "support_1_7": 4.4098
+      },
+      {
+        "id": "general:m6",
+        "pool": "general",
+        "condition": "m6",
+        "support_unit": 0.57896,
+        "support_1_7": 4.4738
+      },
+      {
+        "id": "general:m7",
+        "pool": "general",
+        "condition": "m7",
+        "support_unit": 0.55376,
+        "support_1_7": 4.3226
+      },
+      {
+        "id": "partisan:control",
+        "pool": "partisan",
+        "condition": "control",
+        "support_unit": 0.51802,
+        "support_1_7": 4.1081
+      },
+      {
+        "id": "partisan:m8",
+        "pool": "partisan",
+        "condition": "m8",
+        "support_unit": 0.50573,
+        "support_1_7": 4.0344
+      },
+      {
+        "id": "partisan:m9",
+        "pool": "partisan",
+        "condition": "m9",
+        "support_unit": 0.51292,
+        "support_1_7": 4.0775
+      },
+      {
+        "id": "partisan:m10",
+        "pool": "partisan",
+        "condition": "m10",
+        "support_unit": 0.53156,
+        "support_1_7": 4.1894
+      }
+    ],
+    "effects": [
+      {
+        "id": "support:m1-control",
+        "measure": "support",
+        "contrast": "m1 - control (general pool)",
+        "kernel_effect": 0.02629,
+        "predicted_effect": 0.02432,
+        "interval80": [
+          -0.08895,
+          0.13759
+        ],
+        "interval90": [
+          -0.12106,
+          0.1697
+        ],
+        "p_positive": 0.6084
+      },
+      {
+        "id": "support:m2-control",
+        "measure": "support",
+        "contrast": "m2 - control (general pool)",
+        "kernel_effect": 0.01694,
+        "predicted_effect": 0.01567,
+        "interval80": [
+          -0.0976,
+          0.12894
+        ],
+        "interval90": [
+          -0.12971,
+          0.16105
+        ],
+        "p_positive": 0.5704
+      },
+      {
+        "id": "support:m3-control",
+        "measure": "support",
+        "contrast": "m3 - control (general pool)",
+        "kernel_effect": 0.03304,
+        "predicted_effect": 0.03056,
+        "interval80": [
+          -0.08272,
+          0.14383
+        ],
+        "interval90": [
+          -0.11482,
+          0.17594
+        ],
+        "p_positive": 0.6352
+      },
+      {
+        "id": "support:m4-control",
+        "measure": "support",
+        "contrast": "m4 - control (general pool)",
+        "kernel_effect": 0.04476,
+        "predicted_effect": 0.0414,
+        "interval80": [
+          -0.07187,
+          0.15467
+        ],
+        "interval90": [
+          -0.10398,
+          0.18678
+        ],
+        "p_positive": 0.6803
+      },
+      {
+        "id": "support:m5-control",
+        "measure": "support",
+        "contrast": "m5 - control (general pool)",
+        "kernel_effect": 0.05339,
+        "predicted_effect": 0.04938,
+        "interval80": [
+          -0.06389,
+          0.16265
+        ],
+        "interval90": [
+          -0.096,
+          0.19476
+        ],
+        "p_positive": 0.7118
+      },
+      {
+        "id": "support:m6-control",
+        "measure": "support",
+        "contrast": "m6 - control (general pool)",
+        "kernel_effect": 0.06405,
+        "predicted_effect": 0.05925,
+        "interval80": [
+          -0.05402,
+          0.17252
+        ],
+        "interval90": [
+          -0.08613,
+          0.20463
+        ],
+        "p_positive": 0.7487
+      },
+      {
+        "id": "support:m7-control",
+        "measure": "support",
+        "contrast": "m7 - control (general pool)",
+        "kernel_effect": 0.03886,
+        "predicted_effect": 0.03594,
+        "interval80": [
+          -0.07733,
+          0.14921
+        ],
+        "interval90": [
+          -0.10944,
+          0.18132
+        ],
+        "p_positive": 0.6579
+      },
+      {
+        "id": "support:m8-control",
+        "measure": "support",
+        "contrast": "m8 - control (partisan pool)",
+        "kernel_effect": -0.0123,
+        "predicted_effect": -0.01137,
+        "interval80": [
+          -0.12464,
+          0.1019
+        ],
+        "interval90": [
+          -0.15675,
+          0.13401
+        ],
+        "p_positive": 0.4488
+      },
+      {
+        "id": "support:m9-control",
+        "measure": "support",
+        "contrast": "m9 - control (partisan pool)",
+        "kernel_effect": -0.0051,
+        "predicted_effect": -0.00472,
+        "interval80": [
+          -0.11799,
+          0.10855
+        ],
+        "interval90": [
+          -0.1501,
+          0.14066
+        ],
+        "p_positive": 0.4787
+      },
+      {
+        "id": "support:m10-control",
+        "measure": "support",
+        "contrast": "m10 - control (partisan pool)",
+        "kernel_effect": 0.01354,
+        "predicted_effect": 0.01252,
+        "interval80": [
+          -0.10075,
+          0.12579
+        ],
+        "interval90": [
+          -0.13286,
+          0.1579
+        ],
+        "p_positive": 0.5563
+      },
+      {
+        "id": "support:m8-control:Democrat",
+        "measure": "support",
+        "subgroup": "Democrat",
+        "secondary": true,
+        "contrast": "m8 - control (Democrats incl. leaners)",
+        "kernel_effect": 0.00331,
+        "predicted_effect": 0.00306,
+        "interval80": [
+          -0.11021,
+          0.11633
+        ],
+        "interval90": [
+          -0.14232,
+          0.14844
+        ],
+        "p_positive": 0.5138
+      },
+      {
+        "id": "support:m9-control:Democrat",
+        "measure": "support",
+        "subgroup": "Democrat",
+        "secondary": true,
+        "contrast": "m9 - control (Democrats incl. leaners)",
+        "kernel_effect": -0.00023,
+        "predicted_effect": -0.00021,
+        "interval80": [
+          -0.11348,
+          0.11306
+        ],
+        "interval90": [
+          -0.14559,
+          0.14517
+        ],
+        "p_positive": 0.499
+      },
+      {
+        "id": "support:m10-control:Democrat",
+        "measure": "support",
+        "subgroup": "Democrat",
+        "secondary": true,
+        "contrast": "m10 - control (Democrats incl. leaners)",
+        "kernel_effect": 0.01531,
+        "predicted_effect": 0.01416,
+        "interval80": [
+          -0.09911,
+          0.12743
+        ],
+        "interval90": [
+          -0.13122,
+          0.15954
+        ],
+        "p_positive": 0.5637
+      },
+      {
+        "id": "support:m8-control:Republican",
+        "measure": "support",
+        "subgroup": "Republican",
+        "secondary": true,
+        "contrast": "m8 - control (Republicans incl. leaners)",
+        "kernel_effect": -0.0279,
+        "predicted_effect": -0.02581,
+        "interval80": [
+          -0.13908,
+          0.08746
+        ],
+        "interval90": [
+          -0.17119,
+          0.11957
+        ],
+        "p_positive": 0.3851
+      },
+      {
+        "id": "support:m9-control:Republican",
+        "measure": "support",
+        "subgroup": "Republican",
+        "secondary": true,
+        "contrast": "m9 - control (Republicans incl. leaners)",
+        "kernel_effect": -0.00998,
+        "predicted_effect": -0.00923,
+        "interval80": [
+          -0.1225,
+          0.10404
+        ],
+        "interval90": [
+          -0.15461,
+          0.13615
+        ],
+        "p_positive": 0.4584
+      },
+      {
+        "id": "support:m10-control:Republican",
+        "measure": "support",
+        "subgroup": "Republican",
+        "secondary": true,
+        "contrast": "m10 - control (Republicans incl. leaners)",
+        "kernel_effect": 0.01176,
+        "predicted_effect": 0.01088,
+        "interval80": [
+          -0.10239,
+          0.12415
+        ],
+        "interval90": [
+          -0.1345,
+          0.15626
+        ],
+        "p_positive": 0.549
+      },
+      {
+        "id": "belief:m1",
+        "measure": "targeted belief, post-message minus prior (slider, unit scale)",
+        "secondary": true,
+        "kernel_effect": 0.00047,
+        "predicted_effect": 0.00043,
+        "interval80": [
+          -0.11284,
+          0.11371
+        ],
+        "interval90": [
+          -0.14495,
+          0.14582
+        ],
+        "p_positive": 0.502
+      },
+      {
+        "id": "belief:m2",
+        "measure": "targeted belief, post-message minus prior (slider, unit scale)",
+        "secondary": true,
+        "kernel_effect": 0.03117,
+        "predicted_effect": 0.02883,
+        "interval80": [
+          -0.08444,
+          0.14211
+        ],
+        "interval90": [
+          -0.11655,
+          0.17421
+        ],
+        "p_positive": 0.6279
+      },
+      {
+        "id": "belief:m3",
+        "measure": "targeted belief, post-message minus prior (slider, unit scale)",
+        "secondary": true,
+        "kernel_effect": -0.04507,
+        "predicted_effect": -0.04169,
+        "interval80": [
+          -0.15496,
+          0.07158
+        ],
+        "interval90": [
+          -0.18707,
+          0.10369
+        ],
+        "p_positive": 0.3186
+      },
+      {
+        "id": "belief:m4",
+        "measure": "targeted belief, post-message minus prior (slider, unit scale)",
+        "secondary": true,
+        "kernel_effect": 0.00211,
+        "predicted_effect": 0.00195,
+        "interval80": [
+          -0.11132,
+          0.11522
+        ],
+        "interval90": [
+          -0.14343,
+          0.14733
+        ],
+        "p_positive": 0.5088
+      },
+      {
+        "id": "belief:m5",
+        "measure": "targeted belief, post-message minus prior (slider, unit scale)",
+        "secondary": true,
+        "kernel_effect": 0.03346,
+        "predicted_effect": 0.03095,
+        "interval80": [
+          -0.08232,
+          0.14422
+        ],
+        "interval90": [
+          -0.11443,
+          0.17633
+        ],
+        "p_positive": 0.6369
+      },
+      {
+        "id": "belief:m6",
+        "measure": "targeted belief, post-message minus prior (slider, unit scale)",
+        "secondary": true,
+        "kernel_effect": 0.03315,
+        "predicted_effect": 0.03066,
+        "interval80": [
+          -0.08261,
+          0.14393
+        ],
+        "interval90": [
+          -0.11472,
+          0.17604
+        ],
+        "p_positive": 0.6357
+      },
+      {
+        "id": "belief:m7",
+        "measure": "targeted belief, post-message minus prior (slider, unit scale)",
+        "secondary": true,
+        "kernel_effect": -0.00922,
+        "predicted_effect": -0.00853,
+        "interval80": [
+          -0.1218,
+          0.10474
+        ],
+        "interval90": [
+          -0.15391,
+          0.13685
+        ],
+        "p_positive": 0.4616
+      },
+      {
+        "id": "belief:m8",
+        "measure": "targeted belief, post-message minus prior (slider, unit scale)",
+        "secondary": true,
+        "kernel_effect": -0.1132,
+        "predicted_effect": -0.1047,
+        "interval80": [
+          -0.21797,
+          0.00857
+        ],
+        "interval90": [
+          -0.25008,
+          0.04068
+        ],
+        "p_positive": 0.1181
+      },
+      {
+        "id": "belief:m9",
+        "measure": "targeted belief, post-message minus prior (slider, unit scale)",
+        "secondary": true,
+        "kernel_effect": -0.11369,
+        "predicted_effect": -0.10515,
+        "interval80": [
+          -0.21842,
+          0.00812
+        ],
+        "interval90": [
+          -0.25053,
+          0.04023
+        ],
+        "p_positive": 0.1171
+      },
+      {
+        "id": "belief:m10",
+        "measure": "targeted belief, post-message minus prior (slider, unit scale)",
+        "secondary": true,
+        "kernel_effect": 0.04365,
+        "predicted_effect": 0.04038,
+        "interval80": [
+          -0.0729,
+          0.15365
+        ],
+        "interval90": [
+          -0.10501,
+          0.18576
+        ],
+        "p_positive": 0.6761
+      }
+    ],
+    "rank_order_support": [
+      "m6",
+      "m5",
+      "m4",
+      "m7",
+      "m3",
+      "m1",
+      "m2",
+      "m10",
+      "m9",
+      "m8"
+    ],
+    "best_condition": {
+      "m1": 0.0914,
+      "m2": 0.0757,
+      "m3": 0.1041,
+      "m4": 0.1275,
+      "m5": 0.1522,
+      "m6": 0.18,
+      "m7": 0.1161,
+      "m8": 0.0419,
+      "m9": 0.0444,
+      "m10": 0.0668
+    },
+    "scoring_notes": "Support (1-7, 'don't know' excluded) is forecast on the unit scale; published Cohen's d converts via the pooled SD divided by 6. m1-m7 against the full control, m8-m10 against the partisan control as preregistered; the forecast population is unweighted SocSci210 personas (general-population demographics; partisans 50/50 D/R), not Prolific with raking weights. Belief effects compare the persona's post-message estimate with its own prior. Headline scores use the ten support effects; the belief effects are secondary and scored separately. Known kernel limitation, recorded before sealing: Jev reads numerals poorly (its post-message estimates move little toward the stated figures), so the support forecasts rest on its reading of the messages' wording rather than the numbers.",
+    "models": {
+      "kernel": "jev-1.13.0",
+      "kernel_training_cutoff": "2026-01-01",
+      "phrasing": "p3",
+      "flagship": null,
+      "discrepancy": {
+        "source": "D2 jev fit_seen (91 seen SocSci210 studies); kept after E2c",
+        "beta": 0.9249304558258878,
+        "tau": 0.03680381185921599,
+        "sigma": 0.08035500127218577
+      },
+      "kite_commit": "4e5f9e268d8935f03b59c0320b17758dbbe7ffd8",
+      "run_ledgers": {
+        "prior": {
+          "calls": 2000,
+          "cache_hits": 0,
+          "cache_misses": 20000,
+          "input_tokens": 2807778,
+          "output_tokens": 368000,
+          "usd": 0.117927,
+          "reserved_usd": 0.0,
+          "answers": 20000,
+          "malformed_distributions": 0,
+          "wall_seconds": 123.3,
+          "latency_ms_p50": 178.2058954704553,
+          "latency_ms_p95": 232.48275843216103
+        },
+        "main": {
+          "calls": 4396,
+          "cache_hits": 28,
+          "cache_misses": 36772,
+          "input_tokens": 5527188,
+          "output_tokens": 679480,
+          "usd": 0.232142,
+          "reserved_usd": 0.0,
+          "answers": 36800,
+          "malformed_distributions": 0,
+          "wall_seconds": 273.1,
+          "latency_ms_p50": 181.47849990054965,
+          "latency_ms_p95": 240.59311422752216
+        }
+      }
+    },
+    "created": "2026-09-30T11:05:18+00:00"
+  },
+  "salt": "cb4be236dd832e151aece1bdd863a44b",
+  "digest": "a3feedcfe356c182a001c50ecd1657ee7f0225e5863e7a4e4b87d28c52c23734",
+  "sealed_at": "2026-09-30T11:05:24+00:00"
+}

@@ -1,0 +1,188 @@
+{
+  "forecast_id": "pc-geiger-cbd-norms-001",
+  "group": "post_cutoff",
+  "sealed_at": "2026-09-30T11:05:24+00:00",
+  "scored": "2026-09-30T11:21:29+00:00",
+  "primary": {
+    "effects": 10,
+    "sign_accuracy_reliable": "4/4",
+    "spearman_within_study": 0.8,
+    "coverage80": "10/10",
+    "coverage90": "10/10",
+    "mae": 0.0493,
+    "largest_effect_hit": false,
+    "largest_predicted": "support:m1-control",
+    "largest_observed": "support:m2-control",
+    "per_effect": {
+      "support:m1-control": {
+        "predicted": 0.02432,
+        "observed": 0.03925,
+        "in80": true,
+        "in90": true
+      },
+      "support:m2-control": {
+        "predicted": 0.01567,
+        "observed": 0.06229,
+        "in80": true,
+        "in90": true
+      },
+      "support:m3-control": {
+        "predicted": 0.03056,
+        "observed": -0.00164,
+        "in80": true,
+        "in90": true
+      },
+      "support:m4-control": {
+        "predicted": 0.0414,
+        "observed": -0.00861,
+        "in80": true,
+        "in90": true
+      },
+      "support:m5-control": {
+        "predicted": 0.04938,
+        "observed": 0.02543,
+        "in80": true,
+        "in90": true
+      },
+      "support:m6-control": {
+        "predicted": 0.05925,
+        "observed": 0.00507,
+        "in80": true,
+        "in90": true
+      },
+      "support:m7-control": {
+        "predicted": 0.03594,
+        "observed": -0.02178,
+        "in80": true,
+        "in90": true
+      },
+      "support:m8-control": {
+        "predicted": -0.01137,
+        "observed": -0.11293,
+        "in80": true,
+        "in90": true
+      },
+      "support:m9-control": {
+        "predicted": -0.00472,
+        "observed": -0.08263,
+        "in80": true,
+        "in90": true
+      },
+      "support:m10-control": {
+        "predicted": 0.01252,
+        "observed": -0.02134,
+        "in80": true,
+        "in90": true
+      }
+    }
+  },
+  "secondary": {
+    "effects": 16,
+    "sign_accuracy_reliable": "12/14",
+    "spearman_within_study": 0.785,
+    "coverage80": "11/16",
+    "coverage90": "12/16",
+    "mae": 0.0971,
+    "largest_effect_hit": false,
+    "largest_predicted": "belief:m10",
+    "largest_observed": "belief:m2",
+    "per_effect": {
+      "belief:m1": {
+        "predicted": 0.00043,
+        "observed": 0.11203,
+        "in80": true,
+        "in90": true
+      },
+      "belief:m2": {
+        "predicted": 0.02883,
+        "observed": 0.35213,
+        "in80": false,
+        "in90": false
+      },
+      "belief:m3": {
+        "predicted": -0.04169,
+        "observed": -0.02235,
+        "in80": true,
+        "in90": true
+      },
+      "belief:m4": {
+        "predicted": 0.00195,
+        "observed": 0.18119,
+        "in80": false,
+        "in90": false
+      },
+      "belief:m5": {
+        "predicted": 0.03095,
+        "observed": 0.11206,
+        "in80": true,
+        "in90": true
+      },
+      "belief:m6": {
+        "predicted": 0.03066,
+        "observed": 0.05693,
+        "in80": true,
+        "in90": true
+      },
+      "belief:m7": {
+        "predicted": -0.00853,
+        "observed": 0.04169,
+        "in80": true,
+        "in90": true
+      },
+      "support:m8-control:Democrat": {
+        "predicted": 0.00306,
+        "observed": -0.06327,
+        "in80": true,
+        "in90": true
+      },
+      "support:m8-control:Republican": {
+        "predicted": -0.02581,
+        "observed": -0.07188,
+        "in80": true,
+        "in90": true
+      },
+      "belief:m8": {
+        "predicted": -0.1047,
+        "observed": -0.35959,
+        "in80": false,
+        "in90": false
+      },
+      "support:m9-control:Democrat": {
+        "predicted": -0.00021,
+        "observed": -0.02505,
+        "in80": true,
+        "in90": true
+      },
+      "support:m9-control:Republican": {
+        "predicted": -0.00923,
+        "observed": -0.04977,
+        "in80": true,
+        "in90": true
+      },
+      "belief:m9": {
+        "predicted": -0.10515,
+        "observed": -0.22529,
+        "in80": false,
+        "in90": true
+      },
+      "support:m10-control:Democrat": {
+        "predicted": 0.01416,
+        "observed": 0.0249,
+        "in80": true,
+        "in90": true
+      },
+      "support:m10-control:Republican": {
+        "predicted": 0.01088,
+        "observed": 0.02892,
+        "in80": true,
+        "in90": true
+      },
+      "belief:m10": {
+        "predicted": 0.04038,
+        "observed": 0.22116,
+        "in80": false,
+        "in90": false
+      }
+    }
+  }
+}
