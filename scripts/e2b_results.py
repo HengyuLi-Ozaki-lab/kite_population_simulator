@@ -5,6 +5,7 @@ forecasts/results/<forecast_id>.json in the format scripts/e2_score.py reads. Th
 data/forecasts/e2b/ (their SHA-256 in data/forecasts/e2b/data_SHA256SUMS); only these aggregates are published.
 
     uv run python scripts/e2b_results.py c1
+    uv run python scripts/e2b_results.py c3
     uv run python scripts/e2b_results.py c4
 """
 
@@ -20,6 +21,15 @@ import pandas as pd
 OUT = Path("forecasts/results")
 C1_DATA = Path("data/forecasts/e2b/c1/data/data_S3.csv")
 C4_DATA = Path("data/forecasts/e2b/c4/data/01_clean_distribution_2025-02-26.csv")
+C3_DATA = Path("data/forecasts/e2b/c3/data/survey_Sheet1.csv")  # survey.xlsx's only sheet, saved as CSV
+C3_SECTORS = {"T": "transportation", "E": "education", "U": "utilities", "PH": "public_health", "In": "infrastructure", "B": "banking"}
+C3_MEASURES = {  # column suffix -> (forecast measure, map to the unit scale)
+    "Support": ("support", lambda x: (x - 1) / 3),
+    "Benefit": ("benefit", lambda x: (x - 1) / 4),
+    "Area": ("rural_beneficiary", lambda x: (x == 2).astype(float).where(x.notna())),  # 1 = Urban areas, 2 = Rural areas
+    "Trust": ("trust", lambda x: (x - 1) / 4),
+    "Proximity": ("similarity", lambda x: (x.map({1: 1, 5: 2, 7: 3, 8: 4}) - 1) / 3),  # Qualtrics recodes 1, 5, 7, 8
+}
 C1_CONDS = {  # forecast condition -> the data's `cond` value and belief column stem
     "m1": ("science", "science", 100),
     "m2": ("country", "country", 193),
@@ -157,10 +167,58 @@ def c4() -> dict:
     }
 
 
+def c3() -> dict:
+    cols = [f"{sec}_{pl}_{m}" for sec in C3_SECTORS for pl in ("Rural", "Urban", "Control") for m in C3_MEASURES]
+    wide = pd.read_csv(C3_DATA, usecols=cols)  # response columns only; no timestamps, ids or ZIP codes
+    rows = []
+    for sec, sector in C3_SECTORS.items():
+        for pl in ("Rural", "Urban", "Control"):
+            for m, (short, unit) in C3_MEASURES.items():
+                v = unit(wide[f"{sec}_{pl}_{m}"])
+                rows.append(pd.DataFrame({"respondent": wide.index, "sector": sector, "place": pl.lower(), "measure": short, "value": v}).dropna())
+    long = pd.concat(rows, ignore_index=True)
+    observed = {}
+    for short in (v[0] for v in C3_MEASURES.values()):
+        part = long[long["measure"] == short]
+        person = part.groupby(["respondent", "place"])["value"].mean().unstack()
+        for place in ("rural", "urban"):
+            diff = (person[place] - person["control"]).dropna()
+            value, se = float(diff.mean()), float(diff.std(ddof=1) / np.sqrt(len(diff)))
+            observed[f"{short}:{place}-control"] = {
+                "value": round(value, 5),
+                "se": round(se, 5),
+                "z": round(value / se, 2),
+                "reliable": bool(abs(value / se) >= 3),
+                "n": int(len(diff)),
+                "source": "per-respondent mean by sponsor place (two sectors each), paired difference over respondents, unit scale",
+            }
+        for sector, sub in part.groupby("sector"):
+            for place in ("rural", "urban"):
+                a, b = sub.loc[sub["place"] == place, "value"], sub.loc[sub["place"] == "control", "value"]
+                observed[f"{short}:{sector}:{place}-control"] = {
+                    **welch(a, b, 1),
+                    "source": f"{sector}: sponsor groups compared between respondents, unit scale",
+                }
+    return {
+        "forecast_id": "pc-rural-legislator-001",
+        "study": (
+            "Journal of Experimental Political Science 10.1017/xps.2026.10029; data Harvard Dataverse doi:10.7910/DVN/KHSFVX "
+            "data/survey.xlsx (sha256 259a45ab56670ee953afdbaa6b09c155b0a6ef55fc009dd8086361fc3dbc3c56)"
+        ),
+        "read_on": "2026-10-02",
+        "estimand": (
+            "Rural - control and urban - control on the unit scale: support (1-4), community benefit (1-5), share answering "
+            "'Rural areas', trust (1-5), similarity (codes 1, 5, 7, 8 taken as 1-4). Pooled contrasts paired within respondent."
+        ),
+        "data_notes": f"{len(wide)} respondents, as deposited (the survey ends for non-rural respondents and failed attention checks).",
+        "observed": observed,
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("study", choices=["c1", "c4"])
-    result = {"c1": c1, "c4": c4}[parser.parse_args().study]()
+    parser.add_argument("study", choices=["c1", "c3", "c4"])
+    result = {"c1": c1, "c3": c3, "c4": c4}[parser.parse_args().study]()
     OUT.mkdir(parents=True, exist_ok=True)
     path = OUT / f"{result['forecast_id']}.json"
     path.write_text(json.dumps(result, indent=2), encoding="utf-8")

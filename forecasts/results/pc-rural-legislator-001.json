@@ -1,0 +1,749 @@
+{
+  "forecast_id": "pc-rural-legislator-001",
+  "study": "Journal of Experimental Political Science 10.1017/xps.2026.10029; data Harvard Dataverse doi:10.7910/DVN/KHSFVX data/survey.xlsx (sha256 259a45ab56670ee953afdbaa6b09c155b0a6ef55fc009dd8086361fc3dbc3c56)",
+  "read_on": "2026-10-02",
+  "estimand": "Rural - control and urban - control on the unit scale: support (1-4), community benefit (1-5), share answering 'Rural areas', trust (1-5), similarity (codes 1, 5, 7, 8 taken as 1-4). Pooled contrasts paired within respondent.",
+  "data_notes": "502 respondents, as deposited (the survey ends for non-rural respondents and failed attention checks).",
+  "observed": {
+    "support:rural-control": {
+      "value": 0.03884,
+      "se": 0.0095,
+      "z": 4.09,
+      "reliable": true,
+      "n": 502,
+      "source": "per-respondent mean by sponsor place (two sectors each), paired difference over respondents, unit scale"
+    },
+    "support:urban-control": {
+      "value": -0.04781,
+      "se": 0.00975,
+      "z": -4.9,
+      "reliable": true,
+      "n": 502,
+      "source": "per-respondent mean by sponsor place (two sectors each), paired difference over respondents, unit scale"
+    },
+    "support:banking:rural-control": {
+      "value": 0.02046,
+      "se": 0.0276,
+      "z": 0.74,
+      "reliable": false,
+      "n": [
+        151,
+        185
+      ],
+      "source": "banking: sponsor groups compared between respondents, unit scale"
+    },
+    "support:banking:urban-control": {
+      "value": -0.04092,
+      "se": 0.02654,
+      "z": -1.54,
+      "reliable": false,
+      "n": [
+        166,
+        185
+      ],
+      "source": "banking: sponsor groups compared between respondents, unit scale"
+    },
+    "support:education:rural-control": {
+      "value": 0.02756,
+      "se": 0.02482,
+      "z": 1.11,
+      "reliable": false,
+      "n": [
+        179,
+        158
+      ],
+      "source": "education: sponsor groups compared between respondents, unit scale"
+    },
+    "support:education:urban-control": {
+      "value": -0.06815,
+      "se": 0.02659,
+      "z": -2.56,
+      "reliable": false,
+      "n": [
+        165,
+        158
+      ],
+      "source": "education: sponsor groups compared between respondents, unit scale"
+    },
+    "support:infrastructure:rural-control": {
+      "value": 0.0191,
+      "se": 0.0254,
+      "z": 0.75,
+      "reliable": false,
+      "n": [
+        192,
+        150
+      ],
+      "source": "infrastructure: sponsor groups compared between respondents, unit scale"
+    },
+    "support:infrastructure:urban-control": {
+      "value": -0.07778,
+      "se": 0.02796,
+      "z": -2.78,
+      "reliable": false,
+      "n": [
+        160,
+        150
+      ],
+      "source": "infrastructure: sponsor groups compared between respondents, unit scale"
+    },
+    "support:public_health:rural-control": {
+      "value": 0.03064,
+      "se": 0.02691,
+      "z": 1.14,
+      "reliable": false,
+      "n": [
+        159,
+        167
+      ],
+      "source": "public_health: sponsor groups compared between respondents, unit scale"
+    },
+    "support:public_health:urban-control": {
+      "value": -0.05979,
+      "se": 0.02947,
+      "z": -2.03,
+      "reliable": false,
+      "n": [
+        176,
+        167
+      ],
+      "source": "public_health: sponsor groups compared between respondents, unit scale"
+    },
+    "support:transportation:rural-control": {
+      "value": 0.06238,
+      "se": 0.02193,
+      "z": 2.84,
+      "reliable": false,
+      "n": [
+        160,
+        178
+      ],
+      "source": "transportation: sponsor groups compared between respondents, unit scale"
+    },
+    "support:transportation:urban-control": {
+      "value": -0.01816,
+      "se": 0.02433,
+      "z": -0.75,
+      "reliable": false,
+      "n": [
+        164,
+        178
+      ],
+      "source": "transportation: sponsor groups compared between respondents, unit scale"
+    },
+    "support:utilities:rural-control": {
+      "value": 0.02752,
+      "se": 0.02237,
+      "z": 1.23,
+      "reliable": false,
+      "n": [
+        163,
+        166
+      ],
+      "source": "utilities: sponsor groups compared between respondents, unit scale"
+    },
+    "support:utilities:urban-control": {
+      "value": -0.05151,
+      "se": 0.02352,
+      "z": -2.19,
+      "reliable": false,
+      "n": [
+        173,
+        166
+      ],
+      "source": "utilities: sponsor groups compared between respondents, unit scale"
+    },
+    "benefit:rural-control": {
+      "value": 0.08192,
+      "se": 0.01099,
+      "z": 7.46,
+      "reliable": true,
+      "n": 502,
+      "source": "per-respondent mean by sponsor place (two sectors each), paired difference over respondents, unit scale"
+    },
+    "benefit:urban-control": {
+      "value": -0.06599,
+      "se": 0.01045,
+      "z": -6.32,
+      "reliable": true,
+      "n": 502,
+      "source": "per-respondent mean by sponsor place (two sectors each), paired difference over respondents, unit scale"
+    },
+    "benefit:banking:rural-control": {
+      "value": 0.09122,
+      "se": 0.02681,
+      "z": 3.4,
+      "reliable": true,
+      "n": [
+        151,
+        185
+      ],
+      "source": "banking: sponsor groups compared between respondents, unit scale"
+    },
+    "benefit:banking:urban-control": {
+      "value": 0.01142,
+      "se": 0.02469,
+      "z": 0.46,
+      "reliable": false,
+      "n": [
+        166,
+        185
+      ],
+      "source": "banking: sponsor groups compared between respondents, unit scale"
+    },
+    "benefit:education:rural-control": {
+      "value": 0.05241,
+      "se": 0.02829,
+      "z": 1.85,
+      "reliable": false,
+      "n": [
+        179,
+        158
+      ],
+      "source": "education: sponsor groups compared between respondents, unit scale"
+    },
+    "benefit:education:urban-control": {
+      "value": -0.09266,
+      "se": 0.02979,
+      "z": -3.11,
+      "reliable": true,
+      "n": [
+        165,
+        158
+      ],
+      "source": "education: sponsor groups compared between respondents, unit scale"
+    },
+    "benefit:infrastructure:rural-control": {
+      "value": 0.09125,
+      "se": 0.02874,
+      "z": 3.18,
+      "reliable": true,
+      "n": [
+        192,
+        150
+      ],
+      "source": "infrastructure: sponsor groups compared between respondents, unit scale"
+    },
+    "benefit:infrastructure:urban-control": {
+      "value": -0.08323,
+      "se": 0.02977,
+      "z": -2.8,
+      "reliable": false,
+      "n": [
+        160,
+        150
+      ],
+      "source": "infrastructure: sponsor groups compared between respondents, unit scale"
+    },
+    "benefit:public_health:rural-control": {
+      "value": 0.05113,
+      "se": 0.02977,
+      "z": 1.72,
+      "reliable": false,
+      "n": [
+        159,
+        167
+      ],
+      "source": "public_health: sponsor groups compared between respondents, unit scale"
+    },
+    "benefit:public_health:urban-control": {
+      "value": -0.09725,
+      "se": 0.03132,
+      "z": -3.11,
+      "reliable": true,
+      "n": [
+        176,
+        167
+      ],
+      "source": "public_health: sponsor groups compared between respondents, unit scale"
+    },
+    "benefit:transportation:rural-control": {
+      "value": 0.08406,
+      "se": 0.02778,
+      "z": 3.03,
+      "reliable": true,
+      "n": [
+        160,
+        178
+      ],
+      "source": "transportation: sponsor groups compared between respondents, unit scale"
+    },
+    "benefit:transportation:urban-control": {
+      "value": -0.04445,
+      "se": 0.02987,
+      "z": -1.49,
+      "reliable": false,
+      "n": [
+        164,
+        178
+      ],
+      "source": "transportation: sponsor groups compared between respondents, unit scale"
+    },
+    "benefit:utilities:rural-control": {
+      "value": 0.08283,
+      "se": 0.02783,
+      "z": 2.98,
+      "reliable": false,
+      "n": [
+        163,
+        166
+      ],
+      "source": "utilities: sponsor groups compared between respondents, unit scale"
+    },
+    "benefit:utilities:urban-control": {
+      "value": -0.11804,
+      "se": 0.02655,
+      "z": -4.45,
+      "reliable": true,
+      "n": [
+        173,
+        166
+      ],
+      "source": "utilities: sponsor groups compared between respondents, unit scale"
+    },
+    "rural_beneficiary:rural-control": {
+      "value": 0.31972,
+      "se": 0.02179,
+      "z": 14.67,
+      "reliable": true,
+      "n": 502,
+      "source": "per-respondent mean by sponsor place (two sectors each), paired difference over respondents, unit scale"
+    },
+    "rural_beneficiary:urban-control": {
+      "value": -0.06873,
+      "se": 0.0151,
+      "z": -4.55,
+      "reliable": true,
+      "n": 502,
+      "source": "per-respondent mean by sponsor place (two sectors each), paired difference over respondents, unit scale"
+    },
+    "rural_beneficiary:banking:rural-control": {
+      "value": 0.26923,
+      "se": 0.0412,
+      "z": 6.54,
+      "reliable": true,
+      "n": [
+        151,
+        185
+      ],
+      "source": "banking: sponsor groups compared between respondents, unit scale"
+    },
+    "rural_beneficiary:banking:urban-control": {
+      "value": 0.01159,
+      "se": 0.02439,
+      "z": 0.48,
+      "reliable": false,
+      "n": [
+        166,
+        185
+      ],
+      "source": "banking: sponsor groups compared between respondents, unit scale"
+    },
+    "rural_beneficiary:education:rural-control": {
+      "value": 0.30698,
+      "se": 0.05055,
+      "z": 6.07,
+      "reliable": true,
+      "n": [
+        179,
+        158
+      ],
+      "source": "education: sponsor groups compared between respondents, unit scale"
+    },
+    "rural_beneficiary:education:urban-control": {
+      "value": -0.08899,
+      "se": 0.04413,
+      "z": -2.02,
+      "reliable": false,
+      "n": [
+        165,
+        158
+      ],
+      "source": "education: sponsor groups compared between respondents, unit scale"
+    },
+    "rural_beneficiary:infrastructure:rural-control": {
+      "value": 0.41354,
+      "se": 0.04553,
+      "z": 9.08,
+      "reliable": true,
+      "n": [
+        192,
+        150
+      ],
+      "source": "infrastructure: sponsor groups compared between respondents, unit scale"
+    },
+    "rural_beneficiary:infrastructure:urban-control": {
+      "value": -0.00833,
+      "se": 0.03825,
+      "z": -0.22,
+      "reliable": false,
+      "n": [
+        160,
+        150
+      ],
+      "source": "infrastructure: sponsor groups compared between respondents, unit scale"
+    },
+    "rural_beneficiary:public_health:rural-control": {
+      "value": 0.18698,
+      "se": 0.05414,
+      "z": 3.45,
+      "reliable": true,
+      "n": [
+        159,
+        167
+      ],
+      "source": "public_health: sponsor groups compared between respondents, unit scale"
+    },
+    "rural_beneficiary:public_health:urban-control": {
+      "value": -0.18791,
+      "se": 0.04579,
+      "z": -4.1,
+      "reliable": true,
+      "n": [
+        176,
+        167
+      ],
+      "source": "public_health: sponsor groups compared between respondents, unit scale"
+    },
+    "rural_beneficiary:transportation:rural-control": {
+      "value": 0.32514,
+      "se": 0.04595,
+      "z": 7.08,
+      "reliable": true,
+      "n": [
+        160,
+        178
+      ],
+      "source": "transportation: sponsor groups compared between respondents, unit scale"
+    },
+    "rural_beneficiary:transportation:urban-control": {
+      "value": -0.03309,
+      "se": 0.0318,
+      "z": -1.04,
+      "reliable": false,
+      "n": [
+        164,
+        178
+      ],
+      "source": "transportation: sponsor groups compared between respondents, unit scale"
+    },
+    "rural_beneficiary:utilities:rural-control": {
+      "value": 0.37298,
+      "se": 0.05105,
+      "z": 7.31,
+      "reliable": true,
+      "n": [
+        163,
+        166
+      ],
+      "source": "utilities: sponsor groups compared between respondents, unit scale"
+    },
+    "rural_beneficiary:utilities:urban-control": {
+      "value": -0.12633,
+      "se": 0.0433,
+      "z": -2.92,
+      "reliable": false,
+      "n": [
+        173,
+        166
+      ],
+      "source": "utilities: sponsor groups compared between respondents, unit scale"
+    },
+    "trust:rural-control": {
+      "value": 0.07694,
+      "se": 0.00939,
+      "z": 8.2,
+      "reliable": true,
+      "n": 502,
+      "source": "per-respondent mean by sponsor place (two sectors each), paired difference over respondents, unit scale"
+    },
+    "trust:urban-control": {
+      "value": -0.04756,
+      "se": 0.00812,
+      "z": -5.85,
+      "reliable": true,
+      "n": 502,
+      "source": "per-respondent mean by sponsor place (two sectors each), paired difference over respondents, unit scale"
+    },
+    "trust:banking:rural-control": {
+      "value": 0.06802,
+      "se": 0.02694,
+      "z": 2.52,
+      "reliable": false,
+      "n": [
+        151,
+        185
+      ],
+      "source": "banking: sponsor groups compared between respondents, unit scale"
+    },
+    "trust:banking:urban-control": {
+      "value": 0.00224,
+      "se": 0.02529,
+      "z": 0.09,
+      "reliable": false,
+      "n": [
+        166,
+        185
+      ],
+      "source": "banking: sponsor groups compared between respondents, unit scale"
+    },
+    "trust:education:rural-control": {
+      "value": 0.05164,
+      "se": 0.02582,
+      "z": 2.0,
+      "reliable": false,
+      "n": [
+        179,
+        158
+      ],
+      "source": "education: sponsor groups compared between respondents, unit scale"
+    },
+    "trust:education:urban-control": {
+      "value": -0.07173,
+      "se": 0.02669,
+      "z": -2.69,
+      "reliable": false,
+      "n": [
+        165,
+        158
+      ],
+      "source": "education: sponsor groups compared between respondents, unit scale"
+    },
+    "trust:infrastructure:rural-control": {
+      "value": 0.09234,
+      "se": 0.02608,
+      "z": 3.54,
+      "reliable": true,
+      "n": [
+        192,
+        150
+      ],
+      "source": "infrastructure: sponsor groups compared between respondents, unit scale"
+    },
+    "trust:infrastructure:urban-control": {
+      "value": -0.03604,
+      "se": 0.02774,
+      "z": -1.3,
+      "reliable": false,
+      "n": [
+        160,
+        150
+      ],
+      "source": "infrastructure: sponsor groups compared between respondents, unit scale"
+    },
+    "trust:public_health:rural-control": {
+      "value": 0.05793,
+      "se": 0.0285,
+      "z": 2.03,
+      "reliable": false,
+      "n": [
+        159,
+        167
+      ],
+      "source": "public_health: sponsor groups compared between respondents, unit scale"
+    },
+    "trust:public_health:urban-control": {
+      "value": -0.10593,
+      "se": 0.02731,
+      "z": -3.88,
+      "reliable": true,
+      "n": [
+        176,
+        167
+      ],
+      "source": "public_health: sponsor groups compared between respondents, unit scale"
+    },
+    "trust:transportation:rural-control": {
+      "value": 0.08295,
+      "se": 0.02577,
+      "z": 3.22,
+      "reliable": true,
+      "n": [
+        160,
+        178
+      ],
+      "source": "transportation: sponsor groups compared between respondents, unit scale"
+    },
+    "trust:transportation:urban-control": {
+      "value": -0.05596,
+      "se": 0.0248,
+      "z": -2.26,
+      "reliable": false,
+      "n": [
+        164,
+        178
+      ],
+      "source": "transportation: sponsor groups compared between respondents, unit scale"
+    },
+    "trust:utilities:rural-control": {
+      "value": 0.08359,
+      "se": 0.0267,
+      "z": 3.13,
+      "reliable": true,
+      "n": [
+        163,
+        166
+      ],
+      "source": "utilities: sponsor groups compared between respondents, unit scale"
+    },
+    "trust:utilities:urban-control": {
+      "value": -0.03396,
+      "se": 0.02491,
+      "z": -1.36,
+      "reliable": false,
+      "n": [
+        173,
+        166
+      ],
+      "source": "utilities: sponsor groups compared between respondents, unit scale"
+    },
+    "similarity:rural-control": {
+      "value": 0.06607,
+      "se": 0.00767,
+      "z": 8.62,
+      "reliable": true,
+      "n": 502,
+      "source": "per-respondent mean by sponsor place (two sectors each), paired difference over respondents, unit scale"
+    },
+    "similarity:urban-control": {
+      "value": -0.04017,
+      "se": 0.00632,
+      "z": -6.35,
+      "reliable": true,
+      "n": 502,
+      "source": "per-respondent mean by sponsor place (two sectors each), paired difference over respondents, unit scale"
+    },
+    "similarity:banking:rural-control": {
+      "value": 0.06377,
+      "se": 0.02367,
+      "z": 2.69,
+      "reliable": false,
+      "n": [
+        151,
+        185
+      ],
+      "source": "banking: sponsor groups compared between respondents, unit scale"
+    },
+    "similarity:banking:urban-control": {
+      "value": -0.01141,
+      "se": 0.02029,
+      "z": -0.56,
+      "reliable": false,
+      "n": [
+        166,
+        185
+      ],
+      "source": "banking: sponsor groups compared between respondents, unit scale"
+    },
+    "similarity:education:rural-control": {
+      "value": 0.06054,
+      "se": 0.02317,
+      "z": 2.61,
+      "reliable": false,
+      "n": [
+        179,
+        158
+      ],
+      "source": "education: sponsor groups compared between respondents, unit scale"
+    },
+    "similarity:education:urban-control": {
+      "value": -0.0542,
+      "se": 0.02299,
+      "z": -2.36,
+      "reliable": false,
+      "n": [
+        165,
+        158
+      ],
+      "source": "education: sponsor groups compared between respondents, unit scale"
+    },
+    "similarity:infrastructure:rural-control": {
+      "value": 0.07194,
+      "se": 0.02412,
+      "z": 2.98,
+      "reliable": false,
+      "n": [
+        192,
+        150
+      ],
+      "source": "infrastructure: sponsor groups compared between respondents, unit scale"
+    },
+    "similarity:infrastructure:urban-control": {
+      "value": -0.05792,
+      "se": 0.02539,
+      "z": -2.28,
+      "reliable": false,
+      "n": [
+        160,
+        150
+      ],
+      "source": "infrastructure: sponsor groups compared between respondents, unit scale"
+    },
+    "similarity:public_health:rural-control": {
+      "value": 0.0471,
+      "se": 0.0279,
+      "z": 1.69,
+      "reliable": false,
+      "n": [
+        159,
+        167
+      ],
+      "source": "public_health: sponsor groups compared between respondents, unit scale"
+    },
+    "similarity:public_health:urban-control": {
+      "value": -0.0687,
+      "se": 0.02409,
+      "z": -2.85,
+      "reliable": false,
+      "n": [
+        176,
+        167
+      ],
+      "source": "public_health: sponsor groups compared between respondents, unit scale"
+    },
+    "similarity:transportation:rural-control": {
+      "value": 0.07837,
+      "se": 0.02484,
+      "z": 3.16,
+      "reliable": true,
+      "n": [
+        160,
+        178
+      ],
+      "source": "transportation: sponsor groups compared between respondents, unit scale"
+    },
+    "similarity:transportation:urban-control": {
+      "value": -0.03809,
+      "se": 0.02287,
+      "z": -1.67,
+      "reliable": false,
+      "n": [
+        164,
+        178
+      ],
+      "source": "transportation: sponsor groups compared between respondents, unit scale"
+    },
+    "similarity:utilities:rural-control": {
+      "value": 0.05515,
+      "se": 0.02583,
+      "z": 2.14,
+      "reliable": false,
+      "n": [
+        163,
+        166
+      ],
+      "source": "utilities: sponsor groups compared between respondents, unit scale"
+    },
+    "similarity:utilities:urban-control": {
+      "value": -0.02427,
+      "se": 0.02413,
+      "z": -1.01,
+      "reliable": false,
+      "n": [
+        173,
+        166
+      ],
+      "source": "utilities: sponsor groups compared between respondents, unit scale"
+    }
+  }
+}

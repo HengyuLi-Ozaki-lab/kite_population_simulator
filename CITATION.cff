@@ -6,8 +6,8 @@ authors:
   - family-names: Li
     given-names: Hengyu
     affiliation: The University of Tokyo
-version: 0.6.0
-date-released: 2026-10-02
+version: 0.6.1
+date-released: 2026-10-03
 license: MIT
 repository-code: "https://github.com/HengyuLi-Ozaki-lab/kite_population_simulator"
 url: "https://hengyuli-ozaki-lab.github.io/kite_population_simulator/"

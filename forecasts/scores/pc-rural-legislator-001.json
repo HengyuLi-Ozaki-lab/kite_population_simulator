@@ -1,0 +1,452 @@
+{
+  "forecast_id": "pc-rural-legislator-001",
+  "group": "post_cutoff",
+  "sealed_at": "2026-09-30T11:43:36+00:00",
+  "scored": "2026-10-02T06:12:03+00:00",
+  "primary": {
+    "effects": 9,
+    "sign_accuracy_reliable": "9/9",
+    "spearman_within_study": 0.833,
+    "coverage80": "7/9",
+    "coverage90": "7/9",
+    "mae": 0.0693,
+    "largest_effect_hit": true,
+    "largest_predicted": "rural_beneficiary:rural-control",
+    "largest_observed": "rural_beneficiary:rural-control",
+    "per_effect": {
+      "support:rural-control": {
+        "predicted": 0.01554,
+        "observed": 0.03884,
+        "in80": true,
+        "in90": true
+      },
+      "support:urban-control": {
+        "predicted": -0.0271,
+        "observed": -0.04781,
+        "in80": true,
+        "in90": true
+      },
+      "benefit:rural-control": {
+        "predicted": 0.01515,
+        "observed": 0.08192,
+        "in80": true,
+        "in90": true
+      },
+      "benefit:urban-control": {
+        "predicted": -0.05378,
+        "observed": -0.06599,
+        "in80": true,
+        "in90": true
+      },
+      "rural_beneficiary:rural-control": {
+        "predicted": 0.07577,
+        "observed": 0.31972,
+        "in80": false,
+        "in90": false
+      },
+      "rural_beneficiary:urban-control": {
+        "predicted": -0.23373,
+        "observed": -0.06873,
+        "in80": false,
+        "in90": false
+      },
+      "trust:rural-control": {
+        "predicted": 0.02528,
+        "observed": 0.07694,
+        "in80": true,
+        "in90": true
+      },
+      "trust:urban-control": {
+        "predicted": -0.05853,
+        "observed": -0.04756,
+        "in80": true,
+        "in90": true
+      },
+      "similarity:rural-control": {
+        "predicted": 0.03702,
+        "observed": 0.06607,
+        "in80": true,
+        "in90": true
+      }
+    }
+  },
+  "secondary": {
+    "effects": 61,
+    "sign_accuracy_reliable": "19/19",
+    "spearman_within_study": 0.847,
+    "coverage80": "52/61",
+    "coverage90": "53/61",
+    "mae": 0.0659,
+    "largest_effect_hit": false,
+    "largest_predicted": "rural_beneficiary:banking:rural-control",
+    "largest_observed": "rural_beneficiary:infrastructure:rural-control",
+    "per_effect": {
+      "support:banking:rural-control": {
+        "predicted": 0.01326,
+        "observed": 0.02046,
+        "in80": true,
+        "in90": true
+      },
+      "support:banking:urban-control": {
+        "predicted": -0.02016,
+        "observed": -0.04092,
+        "in80": true,
+        "in90": true
+      },
+      "support:education:rural-control": {
+        "predicted": 0.01358,
+        "observed": 0.02756,
+        "in80": true,
+        "in90": true
+      },
+      "support:education:urban-control": {
+        "predicted": -0.01997,
+        "observed": -0.06815,
+        "in80": true,
+        "in90": true
+      },
+      "support:infrastructure:rural-control": {
+        "predicted": 0.01241,
+        "observed": 0.0191,
+        "in80": true,
+        "in90": true
+      },
+      "support:infrastructure:urban-control": {
+        "predicted": -0.0313,
+        "observed": -0.07778,
+        "in80": true,
+        "in90": true
+      },
+      "support:public_health:rural-control": {
+        "predicted": 0.01859,
+        "observed": 0.03064,
+        "in80": true,
+        "in90": true
+      },
+      "support:public_health:urban-control": {
+        "predicted": -0.02681,
+        "observed": -0.05979,
+        "in80": true,
+        "in90": true
+      },
+      "support:transportation:rural-control": {
+        "predicted": 0.01731,
+        "observed": 0.06238,
+        "in80": true,
+        "in90": true
+      },
+      "support:transportation:urban-control": {
+        "predicted": -0.03441,
+        "observed": -0.01816,
+        "in80": true,
+        "in90": true
+      },
+      "support:utilities:rural-control": {
+        "predicted": 0.01807,
+        "observed": 0.02752,
+        "in80": true,
+        "in90": true
+      },
+      "support:utilities:urban-control": {
+        "predicted": -0.02994,
+        "observed": -0.05151,
+        "in80": true,
+        "in90": true
+      },
+      "benefit:banking:rural-control": {
+        "predicted": 0.01902,
+        "observed": 0.09122,
+        "in80": true,
+        "in90": true
+      },
+      "benefit:banking:urban-control": {
+        "predicted": -0.04091,
+        "observed": 0.01142,
+        "in80": true,
+        "in90": true
+      },
+      "benefit:education:rural-control": {
+        "predicted": 0.00717,
+        "observed": 0.05241,
+        "in80": true,
+        "in90": true
+      },
+      "benefit:education:urban-control": {
+        "predicted": -0.05135,
+        "observed": -0.09266,
+        "in80": true,
+        "in90": true
+      },
+      "benefit:infrastructure:rural-control": {
+        "predicted": 0.01321,
+        "observed": 0.09125,
+        "in80": true,
+        "in90": true
+      },
+      "benefit:infrastructure:urban-control": {
+        "predicted": -0.07013,
+        "observed": -0.08323,
+        "in80": true,
+        "in90": true
+      },
+      "benefit:public_health:rural-control": {
+        "predicted": 0.01579,
+        "observed": 0.05113,
+        "in80": true,
+        "in90": true
+      },
+      "benefit:public_health:urban-control": {
+        "predicted": -0.05027,
+        "observed": -0.09725,
+        "in80": true,
+        "in90": true
+      },
+      "benefit:transportation:rural-control": {
+        "predicted": 0.01719,
+        "observed": 0.08406,
+        "in80": true,
+        "in90": true
+      },
+      "benefit:transportation:urban-control": {
+        "predicted": -0.06161,
+        "observed": -0.04445,
+        "in80": true,
+        "in90": true
+      },
+      "benefit:utilities:rural-control": {
+        "predicted": 0.01852,
+        "observed": 0.08283,
+        "in80": true,
+        "in90": true
+      },
+      "benefit:utilities:urban-control": {
+        "predicted": -0.04841,
+        "observed": -0.11804,
+        "in80": true,
+        "in90": true
+      },
+      "rural_beneficiary:banking:rural-control": {
+        "predicted": 0.0887,
+        "observed": 0.26923,
+        "in80": false,
+        "in90": false
+      },
+      "rural_beneficiary:banking:urban-control": {
+        "predicted": -0.20709,
+        "observed": 0.01159,
+        "in80": false,
+        "in90": false
+      },
+      "rural_beneficiary:education:rural-control": {
+        "predicted": 0.07549,
+        "observed": 0.30698,
+        "in80": false,
+        "in90": false
+      },
+      "rural_beneficiary:education:urban-control": {
+        "predicted": -0.23143,
+        "observed": -0.08899,
+        "in80": false,
+        "in90": true
+      },
+      "rural_beneficiary:infrastructure:rural-control": {
+        "predicted": 0.0824,
+        "observed": 0.41354,
+        "in80": false,
+        "in90": false
+      },
+      "rural_beneficiary:infrastructure:urban-control": {
+        "predicted": -0.24115,
+        "observed": -0.00833,
+        "in80": false,
+        "in90": false
+      },
+      "rural_beneficiary:public_health:rural-control": {
+        "predicted": 0.07988,
+        "observed": 0.18698,
+        "in80": true,
+        "in90": true
+      },
+      "rural_beneficiary:public_health:urban-control": {
+        "predicted": -0.21686,
+        "observed": -0.18791,
+        "in80": true,
+        "in90": true
+      },
+      "rural_beneficiary:transportation:rural-control": {
+        "predicted": 0.05977,
+        "observed": 0.32514,
+        "in80": false,
+        "in90": false
+      },
+      "rural_beneficiary:transportation:urban-control": {
+        "predicted": -0.26654,
+        "observed": -0.03309,
+        "in80": false,
+        "in90": false
+      },
+      "rural_beneficiary:utilities:rural-control": {
+        "predicted": 0.06838,
+        "observed": 0.37298,
+        "in80": false,
+        "in90": false
+      },
+      "rural_beneficiary:utilities:urban-control": {
+        "predicted": -0.23933,
+        "observed": -0.12633,
+        "in80": true,
+        "in90": true
+      },
+      "trust:banking:rural-control": {
+        "predicted": 0.02959,
+        "observed": 0.06802,
+        "in80": true,
+        "in90": true
+      },
+      "trust:banking:urban-control": {
+        "predicted": -0.04669,
+        "observed": 0.00224,
+        "in80": true,
+        "in90": true
+      },
+      "trust:education:rural-control": {
+        "predicted": 0.02255,
+        "observed": 0.05164,
+        "in80": true,
+        "in90": true
+      },
+      "trust:education:urban-control": {
+        "predicted": -0.06021,
+        "observed": -0.07173,
+        "in80": true,
+        "in90": true
+      },
+      "trust:infrastructure:rural-control": {
+        "predicted": 0.02476,
+        "observed": 0.09234,
+        "in80": true,
+        "in90": true
+      },
+      "trust:infrastructure:urban-control": {
+        "predicted": -0.06405,
+        "observed": -0.03604,
+        "in80": true,
+        "in90": true
+      },
+      "trust:public_health:rural-control": {
+        "predicted": 0.02466,
+        "observed": 0.05793,
+        "in80": true,
+        "in90": true
+      },
+      "trust:public_health:urban-control": {
+        "predicted": -0.05832,
+        "observed": -0.10593,
+        "in80": true,
+        "in90": true
+      },
+      "trust:transportation:rural-control": {
+        "predicted": 0.025,
+        "observed": 0.08295,
+        "in80": true,
+        "in90": true
+      },
+      "trust:transportation:urban-control": {
+        "predicted": -0.06021,
+        "observed": -0.05596,
+        "in80": true,
+        "in90": true
+      },
+      "trust:utilities:rural-control": {
+        "predicted": 0.02515,
+        "observed": 0.08359,
+        "in80": true,
+        "in90": true
+      },
+      "trust:utilities:urban-control": {
+        "predicted": -0.06169,
+        "observed": -0.03396,
+        "in80": true,
+        "in90": true
+      },
+      "similarity:urban-control": {
+        "predicted": -0.05859,
+        "observed": -0.04017,
+        "in80": true,
+        "in90": true
+      },
+      "similarity:banking:rural-control": {
+        "predicted": 0.03743,
+        "observed": 0.06377,
+        "in80": true,
+        "in90": true
+      },
+      "similarity:banking:urban-control": {
+        "predicted": -0.05918,
+        "observed": -0.01141,
+        "in80": true,
+        "in90": true
+      },
+      "similarity:education:rural-control": {
+        "predicted": 0.03025,
+        "observed": 0.06054,
+        "in80": true,
+        "in90": true
+      },
+      "similarity:education:urban-control": {
+        "predicted": -0.05616,
+        "observed": -0.0542,
+        "in80": true,
+        "in90": true
+      },
+      "similarity:infrastructure:rural-control": {
+        "predicted": 0.03961,
+        "observed": 0.07194,
+        "in80": true,
+        "in90": true
+      },
+      "similarity:infrastructure:urban-control": {
+        "predicted": -0.05563,
+        "observed": -0.05792,
+        "in80": true,
+        "in90": true
+      },
+      "similarity:public_health:rural-control": {
+        "predicted": 0.03872,
+        "observed": 0.0471,
+        "in80": true,
+        "in90": true
+      },
+      "similarity:public_health:urban-control": {
+        "predicted": -0.05791,
+        "observed": -0.0687,
+        "in80": true,
+        "in90": true
+      },
+      "similarity:transportation:rural-control": {
+        "predicted": 0.03724,
+        "observed": 0.07837,
+        "in80": true,
+        "in90": true
+      },
+      "similarity:transportation:urban-control": {
+        "predicted": -0.06266,
+        "observed": -0.03809,
+        "in80": true,
+        "in90": true
+      },
+      "similarity:utilities:rural-control": {
+        "predicted": 0.03884,
+        "observed": 0.05515,
+        "in80": true,
+        "in90": true
+      },
+      "similarity:utilities:urban-control": {
+        "predicted": -0.06,
+        "observed": -0.02427,
+        "in80": true,
+        "in90": true
+      }
+    }
+  }
+}

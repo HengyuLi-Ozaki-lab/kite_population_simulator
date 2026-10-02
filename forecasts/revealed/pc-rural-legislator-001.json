@@ -1,0 +1,1875 @@
+{
+  "record": {
+    "forecast_id": "pc-rural-legislator-001",
+    "group": "post_cutoff",
+    "study": {
+      "source": "Journal of Experimental Political Science, 10.1017/xps.2026.10029 (online 2026-04-13); fielded 2026-01-23 to 2026-01-25; AsPredicted #25hv8f",
+      "materials": "Cambridge supplementary S2052263026100293sup001.zip (sha256 b16b25f699befbf57436b385c369219cb4f016f5d0fe74a96e159d2a4b74097f), Appendix A only (JEPS_APPENDIX_A.docx); Appendices B-D (results) were not opened",
+      "read_on": "2026-09-30",
+      "notes": "Blinded extraction by a separate agent. Each vignette is a static image of a simulated TV news screen; the kernel reads its on-screen text plus a description of the image (backdrop scenery carries the place cue together with the name-plate subtitle). The study screens for self-identified rural residents; the personas are SocSci210 respondents living outside metro areas. Age brackets, race and party are not matched."
+    },
+    "population": {
+      "source": "SocSci210 test-split respondents (NORC AmeriSpeak, US adults) with metro_status 'Non-Metro Area'",
+      "rural": "200 with gender, age and education, half men (seed 14); every persona answers all 18 clips"
+    },
+    "materials": {
+      "requests": 18000,
+      "distinct_texts": 90,
+      "texts_sha256": "8654feebf0c72330b130b287677845624d4145ea0930e21861dbd5435607f1a1"
+    },
+    "conditions": [
+      {
+        "id": "benefit:banking:control",
+        "measure": "benefit",
+        "sector": "banking",
+        "place": "control",
+        "unit": 0.48278
+      },
+      {
+        "id": "benefit:banking:rural",
+        "measure": "benefit",
+        "sector": "banking",
+        "place": "rural",
+        "unit": 0.50335
+      },
+      {
+        "id": "benefit:banking:urban",
+        "measure": "benefit",
+        "sector": "banking",
+        "place": "urban",
+        "unit": 0.43855
+      },
+      {
+        "id": "benefit:education:control",
+        "measure": "benefit",
+        "sector": "education",
+        "place": "control",
+        "unit": 0.53133
+      },
+      {
+        "id": "benefit:education:rural",
+        "measure": "benefit",
+        "sector": "education",
+        "place": "rural",
+        "unit": 0.53908
+      },
+      {
+        "id": "benefit:education:urban",
+        "measure": "benefit",
+        "sector": "education",
+        "place": "urban",
+        "unit": 0.47581
+      },
+      {
+        "id": "benefit:infrastructure:control",
+        "measure": "benefit",
+        "sector": "infrastructure",
+        "place": "control",
+        "unit": 0.54897
+      },
+      {
+        "id": "benefit:infrastructure:rural",
+        "measure": "benefit",
+        "sector": "infrastructure",
+        "place": "rural",
+        "unit": 0.56326
+      },
+      {
+        "id": "benefit:infrastructure:urban",
+        "measure": "benefit",
+        "sector": "infrastructure",
+        "place": "urban",
+        "unit": 0.47315
+      },
+      {
+        "id": "benefit:public_health:control",
+        "measure": "benefit",
+        "sector": "public_health",
+        "place": "control",
+        "unit": 0.55505
+      },
+      {
+        "id": "benefit:public_health:rural",
+        "measure": "benefit",
+        "sector": "public_health",
+        "place": "rural",
+        "unit": 0.57213
+      },
+      {
+        "id": "benefit:public_health:urban",
+        "measure": "benefit",
+        "sector": "public_health",
+        "place": "urban",
+        "unit": 0.5007
+      },
+      {
+        "id": "benefit:transportation:control",
+        "measure": "benefit",
+        "sector": "transportation",
+        "place": "control",
+        "unit": 0.53058
+      },
+      {
+        "id": "benefit:transportation:rural",
+        "measure": "benefit",
+        "sector": "transportation",
+        "place": "rural",
+        "unit": 0.54916
+      },
+      {
+        "id": "benefit:transportation:urban",
+        "measure": "benefit",
+        "sector": "transportation",
+        "place": "urban",
+        "unit": 0.46397
+      },
+      {
+        "id": "benefit:utilities:control",
+        "measure": "benefit",
+        "sector": "utilities",
+        "place": "control",
+        "unit": 0.51195
+      },
+      {
+        "id": "benefit:utilities:rural",
+        "measure": "benefit",
+        "sector": "utilities",
+        "place": "rural",
+        "unit": 0.53197
+      },
+      {
+        "id": "benefit:utilities:urban",
+        "measure": "benefit",
+        "sector": "utilities",
+        "place": "urban",
+        "unit": 0.45961
+      },
+      {
+        "id": "rural_beneficiary:banking:control",
+        "measure": "rural_beneficiary",
+        "sector": "banking",
+        "place": "control",
+        "unit": 0.60966
+      },
+      {
+        "id": "rural_beneficiary:banking:rural",
+        "measure": "rural_beneficiary",
+        "sector": "banking",
+        "place": "rural",
+        "unit": 0.70556
+      },
+      {
+        "id": "rural_beneficiary:banking:urban",
+        "measure": "rural_beneficiary",
+        "sector": "banking",
+        "place": "urban",
+        "unit": 0.38577
+      },
+      {
+        "id": "rural_beneficiary:education:control",
+        "measure": "rural_beneficiary",
+        "sector": "education",
+        "place": "control",
+        "unit": 0.62674
+      },
+      {
+        "id": "rural_beneficiary:education:rural",
+        "measure": "rural_beneficiary",
+        "sector": "education",
+        "place": "rural",
+        "unit": 0.70836
+      },
+      {
+        "id": "rural_beneficiary:education:urban",
+        "measure": "rural_beneficiary",
+        "sector": "education",
+        "place": "urban",
+        "unit": 0.37653
+      },
+      {
+        "id": "rural_beneficiary:infrastructure:control",
+        "measure": "rural_beneficiary",
+        "sector": "infrastructure",
+        "place": "control",
+        "unit": 0.65118
+      },
+      {
+        "id": "rural_beneficiary:infrastructure:rural",
+        "measure": "rural_beneficiary",
+        "sector": "infrastructure",
+        "place": "rural",
+        "unit": 0.74027
+      },
+      {
+        "id": "rural_beneficiary:infrastructure:urban",
+        "measure": "rural_beneficiary",
+        "sector": "infrastructure",
+        "place": "urban",
+        "unit": 0.39046
+      },
+      {
+        "id": "rural_beneficiary:public_health:control",
+        "measure": "rural_beneficiary",
+        "sector": "public_health",
+        "place": "control",
+        "unit": 0.6199
+      },
+      {
+        "id": "rural_beneficiary:public_health:rural",
+        "measure": "rural_beneficiary",
+        "sector": "public_health",
+        "place": "rural",
+        "unit": 0.70626
+      },
+      {
+        "id": "rural_beneficiary:public_health:urban",
+        "measure": "rural_beneficiary",
+        "sector": "public_health",
+        "place": "urban",
+        "unit": 0.38543
+      },
+      {
+        "id": "rural_beneficiary:transportation:control",
+        "measure": "rural_beneficiary",
+        "sector": "transportation",
+        "place": "control",
+        "unit": 0.6942
+      },
+      {
+        "id": "rural_beneficiary:transportation:rural",
+        "measure": "rural_beneficiary",
+        "sector": "transportation",
+        "place": "rural",
+        "unit": 0.75882
+      },
+      {
+        "id": "rural_beneficiary:transportation:urban",
+        "measure": "rural_beneficiary",
+        "sector": "transportation",
+        "place": "urban",
+        "unit": 0.40603
+      },
+      {
+        "id": "rural_beneficiary:utilities:control",
+        "measure": "rural_beneficiary",
+        "sector": "utilities",
+        "place": "control",
+        "unit": 0.65944
+      },
+      {
+        "id": "rural_beneficiary:utilities:rural",
+        "measure": "rural_beneficiary",
+        "sector": "utilities",
+        "place": "rural",
+        "unit": 0.73336
+      },
+      {
+        "id": "rural_beneficiary:utilities:urban",
+        "measure": "rural_beneficiary",
+        "sector": "utilities",
+        "place": "urban",
+        "unit": 0.40068
+      },
+      {
+        "id": "similarity:banking:control",
+        "measure": "similarity",
+        "sector": "banking",
+        "place": "control",
+        "unit": 0.38574
+      },
+      {
+        "id": "similarity:banking:rural",
+        "measure": "similarity",
+        "sector": "banking",
+        "place": "rural",
+        "unit": 0.42621
+      },
+      {
+        "id": "similarity:banking:urban",
+        "measure": "similarity",
+        "sector": "banking",
+        "place": "urban",
+        "unit": 0.32175
+      },
+      {
+        "id": "similarity:education:control",
+        "measure": "similarity",
+        "sector": "education",
+        "place": "control",
+        "unit": 0.40273
+      },
+      {
+        "id": "similarity:education:rural",
+        "measure": "similarity",
+        "sector": "education",
+        "place": "rural",
+        "unit": 0.43543
+      },
+      {
+        "id": "similarity:education:urban",
+        "measure": "similarity",
+        "sector": "education",
+        "place": "urban",
+        "unit": 0.34201
+      },
+      {
+        "id": "similarity:infrastructure:control",
+        "measure": "similarity",
+        "sector": "infrastructure",
+        "place": "control",
+        "unit": 0.39964
+      },
+      {
+        "id": "similarity:infrastructure:rural",
+        "measure": "similarity",
+        "sector": "infrastructure",
+        "place": "rural",
+        "unit": 0.44247
+      },
+      {
+        "id": "similarity:infrastructure:urban",
+        "measure": "similarity",
+        "sector": "infrastructure",
+        "place": "urban",
+        "unit": 0.3395
+      },
+      {
+        "id": "similarity:public_health:control",
+        "measure": "similarity",
+        "sector": "public_health",
+        "place": "control",
+        "unit": 0.41228
+      },
+      {
+        "id": "similarity:public_health:rural",
+        "measure": "similarity",
+        "sector": "public_health",
+        "place": "rural",
+        "unit": 0.45414
+      },
+      {
+        "id": "similarity:public_health:urban",
+        "measure": "similarity",
+        "sector": "public_health",
+        "place": "urban",
+        "unit": 0.34967
+      },
+      {
+        "id": "similarity:transportation:control",
+        "measure": "similarity",
+        "sector": "transportation",
+        "place": "control",
+        "unit": 0.40319
+      },
+      {
+        "id": "similarity:transportation:rural",
+        "measure": "similarity",
+        "sector": "transportation",
+        "place": "rural",
+        "unit": 0.44345
+      },
+      {
+        "id": "similarity:transportation:urban",
+        "measure": "similarity",
+        "sector": "transportation",
+        "place": "urban",
+        "unit": 0.33544
+      },
+      {
+        "id": "similarity:utilities:control",
+        "measure": "similarity",
+        "sector": "utilities",
+        "place": "control",
+        "unit": 0.39209
+      },
+      {
+        "id": "similarity:utilities:rural",
+        "measure": "similarity",
+        "sector": "utilities",
+        "place": "rural",
+        "unit": 0.43409
+      },
+      {
+        "id": "similarity:utilities:urban",
+        "measure": "similarity",
+        "sector": "utilities",
+        "place": "urban",
+        "unit": 0.32723
+      },
+      {
+        "id": "support:banking:control",
+        "measure": "support",
+        "sector": "banking",
+        "place": "control",
+        "unit": 0.55563
+      },
+      {
+        "id": "support:banking:rural",
+        "measure": "support",
+        "sector": "banking",
+        "place": "rural",
+        "unit": 0.56997
+      },
+      {
+        "id": "support:banking:urban",
+        "measure": "support",
+        "sector": "banking",
+        "place": "urban",
+        "unit": 0.53383
+      },
+      {
+        "id": "support:education:control",
+        "measure": "support",
+        "sector": "education",
+        "place": "control",
+        "unit": 0.59901
+      },
+      {
+        "id": "support:education:rural",
+        "measure": "support",
+        "sector": "education",
+        "place": "rural",
+        "unit": 0.61369
+      },
+      {
+        "id": "support:education:urban",
+        "measure": "support",
+        "sector": "education",
+        "place": "urban",
+        "unit": 0.57742
+      },
+      {
+        "id": "support:infrastructure:control",
+        "measure": "support",
+        "sector": "infrastructure",
+        "place": "control",
+        "unit": 0.62606
+      },
+      {
+        "id": "support:infrastructure:rural",
+        "measure": "support",
+        "sector": "infrastructure",
+        "place": "rural",
+        "unit": 0.63947
+      },
+      {
+        "id": "support:infrastructure:urban",
+        "measure": "support",
+        "sector": "infrastructure",
+        "place": "urban",
+        "unit": 0.59221
+      },
+      {
+        "id": "support:public_health:control",
+        "measure": "support",
+        "sector": "public_health",
+        "place": "control",
+        "unit": 0.59995
+      },
+      {
+        "id": "support:public_health:rural",
+        "measure": "support",
+        "sector": "public_health",
+        "place": "rural",
+        "unit": 0.62005
+      },
+      {
+        "id": "support:public_health:urban",
+        "measure": "support",
+        "sector": "public_health",
+        "place": "urban",
+        "unit": 0.57096
+      },
+      {
+        "id": "support:transportation:control",
+        "measure": "support",
+        "sector": "transportation",
+        "place": "control",
+        "unit": 0.59899
+      },
+      {
+        "id": "support:transportation:rural",
+        "measure": "support",
+        "sector": "transportation",
+        "place": "rural",
+        "unit": 0.61771
+      },
+      {
+        "id": "support:transportation:urban",
+        "measure": "support",
+        "sector": "transportation",
+        "place": "urban",
+        "unit": 0.56179
+      },
+      {
+        "id": "support:utilities:control",
+        "measure": "support",
+        "sector": "utilities",
+        "place": "control",
+        "unit": 0.56781
+      },
+      {
+        "id": "support:utilities:rural",
+        "measure": "support",
+        "sector": "utilities",
+        "place": "rural",
+        "unit": 0.58735
+      },
+      {
+        "id": "support:utilities:urban",
+        "measure": "support",
+        "sector": "utilities",
+        "place": "urban",
+        "unit": 0.53544
+      },
+      {
+        "id": "trust:banking:control",
+        "measure": "trust",
+        "sector": "banking",
+        "place": "control",
+        "unit": 0.46917
+      },
+      {
+        "id": "trust:banking:rural",
+        "measure": "trust",
+        "sector": "banking",
+        "place": "rural",
+        "unit": 0.50116
+      },
+      {
+        "id": "trust:banking:urban",
+        "measure": "trust",
+        "sector": "banking",
+        "place": "urban",
+        "unit": 0.41869
+      },
+      {
+        "id": "trust:education:control",
+        "measure": "trust",
+        "sector": "education",
+        "place": "control",
+        "unit": 0.49032
+      },
+      {
+        "id": "trust:education:rural",
+        "measure": "trust",
+        "sector": "education",
+        "place": "rural",
+        "unit": 0.5147
+      },
+      {
+        "id": "trust:education:urban",
+        "measure": "trust",
+        "sector": "education",
+        "place": "urban",
+        "unit": 0.42523
+      },
+      {
+        "id": "trust:infrastructure:control",
+        "measure": "trust",
+        "sector": "infrastructure",
+        "place": "control",
+        "unit": 0.49654
+      },
+      {
+        "id": "trust:infrastructure:rural",
+        "measure": "trust",
+        "sector": "infrastructure",
+        "place": "rural",
+        "unit": 0.5233
+      },
+      {
+        "id": "trust:infrastructure:urban",
+        "measure": "trust",
+        "sector": "infrastructure",
+        "place": "urban",
+        "unit": 0.42729
+      },
+      {
+        "id": "trust:public_health:control",
+        "measure": "trust",
+        "sector": "public_health",
+        "place": "control",
+        "unit": 0.50658
+      },
+      {
+        "id": "trust:public_health:rural",
+        "measure": "trust",
+        "sector": "public_health",
+        "place": "rural",
+        "unit": 0.53324
+      },
+      {
+        "id": "trust:public_health:urban",
+        "measure": "trust",
+        "sector": "public_health",
+        "place": "urban",
+        "unit": 0.44353
+      },
+      {
+        "id": "trust:transportation:control",
+        "measure": "trust",
+        "sector": "transportation",
+        "place": "control",
+        "unit": 0.48999
+      },
+      {
+        "id": "trust:transportation:rural",
+        "measure": "trust",
+        "sector": "transportation",
+        "place": "rural",
+        "unit": 0.51702
+      },
+      {
+        "id": "trust:transportation:urban",
+        "measure": "trust",
+        "sector": "transportation",
+        "place": "urban",
+        "unit": 0.42489
+      },
+      {
+        "id": "trust:utilities:control",
+        "measure": "trust",
+        "sector": "utilities",
+        "place": "control",
+        "unit": 0.47913
+      },
+      {
+        "id": "trust:utilities:rural",
+        "measure": "trust",
+        "sector": "utilities",
+        "place": "rural",
+        "unit": 0.50632
+      },
+      {
+        "id": "trust:utilities:urban",
+        "measure": "trust",
+        "sector": "utilities",
+        "place": "urban",
+        "unit": 0.41243
+      }
+    ],
+    "effects": [
+      {
+        "id": "support:rural-control",
+        "measure": "support",
+        "contrast": "rural - control, pooled over six sectors",
+        "kernel_effect": 0.0168,
+        "predicted_effect": 0.01554,
+        "interval80": [
+          -0.09773,
+          0.12881
+        ],
+        "interval90": [
+          -0.12984,
+          0.16092
+        ],
+        "p_positive": 0.5698
+      },
+      {
+        "id": "support:urban-control",
+        "measure": "support",
+        "contrast": "urban - control, pooled over six sectors",
+        "kernel_effect": -0.0293,
+        "predicted_effect": -0.0271,
+        "interval80": [
+          -0.14037,
+          0.08617
+        ],
+        "interval90": [
+          -0.17248,
+          0.11828
+        ],
+        "p_positive": 0.3796
+      },
+      {
+        "id": "support:banking:rural-control",
+        "measure": "support",
+        "secondary": true,
+        "contrast": "rural - control, banking",
+        "kernel_effect": 0.01433,
+        "predicted_effect": 0.01326,
+        "interval80": [
+          -0.10001,
+          0.12653
+        ],
+        "interval90": [
+          -0.13212,
+          0.15864
+        ],
+        "p_positive": 0.5596
+      },
+      {
+        "id": "support:banking:urban-control",
+        "measure": "support",
+        "secondary": true,
+        "contrast": "urban - control, banking",
+        "kernel_effect": -0.0218,
+        "predicted_effect": -0.02016,
+        "interval80": [
+          -0.13344,
+          0.09311
+        ],
+        "interval90": [
+          -0.16554,
+          0.12522
+        ],
+        "p_positive": 0.4098
+      },
+      {
+        "id": "support:education:rural-control",
+        "measure": "support",
+        "secondary": true,
+        "contrast": "rural - control, education",
+        "kernel_effect": 0.01468,
+        "predicted_effect": 0.01358,
+        "interval80": [
+          -0.0997,
+          0.12685
+        ],
+        "interval90": [
+          -0.13181,
+          0.15896
+        ],
+        "p_positive": 0.561
+      },
+      {
+        "id": "support:education:urban-control",
+        "measure": "support",
+        "secondary": true,
+        "contrast": "urban - control, education",
+        "kernel_effect": -0.02159,
+        "predicted_effect": -0.01997,
+        "interval80": [
+          -0.13324,
+          0.0933
+        ],
+        "interval90": [
+          -0.16535,
+          0.12541
+        ],
+        "p_positive": 0.4106
+      },
+      {
+        "id": "support:infrastructure:rural-control",
+        "measure": "support",
+        "secondary": true,
+        "contrast": "rural - control, infrastructure",
+        "kernel_effect": 0.01342,
+        "predicted_effect": 0.01241,
+        "interval80": [
+          -0.10086,
+          0.12568
+        ],
+        "interval90": [
+          -0.13297,
+          0.15779
+        ],
+        "p_positive": 0.5558
+      },
+      {
+        "id": "support:infrastructure:urban-control",
+        "measure": "support",
+        "secondary": true,
+        "contrast": "urban - control, infrastructure",
+        "kernel_effect": -0.03385,
+        "predicted_effect": -0.0313,
+        "interval80": [
+          -0.14458,
+          0.08197
+        ],
+        "interval90": [
+          -0.17668,
+          0.11408
+        ],
+        "p_positive": 0.3616
+      },
+      {
+        "id": "support:public_health:rural-control",
+        "measure": "support",
+        "secondary": true,
+        "contrast": "rural - control, public_health",
+        "kernel_effect": 0.0201,
+        "predicted_effect": 0.01859,
+        "interval80": [
+          -0.09468,
+          0.13187
+        ],
+        "interval90": [
+          -0.12679,
+          0.16397
+        ],
+        "p_positive": 0.5833
+      },
+      {
+        "id": "support:public_health:urban-control",
+        "measure": "support",
+        "secondary": true,
+        "contrast": "urban - control, public_health",
+        "kernel_effect": -0.02899,
+        "predicted_effect": -0.02681,
+        "interval80": [
+          -0.14008,
+          0.08646
+        ],
+        "interval90": [
+          -0.17219,
+          0.11857
+        ],
+        "p_positive": 0.3808
+      },
+      {
+        "id": "support:transportation:rural-control",
+        "measure": "support",
+        "secondary": true,
+        "contrast": "rural - control, transportation",
+        "kernel_effect": 0.01872,
+        "predicted_effect": 0.01731,
+        "interval80": [
+          -0.09596,
+          0.13058
+        ],
+        "interval90": [
+          -0.12807,
+          0.16269
+        ],
+        "p_positive": 0.5777
+      },
+      {
+        "id": "support:transportation:urban-control",
+        "measure": "support",
+        "secondary": true,
+        "contrast": "urban - control, transportation",
+        "kernel_effect": -0.0372,
+        "predicted_effect": -0.03441,
+        "interval80": [
+          -0.14768,
+          0.07886
+        ],
+        "interval90": [
+          -0.17979,
+          0.11097
+        ],
+        "p_positive": 0.3485
+      },
+      {
+        "id": "support:utilities:rural-control",
+        "measure": "support",
+        "secondary": true,
+        "contrast": "rural - control, utilities",
+        "kernel_effect": 0.01954,
+        "predicted_effect": 0.01807,
+        "interval80": [
+          -0.0952,
+          0.13135
+        ],
+        "interval90": [
+          -0.12731,
+          0.16346
+        ],
+        "p_positive": 0.581
+      },
+      {
+        "id": "support:utilities:urban-control",
+        "measure": "support",
+        "secondary": true,
+        "contrast": "urban - control, utilities",
+        "kernel_effect": -0.03237,
+        "predicted_effect": -0.02994,
+        "interval80": [
+          -0.14321,
+          0.08333
+        ],
+        "interval90": [
+          -0.17532,
+          0.11544
+        ],
+        "p_positive": 0.3674
+      },
+      {
+        "id": "benefit:rural-control",
+        "measure": "benefit",
+        "contrast": "rural - control, pooled over six sectors",
+        "kernel_effect": 0.01638,
+        "predicted_effect": 0.01515,
+        "interval80": [
+          -0.09812,
+          0.12842
+        ],
+        "interval90": [
+          -0.13023,
+          0.16053
+        ],
+        "p_positive": 0.568
+      },
+      {
+        "id": "benefit:urban-control",
+        "measure": "benefit",
+        "contrast": "urban - control, pooled over six sectors",
+        "kernel_effect": -0.05815,
+        "predicted_effect": -0.05378,
+        "interval80": [
+          -0.16705,
+          0.05949
+        ],
+        "interval90": [
+          -0.19916,
+          0.0916
+        ],
+        "p_positive": 0.2714
+      },
+      {
+        "id": "benefit:banking:rural-control",
+        "measure": "benefit",
+        "secondary": true,
+        "contrast": "rural - control, banking",
+        "kernel_effect": 0.02057,
+        "predicted_effect": 0.01902,
+        "interval80": [
+          -0.09425,
+          0.13229
+        ],
+        "interval90": [
+          -0.12636,
+          0.1644
+        ],
+        "p_positive": 0.5852
+      },
+      {
+        "id": "benefit:banking:urban-control",
+        "measure": "benefit",
+        "secondary": true,
+        "contrast": "urban - control, banking",
+        "kernel_effect": -0.04423,
+        "predicted_effect": -0.04091,
+        "interval80": [
+          -0.15418,
+          0.07236
+        ],
+        "interval90": [
+          -0.18629,
+          0.10447
+        ],
+        "p_positive": 0.3217
+      },
+      {
+        "id": "benefit:education:rural-control",
+        "measure": "benefit",
+        "secondary": true,
+        "contrast": "rural - control, education",
+        "kernel_effect": 0.00775,
+        "predicted_effect": 0.00717,
+        "interval80": [
+          -0.1061,
+          0.12044
+        ],
+        "interval90": [
+          -0.13821,
+          0.15255
+        ],
+        "p_positive": 0.5323
+      },
+      {
+        "id": "benefit:education:urban-control",
+        "measure": "benefit",
+        "secondary": true,
+        "contrast": "urban - control, education",
+        "kernel_effect": -0.05552,
+        "predicted_effect": -0.05135,
+        "interval80": [
+          -0.16462,
+          0.06192
+        ],
+        "interval90": [
+          -0.19673,
+          0.09403
+        ],
+        "p_positive": 0.2806
+      },
+      {
+        "id": "benefit:infrastructure:rural-control",
+        "measure": "benefit",
+        "secondary": true,
+        "contrast": "rural - control, infrastructure",
+        "kernel_effect": 0.01428,
+        "predicted_effect": 0.01321,
+        "interval80": [
+          -0.10006,
+          0.12648
+        ],
+        "interval90": [
+          -0.13217,
+          0.15859
+        ],
+        "p_positive": 0.5594
+      },
+      {
+        "id": "benefit:infrastructure:urban-control",
+        "measure": "benefit",
+        "secondary": true,
+        "contrast": "urban - control, infrastructure",
+        "kernel_effect": -0.07583,
+        "predicted_effect": -0.07013,
+        "interval80": [
+          -0.18341,
+          0.04314
+        ],
+        "interval90": [
+          -0.21551,
+          0.07525
+        ],
+        "p_positive": 0.2137
+      },
+      {
+        "id": "benefit:public_health:rural-control",
+        "measure": "benefit",
+        "secondary": true,
+        "contrast": "rural - control, public_health",
+        "kernel_effect": 0.01708,
+        "predicted_effect": 0.01579,
+        "interval80": [
+          -0.09748,
+          0.12906
+        ],
+        "interval90": [
+          -0.12959,
+          0.16117
+        ],
+        "p_positive": 0.5709
+      },
+      {
+        "id": "benefit:public_health:urban-control",
+        "measure": "benefit",
+        "secondary": true,
+        "contrast": "urban - control, public_health",
+        "kernel_effect": -0.05435,
+        "predicted_effect": -0.05027,
+        "interval80": [
+          -0.16354,
+          0.063
+        ],
+        "interval90": [
+          -0.19565,
+          0.09511
+        ],
+        "p_positive": 0.2848
+      },
+      {
+        "id": "benefit:transportation:rural-control",
+        "measure": "benefit",
+        "secondary": true,
+        "contrast": "rural - control, transportation",
+        "kernel_effect": 0.01858,
+        "predicted_effect": 0.01719,
+        "interval80": [
+          -0.09608,
+          0.13046
+        ],
+        "interval90": [
+          -0.12819,
+          0.16257
+        ],
+        "p_positive": 0.5771
+      },
+      {
+        "id": "benefit:transportation:urban-control",
+        "measure": "benefit",
+        "secondary": true,
+        "contrast": "urban - control, transportation",
+        "kernel_effect": -0.06662,
+        "predicted_effect": -0.06161,
+        "interval80": [
+          -0.17489,
+          0.05166
+        ],
+        "interval90": [
+          -0.20699,
+          0.08377
+        ],
+        "p_positive": 0.2429
+      },
+      {
+        "id": "benefit:utilities:rural-control",
+        "measure": "benefit",
+        "secondary": true,
+        "contrast": "rural - control, utilities",
+        "kernel_effect": 0.02002,
+        "predicted_effect": 0.01852,
+        "interval80": [
+          -0.09475,
+          0.13179
+        ],
+        "interval90": [
+          -0.12686,
+          0.1639
+        ],
+        "p_positive": 0.583
+      },
+      {
+        "id": "benefit:utilities:urban-control",
+        "measure": "benefit",
+        "secondary": true,
+        "contrast": "urban - control, utilities",
+        "kernel_effect": -0.05234,
+        "predicted_effect": -0.04841,
+        "interval80": [
+          -0.16168,
+          0.06486
+        ],
+        "interval90": [
+          -0.19379,
+          0.09697
+        ],
+        "p_positive": 0.2919
+      },
+      {
+        "id": "rural_beneficiary:rural-control",
+        "measure": "rural_beneficiary",
+        "contrast": "rural - control, pooled over six sectors",
+        "kernel_effect": 0.08192,
+        "predicted_effect": 0.07577,
+        "interval80": [
+          -0.0375,
+          0.18904
+        ],
+        "interval90": [
+          -0.06961,
+          0.22115
+        ],
+        "p_positive": 0.8044
+      },
+      {
+        "id": "rural_beneficiary:urban-control",
+        "measure": "rural_beneficiary",
+        "contrast": "urban - control, pooled over six sectors",
+        "kernel_effect": -0.2527,
+        "predicted_effect": -0.23373,
+        "interval80": [
+          -0.347,
+          -0.12046
+        ],
+        "interval90": [
+          -0.37911,
+          -0.08835
+        ],
+        "p_positive": 0.0041
+      },
+      {
+        "id": "rural_beneficiary:banking:rural-control",
+        "measure": "rural_beneficiary",
+        "secondary": true,
+        "contrast": "rural - control, banking",
+        "kernel_effect": 0.0959,
+        "predicted_effect": 0.0887,
+        "interval80": [
+          -0.02457,
+          0.20197
+        ],
+        "interval90": [
+          -0.05668,
+          0.23408
+        ],
+        "p_positive": 0.8422
+      },
+      {
+        "id": "rural_beneficiary:banking:urban-control",
+        "measure": "rural_beneficiary",
+        "secondary": true,
+        "contrast": "urban - control, banking",
+        "kernel_effect": -0.22389,
+        "predicted_effect": -0.20709,
+        "interval80": [
+          -0.32036,
+          -0.09381
+        ],
+        "interval90": [
+          -0.35247,
+          -0.06171
+        ],
+        "p_positive": 0.0096
+      },
+      {
+        "id": "rural_beneficiary:education:rural-control",
+        "measure": "rural_beneficiary",
+        "secondary": true,
+        "contrast": "rural - control, education",
+        "kernel_effect": 0.08162,
+        "predicted_effect": 0.07549,
+        "interval80": [
+          -0.03778,
+          0.18876
+        ],
+        "interval90": [
+          -0.06989,
+          0.22087
+        ],
+        "p_positive": 0.8035
+      },
+      {
+        "id": "rural_beneficiary:education:urban-control",
+        "measure": "rural_beneficiary",
+        "secondary": true,
+        "contrast": "urban - control, education",
+        "kernel_effect": -0.25021,
+        "predicted_effect": -0.23143,
+        "interval80": [
+          -0.3447,
+          -0.11816
+        ],
+        "interval90": [
+          -0.37681,
+          -0.08605
+        ],
+        "p_positive": 0.0044
+      },
+      {
+        "id": "rural_beneficiary:infrastructure:rural-control",
+        "measure": "rural_beneficiary",
+        "secondary": true,
+        "contrast": "rural - control, infrastructure",
+        "kernel_effect": 0.08909,
+        "predicted_effect": 0.0824,
+        "interval80": [
+          -0.03087,
+          0.19567
+        ],
+        "interval90": [
+          -0.06298,
+          0.22778
+        ],
+        "p_positive": 0.8244
+      },
+      {
+        "id": "rural_beneficiary:infrastructure:urban-control",
+        "measure": "rural_beneficiary",
+        "secondary": true,
+        "contrast": "urban - control, infrastructure",
+        "kernel_effect": -0.26073,
+        "predicted_effect": -0.24115,
+        "interval80": [
+          -0.35442,
+          -0.12788
+        ],
+        "interval90": [
+          -0.38653,
+          -0.09577
+        ],
+        "p_positive": 0.0032
+      },
+      {
+        "id": "rural_beneficiary:public_health:rural-control",
+        "measure": "rural_beneficiary",
+        "secondary": true,
+        "contrast": "rural - control, public_health",
+        "kernel_effect": 0.08637,
+        "predicted_effect": 0.07988,
+        "interval80": [
+          -0.03339,
+          0.19316
+        ],
+        "interval90": [
+          -0.0655,
+          0.22526
+        ],
+        "p_positive": 0.817
+      },
+      {
+        "id": "rural_beneficiary:public_health:urban-control",
+        "measure": "rural_beneficiary",
+        "secondary": true,
+        "contrast": "urban - control, public_health",
+        "kernel_effect": -0.23446,
+        "predicted_effect": -0.21686,
+        "interval80": [
+          -0.33013,
+          -0.10359
+        ],
+        "interval90": [
+          -0.36224,
+          -0.07148
+        ],
+        "p_positive": 0.0071
+      },
+      {
+        "id": "rural_beneficiary:transportation:rural-control",
+        "measure": "rural_beneficiary",
+        "secondary": true,
+        "contrast": "rural - control, transportation",
+        "kernel_effect": 0.06462,
+        "predicted_effect": 0.05977,
+        "interval80": [
+          -0.0535,
+          0.17304
+        ],
+        "interval90": [
+          -0.08561,
+          0.20515
+        ],
+        "p_positive": 0.7506
+      },
+      {
+        "id": "rural_beneficiary:transportation:urban-control",
+        "measure": "rural_beneficiary",
+        "secondary": true,
+        "contrast": "urban - control, transportation",
+        "kernel_effect": -0.28817,
+        "predicted_effect": -0.26654,
+        "interval80": [
+          -0.37981,
+          -0.15327
+        ],
+        "interval90": [
+          -0.41192,
+          -0.12116
+        ],
+        "p_positive": 0.0013
+      },
+      {
+        "id": "rural_beneficiary:utilities:rural-control",
+        "measure": "rural_beneficiary",
+        "secondary": true,
+        "contrast": "rural - control, utilities",
+        "kernel_effect": 0.07393,
+        "predicted_effect": 0.06838,
+        "interval80": [
+          -0.04489,
+          0.18165
+        ],
+        "interval90": [
+          -0.077,
+          0.21376
+        ],
+        "p_positive": 0.7804
+      },
+      {
+        "id": "rural_beneficiary:utilities:urban-control",
+        "measure": "rural_beneficiary",
+        "secondary": true,
+        "contrast": "urban - control, utilities",
+        "kernel_effect": -0.25875,
+        "predicted_effect": -0.23933,
+        "interval80": [
+          -0.3526,
+          -0.12606
+        ],
+        "interval90": [
+          -0.38471,
+          -0.09395
+        ],
+        "p_positive": 0.0034
+      },
+      {
+        "id": "trust:rural-control",
+        "measure": "trust",
+        "contrast": "rural - control, pooled over six sectors",
+        "kernel_effect": 0.02734,
+        "predicted_effect": 0.02528,
+        "interval80": [
+          -0.08799,
+          0.13855
+        ],
+        "interval90": [
+          -0.1201,
+          0.17066
+        ],
+        "p_positive": 0.6126
+      },
+      {
+        "id": "trust:urban-control",
+        "measure": "trust",
+        "contrast": "urban - control, pooled over six sectors",
+        "kernel_effect": -0.06328,
+        "predicted_effect": -0.05853,
+        "interval80": [
+          -0.1718,
+          0.05474
+        ],
+        "interval90": [
+          -0.20391,
+          0.08685
+        ],
+        "p_positive": 0.2539
+      },
+      {
+        "id": "trust:banking:rural-control",
+        "measure": "trust",
+        "secondary": true,
+        "contrast": "rural - control, banking",
+        "kernel_effect": 0.03199,
+        "predicted_effect": 0.02959,
+        "interval80": [
+          -0.08368,
+          0.14286
+        ],
+        "interval90": [
+          -0.11579,
+          0.17497
+        ],
+        "p_positive": 0.6311
+      },
+      {
+        "id": "trust:banking:urban-control",
+        "measure": "trust",
+        "secondary": true,
+        "contrast": "urban - control, banking",
+        "kernel_effect": -0.05048,
+        "predicted_effect": -0.04669,
+        "interval80": [
+          -0.15996,
+          0.06658
+        ],
+        "interval90": [
+          -0.19207,
+          0.09869
+        ],
+        "p_positive": 0.2987
+      },
+      {
+        "id": "trust:education:rural-control",
+        "measure": "trust",
+        "secondary": true,
+        "contrast": "rural - control, education",
+        "kernel_effect": 0.02438,
+        "predicted_effect": 0.02255,
+        "interval80": [
+          -0.09072,
+          0.13582
+        ],
+        "interval90": [
+          -0.12283,
+          0.16793
+        ],
+        "p_positive": 0.6007
+      },
+      {
+        "id": "trust:education:urban-control",
+        "measure": "trust",
+        "secondary": true,
+        "contrast": "urban - control, education",
+        "kernel_effect": -0.0651,
+        "predicted_effect": -0.06021,
+        "interval80": [
+          -0.17348,
+          0.05306
+        ],
+        "interval90": [
+          -0.20559,
+          0.08517
+        ],
+        "p_positive": 0.2479
+      },
+      {
+        "id": "trust:infrastructure:rural-control",
+        "measure": "trust",
+        "secondary": true,
+        "contrast": "rural - control, infrastructure",
+        "kernel_effect": 0.02676,
+        "predicted_effect": 0.02476,
+        "interval80": [
+          -0.08852,
+          0.13803
+        ],
+        "interval90": [
+          -0.12063,
+          0.17014
+        ],
+        "p_positive": 0.6103
+      },
+      {
+        "id": "trust:infrastructure:urban-control",
+        "measure": "trust",
+        "secondary": true,
+        "contrast": "urban - control, infrastructure",
+        "kernel_effect": -0.06925,
+        "predicted_effect": -0.06405,
+        "interval80": [
+          -0.17732,
+          0.04922
+        ],
+        "interval90": [
+          -0.20943,
+          0.08133
+        ],
+        "p_positive": 0.2343
+      },
+      {
+        "id": "trust:public_health:rural-control",
+        "measure": "trust",
+        "secondary": true,
+        "contrast": "rural - control, public_health",
+        "kernel_effect": 0.02666,
+        "predicted_effect": 0.02466,
+        "interval80": [
+          -0.08861,
+          0.13793
+        ],
+        "interval90": [
+          -0.12072,
+          0.17004
+        ],
+        "p_positive": 0.6099
+      },
+      {
+        "id": "trust:public_health:urban-control",
+        "measure": "trust",
+        "secondary": true,
+        "contrast": "urban - control, public_health",
+        "kernel_effect": -0.06306,
+        "predicted_effect": -0.05832,
+        "interval80": [
+          -0.1716,
+          0.05495
+        ],
+        "interval90": [
+          -0.2037,
+          0.08706
+        ],
+        "p_positive": 0.2547
+      },
+      {
+        "id": "trust:transportation:rural-control",
+        "measure": "trust",
+        "secondary": true,
+        "contrast": "rural - control, transportation",
+        "kernel_effect": 0.02703,
+        "predicted_effect": 0.025,
+        "interval80": [
+          -0.08827,
+          0.13827
+        ],
+        "interval90": [
+          -0.12038,
+          0.17038
+        ],
+        "p_positive": 0.6114
+      },
+      {
+        "id": "trust:transportation:urban-control",
+        "measure": "trust",
+        "secondary": true,
+        "contrast": "urban - control, transportation",
+        "kernel_effect": -0.06509,
+        "predicted_effect": -0.06021,
+        "interval80": [
+          -0.17348,
+          0.05306
+        ],
+        "interval90": [
+          -0.20559,
+          0.08517
+        ],
+        "p_positive": 0.2479
+      },
+      {
+        "id": "trust:utilities:rural-control",
+        "measure": "trust",
+        "secondary": true,
+        "contrast": "rural - control, utilities",
+        "kernel_effect": 0.02719,
+        "predicted_effect": 0.02515,
+        "interval80": [
+          -0.08812,
+          0.13842
+        ],
+        "interval90": [
+          -0.12023,
+          0.17053
+        ],
+        "p_positive": 0.612
+      },
+      {
+        "id": "trust:utilities:urban-control",
+        "measure": "trust",
+        "secondary": true,
+        "contrast": "urban - control, utilities",
+        "kernel_effect": -0.0667,
+        "predicted_effect": -0.06169,
+        "interval80": [
+          -0.17496,
+          0.05158
+        ],
+        "interval90": [
+          -0.20707,
+          0.08369
+        ],
+        "p_positive": 0.2426
+      },
+      {
+        "id": "similarity:rural-control",
+        "measure": "similarity",
+        "contrast": "rural - control, pooled over six sectors",
+        "kernel_effect": 0.04002,
+        "predicted_effect": 0.03702,
+        "interval80": [
+          -0.07625,
+          0.15029
+        ],
+        "interval90": [
+          -0.10836,
+          0.1824
+        ],
+        "p_positive": 0.6623
+      },
+      {
+        "id": "similarity:urban-control",
+        "measure": "similarity",
+        "contrast": "urban - control, pooled over six sectors",
+        "secondary": true,
+        "kernel_effect": -0.06335,
+        "predicted_effect": -0.05859,
+        "interval80": [
+          -0.17186,
+          0.05468
+        ],
+        "interval90": [
+          -0.20397,
+          0.08679
+        ],
+        "p_positive": 0.2537
+      },
+      {
+        "id": "similarity:banking:rural-control",
+        "measure": "similarity",
+        "secondary": true,
+        "contrast": "rural - control, banking",
+        "kernel_effect": 0.04047,
+        "predicted_effect": 0.03743,
+        "interval80": [
+          -0.07584,
+          0.1507
+        ],
+        "interval90": [
+          -0.10795,
+          0.18281
+        ],
+        "p_positive": 0.664
+      },
+      {
+        "id": "similarity:banking:urban-control",
+        "measure": "similarity",
+        "secondary": true,
+        "contrast": "urban - control, banking",
+        "kernel_effect": -0.06399,
+        "predicted_effect": -0.05918,
+        "interval80": [
+          -0.17245,
+          0.05409
+        ],
+        "interval90": [
+          -0.20456,
+          0.0862
+        ],
+        "p_positive": 0.2515
+      },
+      {
+        "id": "similarity:education:rural-control",
+        "measure": "similarity",
+        "secondary": true,
+        "contrast": "rural - control, education",
+        "kernel_effect": 0.03271,
+        "predicted_effect": 0.03025,
+        "interval80": [
+          -0.08302,
+          0.14352
+        ],
+        "interval90": [
+          -0.11513,
+          0.17563
+        ],
+        "p_positive": 0.6339
+      },
+      {
+        "id": "similarity:education:urban-control",
+        "measure": "similarity",
+        "secondary": true,
+        "contrast": "urban - control, education",
+        "kernel_effect": -0.06072,
+        "predicted_effect": -0.05616,
+        "interval80": [
+          -0.16943,
+          0.05711
+        ],
+        "interval90": [
+          -0.20154,
+          0.08922
+        ],
+        "p_positive": 0.2626
+      },
+      {
+        "id": "similarity:infrastructure:rural-control",
+        "measure": "similarity",
+        "secondary": true,
+        "contrast": "rural - control, infrastructure",
+        "kernel_effect": 0.04283,
+        "predicted_effect": 0.03961,
+        "interval80": [
+          -0.07366,
+          0.15288
+        ],
+        "interval90": [
+          -0.10577,
+          0.18499
+        ],
+        "p_positive": 0.673
+      },
+      {
+        "id": "similarity:infrastructure:urban-control",
+        "measure": "similarity",
+        "secondary": true,
+        "contrast": "urban - control, infrastructure",
+        "kernel_effect": -0.06015,
+        "predicted_effect": -0.05563,
+        "interval80": [
+          -0.1689,
+          0.05764
+        ],
+        "interval90": [
+          -0.20101,
+          0.08975
+        ],
+        "p_positive": 0.2645
+      },
+      {
+        "id": "similarity:public_health:rural-control",
+        "measure": "similarity",
+        "secondary": true,
+        "contrast": "rural - control, public_health",
+        "kernel_effect": 0.04187,
+        "predicted_effect": 0.03872,
+        "interval80": [
+          -0.07455,
+          0.152
+        ],
+        "interval90": [
+          -0.10666,
+          0.1841
+        ],
+        "p_positive": 0.6694
+      },
+      {
+        "id": "similarity:public_health:urban-control",
+        "measure": "similarity",
+        "secondary": true,
+        "contrast": "urban - control, public_health",
+        "kernel_effect": -0.06261,
+        "predicted_effect": -0.05791,
+        "interval80": [
+          -0.17118,
+          0.05536
+        ],
+        "interval90": [
+          -0.20329,
+          0.08747
+        ],
+        "p_positive": 0.2562
+      },
+      {
+        "id": "similarity:transportation:rural-control",
+        "measure": "similarity",
+        "secondary": true,
+        "contrast": "rural - control, transportation",
+        "kernel_effect": 0.04026,
+        "predicted_effect": 0.03724,
+        "interval80": [
+          -0.07603,
+          0.15051
+        ],
+        "interval90": [
+          -0.10814,
+          0.18262
+        ],
+        "p_positive": 0.6633
+      },
+      {
+        "id": "similarity:transportation:urban-control",
+        "measure": "similarity",
+        "secondary": true,
+        "contrast": "urban - control, transportation",
+        "kernel_effect": -0.06775,
+        "predicted_effect": -0.06266,
+        "interval80": [
+          -0.17593,
+          0.05061
+        ],
+        "interval90": [
+          -0.20804,
+          0.08272
+        ],
+        "p_positive": 0.2392
+      },
+      {
+        "id": "similarity:utilities:rural-control",
+        "measure": "similarity",
+        "secondary": true,
+        "contrast": "rural - control, utilities",
+        "kernel_effect": 0.042,
+        "predicted_effect": 0.03884,
+        "interval80": [
+          -0.07443,
+          0.15211
+        ],
+        "interval90": [
+          -0.10654,
+          0.18422
+        ],
+        "p_positive": 0.6698
+      },
+      {
+        "id": "similarity:utilities:urban-control",
+        "measure": "similarity",
+        "secondary": true,
+        "contrast": "urban - control, utilities",
+        "kernel_effect": -0.06487,
+        "predicted_effect": -0.06,
+        "interval80": [
+          -0.17327,
+          0.05327
+        ],
+        "interval90": [
+          -0.20538,
+          0.08538
+        ],
+        "p_positive": 0.2486
+      }
+    ],
+    "best_condition": {
+      "rural": 0.4882,
+      "urban": 0.2418,
+      "control": 0.27
+    },
+    "scoring_notes": "Primary: rural - control and urban - control on support (1-4), community benefit (1-5), rural-area beneficiary (share choosing 'Rural areas') and trust (1-5), pooled over the six sectors, plus rural - control on similarity (the preregistered validation check); all on the unit scale (position on the scale; the share for the binary item). Per-sector effects and urban - control on similarity are secondary. Within respondent in the study; here each persona reads all 18 clips independently. best_condition is for support with the control as the reference.",
+    "models": {
+      "kernel": "jev-1.13.0",
+      "kernel_training_cutoff": "2026-01-01",
+      "phrasing": "p3",
+      "flagship": null,
+      "discrepancy": {
+        "source": "D2 jev fit_seen (91 seen SocSci210 studies); kept after E2c",
+        "beta": 0.9249304558258878,
+        "tau": 0.03680381185921599,
+        "sigma": 0.08035500127218577
+      },
+      "kite_commit": "db05c624113041dcb7ca9469d74d506c794923f4",
+      "run_ledgers": {
+        "main": {
+          "calls": 18000,
+          "cache_hits": 0,
+          "cache_misses": 72000,
+          "input_tokens": 15638740,
+          "output_tokens": 1368000,
+          "usd": 0.656827,
+          "reserved_usd": 0.0,
+          "answers": 72000,
+          "malformed_distributions": 0,
+          "wall_seconds": 1123.29,
+          "latency_ms_p50": 175.586479017511,
+          "latency_ms_p95": 230.9851806494407
+        }
+      }
+    },
+    "created": "2026-09-30T11:43:31+00:00"
+  },
+  "salt": "d7528659fc6f3fc544858bcb34231fc0",
+  "digest": "2088d51bf02e45eae7b8c576699a913ccb6a913f311e560450aa3bf1ee1d2b0c",
+  "sealed_at": "2026-09-30T11:43:36+00:00"
+}
